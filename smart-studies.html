@@ -1082,7 +1082,7 @@
         <div class="tip-card">
           <i class="fas fa-stopwatch icon"></i>
           <h5 class="tip-title">Time Block Strategy</h5>
-          <p>Allocate fixed time to each section. Avoid overthinking. Move forward once time’s up!</p>
+          <p>Allocate time per section. Avoid overthinking. Move on when time’s up!</p>
         </div>
       </div>
 
@@ -1127,7 +1127,7 @@
         <div class="tip-card">
           <i class="fas fa-check-circle icon"></i>
           <h5 class="tip-title">Answer the Easy First</h5>
-          <p>Start with the questions you know well. Builds confidence and secures marks early.</p>
+          <p>Start with questions you know well. Builds confidence and secures marks early.</p>
         </div>
       </div>
     </div>
@@ -1349,14 +1349,63 @@ function submitForm(event, type) {
   // Reset form
   document.getElementById(type === "register" ? "registerForm" : "loginForm").reset();
 
-  setTimeout(() => {
-    closeAuthModal();
-    const subject = localStorage.getItem("requestedSubject");
-    if (typeof showPopup === "function") {
-      showPopup(subject || "Subject");
-    }
-    localStorage.removeItem("requestedSubject");
-  }, 2200);
+//   setTimeout(() => {
+//     closeAuthModal();
+//     const subject = localStorage.getItem("requestedSubject");
+//     if (typeof showPopup === "function") {
+//       showPopup(subject || "Subject");
+//     }
+//     localStorage.removeItem("requestedSubject");
+//   }, 2200);
+// }
+
+setTimeout(() => {
+  closeAuthModal();
+  const subject = localStorage.getItem("requestedSubject");
+
+  // ✅ Subject → File mapping
+  const fileMap = {
+    "Math": "past_papers/Maths notes.pdf",
+    "English": "past_papers/English notes.pdf",
+    "Physics": "past_papers/Physics notes.pdf",
+    "Chemistry": "past_papers/Chemistry notes.pdf",
+    "Biology": "past_papers/Biology notes.pdf",
+    "Urdu": "past_papers/Urdu notes.pdf",
+    "Computer": "past_papers/Computer notes.pdf",
+    "Islamiat": "past_paperses/Islamiat notes.pdf",
+    "Social Studies": "past_papers/Social Studies notes.pdf",
+    "Sindhi": "past_papers/Sindhi notes.pdf",
+    "General Science": "past_papers/General Science notes.pdf",
+    "Environmental Management": "past_papers/Environmental Management notes.pdf",
+    "Economics": "past_papers/Economics notes.pdf",
+    "Business Studies": "past_papers/Business Studies notes.pdf",
+    "Accounting": "past_papers/Accounting notes.pdf",
+    "History": "past_papers/History notes.pdf",
+    "Geography": "past_papers/Geography notes.pdf",
+    "ICT": "past_papers/ICT notes.pdf"
+  };
+
+  // Pick file based on subject OR fallback
+  let fileUrl = fileMap[subject] || "past_papers/general.pdf";
+
+  // ✅ Trigger file download
+  if (fileUrl) {
+    const a = document.createElement("a");
+    a.href = fileUrl;
+    a.download = fileUrl.split("/").pop(); // downloads as maths.pdf, physics.pdf etc.
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
+  // ✅ Show your popup message
+  if (typeof showPopup === "function") {
+    showPopup(subject || "Subject");
+  }
+
+  localStorage.removeItem("requestedSubject");
+}, 2200);
+
 }
 </script>
 
@@ -1435,7 +1484,7 @@ function submitForm(event, type) {
 <!-- Validation message -->
       <div id="footerMsg" style="font-size: 12px; margin-top: -4px;" ></div>
 
-      <div class="d-flex justify-content-center justify-content-md-start align-items-center gap-3 mt-2">         
+      <div class="d-flex justify-content-center justify-content-md-start align-items-center gap-3 mt-2  f-icons">         
       <a style="font-size: 23px;" href="https://facebook.com/mindspark" target="_blank"><i class="fab fa-facebook fa-lg"></i></a>
       <a style="font-size: 23px;" href="https://instagram.com/mindspark" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
       <a style="font-size: 23px;" href="https://www.threads.net/@mindspark" target="_blank"><i class="fa-brands fa-threads"></i></a>

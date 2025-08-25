@@ -272,29 +272,39 @@ html, body {
     font-size: 14px;
     font-weight: 500;
     line-height: 1.6;
-    padding-left:12px ;
+    padding-left:8px ;
     position: relative;
+    word-break: break-word; 
   }
-.quick a::before{
+  .quick a::before{
   content: "•";
   position: absolute;
   left: 0;
   top: 0;
   font-weight: bold;
   color: rgb(214,178,82) ;
-}
+  }
+  .quick li {
+  display: flex;         /* align bullet and text in same line */
+  align-items: flex-start;
+  }
+
+
    footer a:hover{
      color:#f0e3c3;
      transform: scale(1.1);
   }
   
   .footer-input{
-    max-width: 200px;
+    max-width: 185px;
     max-height: 49px;
     padding: 4px;
     border: 3px solid rgb(214,178,82);
     margin-bottom: 20px;
 
+  }
+  .f-link{
+    gap: 9px!important;
   }
    .footer-input:focus{
     outline: none;
@@ -312,8 +322,9 @@ html, body {
     border:none; 
     font-weight:600; 
     max-height:37px; 
-    max-width: 78px;
+    max-width: 72px;
     font-size:13px;
+    padding: 3px;
   }
 .f_email_btn:hover{
   background-color:rgb(214,178,82) ;
@@ -346,7 +357,48 @@ html, body {
   75% { transform: translateX(-4px); }
   100% { transform: translateX(0); }
 }
+/* Make footer flex wrap */
+#footerForm {
+  flex-wrap: wrap !important; /* allows email + button to wrap */
+}
 
+.footer-input {
+  flex: 1 1 auto; /* allow shrinking */
+  min-width: 150px; /* optional: minimum width */
+}
+
+.f_email_btn {
+  flex: 0 0 auto;
+}
+.f-icons {
+  flex-wrap: wrap; /* allow icons to go to next line if needed */
+  gap: 10px!important;       /* smaller gap on small screens */
+}
+@media (min-width: 765px) and (max-width: 845px) {
+  .f-icons a{
+    font-size: 17px;
+    gap: 8px;
+  }
+  .f_email_btn{
+    padding: 7px;
+    margin-top: -13px;
+    margin-bottom: 9px;
+  }
+.f-link a{
+  font-size: 12px!important;
+}
+#footerForm{
+  display: flex!important;
+}
+  .footer-input{
+    max-width: 86px;
+   
+  }
+} @media (max-width:768px){
+.dropdown-menu {
+  text-align: center;
+}
+}
 
                                                             /* HOME*/
 
@@ -1158,7 +1210,7 @@ transform: scale(1.05);
   right: 20px;
   width: 58px;
   height: 58px;
-  background: var(--chat-accent);
+  background-color:  #d0a75ace;
   color: white;
   font-size: 26px;
   display: flex;
@@ -1172,7 +1224,8 @@ transform: scale(1.05);
 }
 #chatbot-icon:hover {
   transform: scale(1.1);
-  opacity: 0.9;
+  opacity: 1;
+  background-color:  #d0a75a;
 }
 
 /* Chatbox */
