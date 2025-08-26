@@ -250,10 +250,14 @@ html, body {
   }
 } */
 @media (max-width:768px) {
-  .navbar{
-    margin-bottom: 70px;
-  }
-  
+.mindsparkk-hero{
+  margin-top: 70px!important;
+}
+.career-banner{
+  margin-top: 80px!important;
+} .career-banner h1{
+  font-size: 38px!important;
+}
 }
 
                                                         /* footer */
