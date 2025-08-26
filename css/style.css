@@ -249,7 +249,12 @@ html, body {
     display: none;
   }
 } */
-
+@media (max-width:768px) {
+  .navbar{
+    margin-bottom: 70px;
+  }
+  
+}
 
                                                         /* footer */
   footer{
@@ -1356,6 +1361,9 @@ transform: scale(1.05);
   scrollbar-color: #d6b252 #1a1a1a;
 }
 
+.chatbot-input-container{
+  padding-right: 15px;
+}
                                                 /* SOFT-EDGE  */
 .softlux-hero {
   background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8)),
