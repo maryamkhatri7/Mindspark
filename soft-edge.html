@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MindSpark | Unlock soft skills like leadership, communication, emotional intelligence & confidence. Grow smarter with our tools, guides, and videos.">
+    <meta name="keywords" content="soft skills, leadership, communication, confidence, career, productivity, emotional intelligence">
+    <meta property="og:title" content="Soft Edge | MindSpark">
+    <meta property="og:description" content="Elevate your soft skills with MindSpark – Communication, Leadership, Confidence & More.">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:type" content="website">
+    <title>Soft Edge | MindSpark</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> 
+     <link rel="stylesheet" href="css/all.min.css">
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/aos.css"><!--AOS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      
+.softlux-category ul li {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  padding-left: 28px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.softlux-category li::before {
+  content: "✔";
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    color: #b58e2c!important;
+background-color: #b58e2c;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: bold;
+}
+html,body{width:100%;overflow-x:hidden}
+*,*::before,*::after{box-sizing:border-box}
+
+.softlux-hero{background:linear-gradient(to bottom,rgba(0,0,0,.4),rgba(0,0,0,.8)),url('../images/soft-image.jpg') center/cover no-repeat;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding-inline:clamp(14px,4vw,32px)}
+.softlux-hero-overlay{color:#fff;max-width:clamp(320px,90vw,800px);padding:clamp(16px,4vw,28px)}
+.softlux-hero-overlay h1{font-size:clamp(1.9rem,6vw,3.2rem);font-family:'Playfair Display',serif;line-height:1.2}
+.softlux-hero-overlay p{font-size:clamp(.95rem,3.5vw,1.2rem);margin:clamp(14px,4vw,22px) 0}
+
+.softlux-btn{display:inline-block;font-size:clamp(.9rem,3vw,1rem);padding:clamp(10px,3vw,14px) clamp(18px,5vw,32px);border-radius:clamp(24px,6vw,50px);font-weight:700;text-decoration:none;color:#fff;background:linear-gradient(90deg,#b58e2c,#d4af37);box-shadow:0 8px 20px rgba(180,142,44,.3);transition:.3s}
+.softlux-btn:hover{background:linear-gradient(90deg,#d4af37,#b58e2c);box-shadow:0 10px 25px rgba(180,142,44,.45);transform:translateY(-2px)}
+
+.softlux-why{padding:clamp(28px,6vw,50px) clamp(16px,4vw,24px);background:none;position:relative;overflow:hidden}
+.softlux-why::before,.softlux-why::after{content:"";position:absolute;width:clamp(160px,40vw,250px);height:clamp(160px,40vw,250px);border-radius:50%;z-index:0}
+.softlux-why::before{top:-60px;left:-75px;background:radial-gradient(circle,rgba(168,115,15,.5),transparent 70%);filter:blur(clamp(40px,8vw,60px))}
+.softlux-why::after{bottom:-60px;right:-75px;background:radial-gradient(circle,rgba(168,115,15,.5),transparent 70%);filter:blur(clamp(45px,9vw,70px))}
+
+.softlux-why-inner{max-width:1200px;margin:0 auto}
+.softlux-intro{font-size:clamp(0.7rem,1.5vw,1.2rem);line-height:1.8;color:#444;margin:0 auto clamp(32px,6vw,50px);max-width:800px}
+.softlux-why p{max-width:800px;margin:auto;text-align:center;font-size:clamp(.95rem,2.2vw,1.1rem);line-height:1.6}
+
+.section-title{font-size:clamp(1.6rem,5vw,2rem);text-align:center;margin-bottom:clamp(28px,6vw,40px);font-family:'Playfair Display',serif}
+
+.softlux-category{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border-radius:clamp(14px,3vw,16px);padding:clamp(16px,3vw,20px);flex:1 1 clamp(260px,45vw,300px);box-shadow:0 8px 25px rgba(0,0,0,.1);transition:.3s;border:2px solid rgba(208,167,90,.2);min-width:0}
+.softlux-category:hover{transform:translateY(-6px);box-shadow:0 15px 35px rgba(208,167,90,.25);border-color:rgb(208,167,90)}
+.softlux-category h3{font-size:clamp(1.1rem,3.5vw,1.3rem);font-weight:600;margin-bottom:clamp(10px,3vw,15px);color:rgb(208,167,90)}
+.softlux-category ul li{font-size:clamp(.9rem,3vw,1rem);line-height:1.5;color:#333;padding-left:24px;margin-bottom:6px;position:relative;word-break:break-word}
+.softlux-category li::before{content:"✔";position:absolute;left:0;top:0;color:#b58e2c!important;font-weight:700}
+
+.softlux-quote p{font-size:clamp(1rem,3vw,1.2rem);color:#555;margin-top:clamp(30px,6vw,50px);border-left:5px solid rgb(208,167,90)}
+
+.softlux-skills .softlux-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(16px,4vw,30px)}
+
+.softlux-card{background:#fff;border-radius:clamp(16px,4vw,20px);padding:clamp(20px,4vw,30px);text-align:center;box-shadow:0 8px 20px rgba(0,0,0,.05);transition:.3s}
+.softlux-card:hover{transform:translateY(-5px)}
+.softlux-icon{font-size:clamp(2rem,6vw,2.5rem);color:#d4af37;margin-bottom:clamp(10px,3vw,15px)}
+
+.softlux-subtitle{font-size:clamp(.95rem,3vw,1.15rem);color:#555;max-width:750px;margin:0 auto}
+
+.softlux-title,.softlux-subtitle,.softlux-tips li,.softlux-quote,.softlux-btn{opacity:0;transform:translateY(20px);animation:fadeUp .8s ease forwards}
+.softlux-title{animation-delay:.1s}
+.softlux-subtitle{animation-delay:.3s}
+.softlux-tips li{animation-delay:.5s}
+.softlux-quote{animation-delay:.7s}
+.softlux-btn{animation-delay:.9s}
+
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+
+.skill-heading{font-size:clamp(1.4rem,4vw,2.2rem);font-weight:800;color:#1e1e1e;margin-bottom:clamp(.6rem,2vw,1rem);text-align:center}
+.skill-subheading{font-size:clamp(.95rem,3vw,1.05rem);color:#555;max-width:760px;margin:0 auto clamp(20px,5vw,32px)}
+
+.skill-card{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border:2px solid rgba(208,167,90,.25);border-radius:clamp(16px,4vw,18px);padding:clamp(22px,4vw,28px) clamp(16px,4vw,20px);text-align:center;height:100%;transition:.25s;cursor:pointer}
+.skill-card:hover{transform:translateY(-6px);border-color:rgb(208,167,90);box-shadow:0 16px 36px rgba(208,167,90,.25)}
+.skill-icon{font-size:clamp(2rem,6vw,2.4rem);color:rgb(208,167,90);margin-bottom:.75rem}
+.skill-card h5{font-size:clamp(1rem,3vw,1.2rem);font-weight:700;color:#222;margin-bottom:.35rem}
+.skill-card p{font-size:clamp(.9rem,3vw,1rem);color:#444;margin:0}
+
+.skill-modal{background:#1e1e1eb2;backdrop-filter:blur(16px);border:2px solid rgba(208,167,90,.5);border-radius:clamp(16px,4vw,20px);color:#f2f2f2}
+.skill-modal h5{font-size:clamp(1rem,3vw,1.15rem)}
+.skill-modal p,.skill-modal li{font-size:clamp(.9rem,3vw,1rem)}
+
+.softlux-download{background:#1a1a1a;padding:clamp(26px,6vw,40px) clamp(16px,4vw,24px);text-align:center;color:#f3f3f3;position:relative;overflow:hidden}
+.softlux-inner .softlux-title{font-size:clamp(1.8rem,5vw,2.2rem)}
+.softlux-inner .softlux-subtitle{font-size:clamp(.9rem,3vw,1rem)}
+
+.softlux-inner .softlux-tips{display:flex;flex-wrap:wrap;gap:clamp(12px,4vw,40px);max-width:1070px;margin:0 auto}
+.softlux-inner .softlux-tips li{width:100%;font-size:clamp(.9rem,3vw,1rem)}
+@media(min-width:768px){.softlux-inner .softlux-tips li{width:calc(50% - 20px)}}
+/* ================= SOFT SKILLS IN ACTION ================= */
+
+.softlux-impact{
+  padding:clamp(50px,8vw,90px) 16px;
+  position:relative;
+  overflow:hidden;
+  background-color: #1e1e1e;
+}
+
+.softlux-impact::before{
+  content:"";
+  position:absolute;
+  inset:auto -20% -40% -20%;
+  height:60%;
+  background:radial-gradient(circle,rgba(208,167,90,.15),transparent 70%);
+  filter:blur(60px);
+  z-index:0;
+}
+
+.softlux-impact .container{
+  position:relative;
+  z-index:1;
+}
+
+/* Heading */
+.impact-heading h2{
+  font-size:clamp(1.8rem,5vw,2.4rem);
+  font-family:'Playfair Display',serif;
+  margin-bottom:.4rem;
+  color: #d0a75a;
+  font-weight: 800;
+}
+
+.impact-heading p{
+  font-size:clamp(.95rem,3vw,1.1rem);
+  color: white !important;;
+  max-width:620px;
+  margin:0 auto clamp(30px,6vw,50px);
+}
+
+/* Stats */
+.impact-stats{
+  margin-bottom:clamp(40px,8vw,70px);
+}
+
+.impact-stats h3{
+  font-size:clamp(2rem,6vw,2.8rem);
+  font-weight:800;
+  color:rgb(208,167,90);
+}
+
+.impact-stats p{
+  font-size:clamp(.9rem,3vw,1rem);
+  color:white;
+  max-width:260px;
+  margin:0 auto;
+}
+
+/* Impact Cards */
+.impact-card{
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(14px);
+  border:2px solid rgba(208,167,90,.25);
+  border-radius:clamp(18px,4vw,22px);
+  padding:clamp(26px,5vw,36px);
+  text-align:center;
+  max-width:720px;
+  margin:0 auto;
+  box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+.impact-card h4{
+  font-size:clamp(1.2rem,4vw,1.5rem);
+  color:rgb(208,167,90);
+  margin-bottom:.5rem;
+}
+
+.impact-card p{
+  font-size:clamp(.95rem,3vw,1.05rem);
+  color:white;
+  line-height:1.6;
+}
+
+/* Carousel Controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon{
+  filter:invert(1);
+  opacity:.85;
+  background-color: #1e1e1e30;
+}
+
+@media(max-width:768px){
+  .impact-stats .col-md-4{
+    margin-bottom:24px;
+  }
+}.carousel-control-prev-icon,
+.carousel-control-next-icon{
+  background-color:rgba(244,211,94,.7)!important;
+  border-radius:50%;
+  padding:clamp(10px,3vw,15px)
+}
+
+.section-subtitle{
+  font-size:clamp(.9rem,2.5vw,1rem);
+  color:#555;
+  margin-bottom:clamp(20px,5vw,30px)
+}
+
+.video-card{
+  background:#fff;
+  border:2px solid #1a2a3a;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 6px 16px rgba(0,0,0,.08);
+  transition:transform .3s ease;
+  text-align:left
+}
+
+.video-card:hover{transform:translateY(-5px)}
+
+.video-card video{
+  display:block;
+  width:100%;
+  height:auto;
+  border:none;
+  object-fit:cover
+}
+
+.main-video video{aspect-ratio:16/9}
+.small-video video{aspect-ratio:4/3}
+
+.video-card h5,
+.video-card h6{
+  margin:clamp(10px,3vw,15px);
+  font-weight:700;
+  font-size:clamp(.95rem,3vw,1.05rem)
+}
+
+.video-card p{
+  margin:0 clamp(10px,3vw,15px) clamp(10px,3vw,15px);
+  font-size:clamp(.85rem,2.8vw,.95rem);
+  color:#666
+}
+
+.learning-insights,
+.did-you-know,
+.action-plan{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:clamp(14px,4vw,16px);
+  backdrop-filter:blur(10px);
+  box-shadow:0 4px 20px rgba(0,0,0,.12);
+  color:#fff;
+  transition:transform .25s ease,box-shadow .25s ease
+}
+
+.learning-insights:hover,
+.did-you-know:hover,
+.action-plan:hover{
+  transform:translateY(-4px);
+  box-shadow:0 6px 25px rgba(0,0,0,.18)
+}
+
+.learning-insights h5,
+.did-you-know h5,
+.action-plan h5{
+  font-weight:600;
+  font-size:clamp(1rem,3vw,1.2rem);
+  margin-bottom:clamp(.6rem,2vw,1rem);
+  color:#f9d17d
+}
+
+.learning-insights p,
+.did-you-know ul li,
+.action-plan ol li{
+  font-size:clamp(.85rem,2.8vw,.95rem);
+  line-height:1.5;
+  color:gray;
+  text-align: left;
+}
+
+.learning-insights i{
+  color:#f9d17d;
+  transition:transform .25s ease
+}
+
+.learning-insights i:hover{transform:scale(1.15)}
+
+.did-you-know ul,
+.action-plan ol{padding-left:1.2rem}
+
+.did-you-know ul li{list-style-type:"💡 "; text-align: left;}
+.action-plan ol li{margin-bottom:2px; text-align: left;}
+
+@media(max-width:767px){
+  .did-you-know,
+  .action-plan{margin-bottom:1rem}
+}
+
+.softlux-download{
+  background:#1a1a1a;
+  padding:clamp(24px,6vw,30px) clamp(16px,4vw,20px);
+  text-align:center;
+  font-family:'Poppins',sans-serif;
+  color:#f3f3f3;
+  position:relative;
+  overflow:visible
+}
+
+.softlux-download::before,
+.softlux-download::after{
+  content:'';
+  position:absolute;
+  border-radius:50%;
+  filter:blur(clamp(80px,15vw,100px));
+  opacity:.12
+}
+
+.softlux-download::before{
+  width:180px;
+  height:180px;
+  background:#d4af37;
+  top:-50px;
+  left:-50px
+}
+
+.softlux-download::after{
+  width:140px;
+  height:140px;
+  background:#b8860b;
+  bottom:-40px;
+  right:-40px
+}
+
+
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" alt="Logo" class="logo img-fluid">
+      </a>
+
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <!-- </div> -->
+    <div class="collapse navbar-collapse mt-1 mt-lg-0" id="mainNavbar">
+      <ul class="navbar-nav ms-auto">
+        
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="fa-solid fa-house me-1" id="nav-icon"></i>home
+          </a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="lifestyleDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-bolt me-1" id="nav-icon"></i>Lifestyle
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="lifestyleDropdown">
+            <li><a class="dropdown-item" href="lifestyle.html#mental-wellness">Mental Wellness</a></li>
+            <li><a class="dropdown-item" href="lifestyle.html#productivity-habits">Productivity Habits</a></li>
+            <li><a class="dropdown-item" href="lifestyle.html#time-management">Time Management</a></li>
+            <li><a class="dropdown-item" href="lifestyle.html#daily-routine">Daily Routines</a></li>
+            <li><a class="dropdown-item" href="lifestyle.html#stress-relief">Stress Relief</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle " href="#" id="smartStudiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-book me-1" id="nav-icon"></i>Smart Studies
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="smartStudiesDropdown">
+            <li><a class="dropdown-item" href="smart-studies.html#study-notes">Study Notes</a></li>
+            <li><a class="dropdown-item" href="smart-studies.html#past-papers">Past Papers</a></li>
+            <li><a class="dropdown-item" href="smart-studies.html#exam-tricks">Exam Tricks</a></li>
+            <li><a class="dropdown-item" href="smart-studies.html#memory-boost">Memory Boost</a></li>
+
+          </ul>
+        </li>
+        
+        <li class="nav-item ">
+          <a class="nav-link" href="tech.html">
+            <i class="fa-solid fa-code me-1" id="nav-icon"></i>Tech Skills
+          </a>
+        </li>
+        
+        <li class="nav-item ">
+          <a class="nav-link" href="career.html">
+            <i class="fa-solid fa-graduation-cap me-1" id="nav-icon"></i>Career Hub
+          </a>
+        </li>
+        
+        <li class="nav-item ">
+          <a class="nav-link" href="soft-edge.html">
+            <i class="fa-brands fa-bluesky me-1" id="nav-icon"></i>Soft Edge
+          </a>
+        </li>
+        
+        <li class="nav-item ">
+          <a class="nav-link" href="contact.html">
+            <i class="fa-solid fa-lightbulb me-1" id="nav-icon"></i>Contact Us
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class=" softlux-hero" style="margin-top: 70px;">
+  <div class="softlux-hero-overlay">
+    <h1>Unlock the Power of Soft Skills</h1>
+    <p>Elevate your communication, leadership, and confidence — be the best version of you.</p>
+    <a href="#softlux-why" class="softlux-btn">Start Exploring</a>
+  </div>
+</section>
+
+<!-- Why Soft Skills --> 
+<section class="softlux-why  full-width-section position-relative overflow-hidden z-0 " id="softlux-why">
+  <div class="softlux-why-inner container m-auto mt-0 position-relative z-1 " style="margin: auto;
+  padding: 60px 20px;">
+    <h2 class="skill-heading" data-aos="fade-down">Why Soft Skills Matter</h2>
+    <p class="softlux-intro text-center" data-aos="fade-up" data-aos-delay="200">
+      Technical knowledge can land you the job — but soft skills determine how far you rise. 
+      At <strong style="color:rgb(208,167,90);">MindSpark</strong>, we empower you to excel in communication, leadership, emotional intelligence, and collaboration so you thrive in every environment.
+    </p>
+
+    <div class="softlux-flex mt-4 d-flex justify-content-center flex-wrap gap-4 mb-3">
+      <!-- Category -->
+      <div class="softlux-category mb-" data-aos="fade-up" data-aos-delay="500">
+        <h3  class="align-items-center d-flex"><i class="fa-solid fa-user-check me-1" style="color: rgb(208,167,90);"></i> Personal Mastery</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li>Confidence to adapt to any challenge</li>
+          <li>Emotional intelligence for stress control</li>
+          <li>Self-awareness for continuous growth</li>
+        </ul>
+      </div>
+
+      <!-- Category -->
+      <div class="softlux-category" data-aos="fade-up" data-aos-delay="500">
+        <h3 class="align-items-center d-flex"><i class="fa-solid fa-comments me-1" style="color: rgb(208,167,90);"></i> Communication & Influence</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li>Speak with clarity and impact</li>
+          <li>Master the art of active listening</li>
+          <li>Inspire action without authority</li>
+        </ul>
+      </div>
+
+      <!-- Category -->
+      <div class="softlux-category" data-aos="fade-up" data-aos-delay="500">
+        <h3  class="align-items-center d-flex"><i class="fa-solid fa-people-group me-1" style="color: rgb(208,167,90);"></i> Collaboration & Leadership</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li>Build trust in diverse teams</li>
+          <li>Resolve conflicts constructively</li>
+          <li>Motivate others towards shared goals</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="softlux-quote text-center fst-italic mt-5">
+      <p data-aos="fade-right" data-aos-delay="200">“Your technical skills make you employable — your soft skills make you exceptional.”</p>
+    </div>
+  </div>
+</section>
+
+<section class="mindspark-skill-section container py-5 mt-4" id="skills">
+  <h2 class="skill-heading text-center mb-4" data-aos="fade-up" >
+    Unlock Your Potential – Skills That Shape Your Success
+  </h2>
+  <p class="skill-subheading text-center mb-5" data-aos="fade-up" data-aos-delay="200">
+    These essential skills help you excel in academics, career, and life. Click on any to explore them in detail with practical guidance.
+  </p>
+
+  <div class="row g-4">
+    <!-- Leadership -->
+    <div class="col-md-4" data-aos="fade-down" data-aos-delay="500">
+      <div class="skill-card" data-bs-toggle="modal" data-bs-target="#modalLeadership">
+        <i class="fas fa-user-tie skill-icon"></i>
+        <h5>Leadership</h5>
+        <p>Inspire, guide, and empower people towards shared goals.</p>
+      </div>
+    </div>
+
+    <!-- Effective Communication -->
+    <div class="col-md-4" data-aos="fade-down" data-aos-delay="500">
+      <div class="skill-card" data-bs-toggle="modal" data-bs-target="#modalCommunication">
+        <i class="fas fa-comments skill-icon"></i>
+        <h5>Effective Communication</h5>
+        <p>Express ideas clearly and confidently to connect with people.</p>
+      </div>
+    </div>
+
+    <!-- Time Management -->
+    <div class="col-md-4" data-aos="fade-down" data-aos-delay="500">
+      <div class="skill-card" data-bs-toggle="modal" data-bs-target="#modalTime">
+        <i class="fas fa-clock skill-icon"></i>
+        <h5>Time Management</h5>
+        <p>Plan and prioritize to achieve maximum productivity.</p>
+      </div>
+    </div>
+
+    <!-- Critical Thinking -->
+    <div class="col-md-4" data-aos="fade-down" data-aos-delay="600">
+      <div class="skill-card" data-bs-toggle="modal" data-bs-target="#modalThinking">
+        <i class="fas fa-brain skill-icon"></i>
+        <h5>Critical Thinking</h5>
+        <p>Analyze situations logically to make better decisions.</p>
+      </div>
+    </div>
+
+    <!-- Emotional Intelligence -->
+    <div class="col-md-4" data-aos="fade-down" data-aos-delay="600">
+      <div class="skill-card" data-bs-toggle="modal" data-bs-target="#modalEmotional">
+        <i class="fas fa-heart skill-icon"></i>
+        <h5>Emotional Intelligence</h5>
+        <p>Understand and manage emotions for stronger relationships.</p>
+      </div>
+    </div>
+
+    <!-- Problem Solving -->
+    <div class="col-md-4" data-aos="fade-down" data-aos-delay="600">
+      <div class="skill-card" data-bs-toggle="modal" data-bs-target="#modalProblem">
+        <i class="fas fa-lightbulb skill-icon"></i>
+        <h5>Problem Solving</h5>
+        <p>Find creative and effective solutions to challenges.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Leadership Modal -->
+<div class="modal fade" id="modalLeadership" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content skill-modal">
+      <div class="modal-header">
+        <h3 class="modal-title">
+          <i class="fas fa-user-tie"></i> Leadership
+        </h3>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+
+        <section>
+          <h5><i class="fas fa-lightbulb"></i> Why It Matters</h5>
+          <p>Leadership turns vision into action. Great leaders inspire trust, unite people toward a shared purpose, and help others achieve their full potential.</p>
+        </section>
+
+        <section>
+          <h5><i class="fas fa-list-ul"></i> Core Skills to Master</h5>
+          <div>
+            <span class="skill-badge">Decision-Making Under Pressure</span>
+            <span class="skill-badge">Delegating Effectively</span>
+            <span class="skill-badge">Conflict Resolution</span>
+            <span class="skill-badge">Vision Setting</span>
+            <span class="skill-badge">Team Motivation</span>
+          </div>
+        </section>
+
+        <section>
+          <h5><i class="fas fa-rocket"></i> How to Improve (Quick Wins)</h5>
+          <ul class="skill-check">
+            <li>Lead by example — demonstrate the behavior you want to see.</li>
+            <li>Practice “decision deadlines”: limit overthinking by setting a time cap to choose.</li>
+            <li>Ask for feedback from your team on your leadership style.</li>
+            <li>Delegate tasks with clear outcomes and trust others to deliver.</li>
+            <li>Study one leader you admire — analyze and emulate their approach.</li>
+          </ul>
+        </section>
+        <section class="skill-fact">
+          <strong>Did You Know?</strong>
+          <p>75% of employees leave jobs not because of the work itself, but because of their direct manager’s leadership style.</p>
+        </section>
+
+        <blockquote class="skill-quote">
+          “A leader is one who knows the way, goes the way, and shows the way.”
+        </blockquote>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Communication Modal -->
+<div class="modal fade" id="modalCommunication" tabindex="-1">
+  <div class="modal-dialog skill-modal-width modal-dialog-centered">
+    <div class="modal-content skill-modal">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fas fa-comments"></i> Effective Communication</h3>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        
+        <section>
+          <h5><i class="fas fa-list-ul"></i> Core Skills</h5>
+          <div>
+            <span class="skill-badge">Active Listening</span>
+            <span class="skill-badge">Clarity</span>
+            <span class="skill-badge">Non-verbal Cues</span>
+            <span class="skill-badge">Empathy</span>
+            <span class="skill-badge">Storytelling</span>
+            <span class="skill-badge">Concise Writing</span>
+          </div>
+        </section>
+
+        <section>
+          <h5><i class="fas fa-rocket"></i> Quick Improvement Tips</h5>
+          <ul class="skill-check">
+            <li>Start with the main point in 1–2 sentences.</li>
+            <li>Summarize what you heard before replying.</li>
+            <li>Use short sentences and bullet points.</li>
+            <li>Decide: “What do I want them to do/know/feel?”</li>
+            <li>Test your message by explaining it aloud in under a minute.</li>
+          </ul>
+        </section>
+
+        <section class="skill-fact">
+          <strong>Did You Know?</strong>
+          <p>People remember stories 22× more than plain facts—wrap your message in a short story.</p>
+        </section>
+
+        <blockquote class="skill-quote">
+          “If you can’t explain it simply, you don’t understand it well enough.”
+        </blockquote>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Time Management Modal -->
+<div class="modal fade" id="modalTime" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content skill-modal">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fas fa-clock"></i> Time Management</h3>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <section>
+          <h5><i class="fas fa-lightbulb"></i> Why It Matters</h5>
+          <p>Mastering your time means accomplishing more with less stress, avoiding burnout, and making room for what truly matters.</p>
+        </section>
+
+        <section>
+          <h5><i class="fas fa-list-ul"></i> Core Skills to Master</h5>
+          <div>
+            <span class="skill-badge">Prioritization</span>
+            <span class="skill-badge">Goal Setting</span>
+            <span class="skill-badge">Planning</span>
+            <span class="skill-badge">Delegation</span>
+            <span class="skill-badge">Avoiding Distractions</span>
+          </div>
+        </section>
+
+        <section>
+          <h5><i class="fas fa-rocket"></i> How to Improve (Quick Wins)</h5>
+          <ul class="skill-check">
+            <li>Use the **80/20 Rule**: focus on the 20% of tasks that give 80% of results.</li>
+            <li>Block time for high-priority work—treat it like a meeting.</li>
+            <li>End your day by writing tomorrow’s top 3 tasks.</li>
+            <li>Limit multitasking—it reduces efficiency by up to 40%.</li>
+          </ul>
+        </section>
+        <section class="skill-fact">
+          <strong>Did You Know?</strong>
+          <p>People who plan their day are 2–3× more likely to meet their deadlines.</p>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Critical Thinking Modal -->
+<div class="modal fade" id="modalThinking" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content skill-modal">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fas fa-brain"></i> Critical Thinking</h3>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <section>
+          <h5><i class="fas fa-lightbulb"></i> Why It Matters</h5>
+          <p>Critical thinking helps you cut through noise, question assumptions, and make better decisions based on facts—not bias.</p>
+        </section>
+
+        <section>
+          <h5><i class="fas fa-list-ul"></i> Core Skills to Master</h5>
+          <div>
+            <span class="skill-badge">Analysis</span>
+            <span class="skill-badge">Logical Reasoning</span>
+            <span class="skill-badge">Research</span>
+            <span class="skill-badge">Open-mindedness</span>
+            <span class="skill-badge">Problem Decomposition</span>
+          </div>
+        </section>
+
+        <section>
+          <h5><i class="fas fa-rocket"></i> How to Improve (Quick Wins)</h5>
+          <ul class="skill-check">
+            <li>Ask “What evidence supports this?” before accepting an idea.</li>
+            <li>Consider at least 2–3 alternative explanations or solutions.</li>
+            <li>Play devil’s advocate on your own assumptions.</li>
+            <li>Read across diverse sources, even those you disagree with.</li>
+          </ul>
+        </section>
+
+        <section class="skill-fact">
+          <strong>Did You Know?</strong>
+          <p>Employees with strong critical thinking skills are 6× more likely to be promoted.</p>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Emotional Intelligence Modal -->
+<div class="modal fade" id="modalEmotional" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content skill-modal">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fas fa-heart"></i> Emotional Intelligence</h3>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <section>
+          <h5><i class="fas fa-lightbulb"></i> Why It Matters</h5>
+          <p>High emotional intelligence lets you build trust, navigate conflict, and connect with people on a deeper level.</p>
+        </section>
+
+        <section>
+          <h5><i class="fas fa-list-ul"></i> Core Skills to Master</h5>
+          <div>
+            <span class="skill-badge">Self-Awareness</span>
+            <span class="skill-badge">Self-Regulation</span>
+            <span class="skill-badge">Empathy</span>
+            <span class="skill-badge">Social Skills</span>
+            <span class="skill-badge">Motivation</span>
+          </div>
+        </section>
+
+        <section>
+          <h5><i class="fas fa-rocket"></i> How to Improve (Quick Wins)</h5>
+          <ul class="skill-check">
+            <li>Pause before reacting—count to three.</li>
+            <li>Identify and name your emotions during the day.</li>
+            <li>Ask others for feedback on how you come across.</li>
+            <li>Practice empathy by summarizing others’ feelings before responding.</li>
+          </ul>
+        </section>
+
+
+        <section class="skill-fact">
+          <strong>Did You Know?</strong>
+          <p>90% of top performers have high emotional intelligence.</p>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Problem Solving Modal -->
+<div class="modal fade" id="modalProblem" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content skill-modal">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fas fa-lightbulb"></i> Problem Solving</h3>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <section>
+          <h5><i class="fas fa-lightbulb"></i> Why It Matters</h5>
+          <p>Problem-solving transforms obstacles into opportunities, turning challenges into innovative solutions.</p>
+        </section>
+
+        <section>
+          <h5><i class="fas fa-list-ul"></i> Core Skills to Master</h5>
+          <div>
+            <span class="skill-badge">Creative Thinking</span>
+            <span class="skill-badge">Root Cause Analysis</span>
+            <span class="skill-badge">Decision-Making</span>
+            <span class="skill-badge">Adaptability</span>
+            <span class="skill-badge">Collaboration</span>
+          </div>
+        </section>
+
+        <section>
+          <h5><i class="fas fa-rocket"></i> How to Improve (Quick Wins)</h5>
+          <ul class="skill-check">
+            <li>Break problems into smaller, manageable parts.</li>
+            <li>Brainstorm 10 ideas without judging them—then refine.</li>
+            <li>Ask “Why?” five times to reach the root cause.</li>
+            <li>Test small-scale solutions before committing fully.</li>
+          </ul>
+        </section>
+
+        <section class="skill-fact">
+          <strong>Did You Know?</strong>
+          <p>Problem-solving skills are ranked in the top 3 skills employers seek globally.</p>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Soft Skills in Action -->
+<section class="softlux-impact">
+  <div class="container">
+    <!-- Section Heading -->
+    <div class="impact-heading text-center">
+      <h2>Soft Skills in Action</h2>
+      <p>Real impact. Real growth. Real success stories.</p>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="row text-center impact-stats">
+      <div class="col-md-4">
+        <h3 class="counter" data-target="92">0</h3>
+        <p>of hiring managers say soft skills outweigh hard skills.</p>
+      </div>
+      <div class="col-md-4">
+        <h3 class="counter" data-target="3">0</h3>
+        <p>times higher promotion rates for strong leaders.</p>
+      </div>
+      <div class="col-md-4">
+        <h3 class="counter" data-target="50">0</h3>
+        <p>less team conflict with communication training.</p>
+      </div>
+    </div>
+
+    <!-- Case Studies Carousel -->
+    <div id="impactCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="hover">
+      <div class="carousel-inner">
+        
+        <div class="carousel-item active">
+          <div class="impact-card">
+            <h4>From Junior to Team Lead in 18 Months</h4>
+            <p>Mastering leadership & communication transformed Ayesha’s career path faster than she imagined.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="impact-card">
+            <h4>How Time Management Saved 10 Hours/Week</h4>
+            <p>Ali improved productivity with prioritization skills, freeing time for innovation.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="impact-card">
+            <h4>Problem Solving Turned Crisis into $50k Win</h4>
+            <p>Sarah’s creative thinking saved a major client and boosted revenue.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#impactCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#impactCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-4">
+      <a href="#skills" class="softlux-btn">Discover Your Soft Skills Path</a>
+    </div>
+  </div>
+</section>
+<!-- Watch & Grow Section -->
+ <section class="watch-grow container my-5 text-center" id="watch">
+  <h2 class="skill-heading" data-aos="zoom-in"> Watch & Grow</h2>
+  <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100">Learn faster, grow smarter – one video at a time.</p>
+
+  <div class="row g-4">
+    <div class="col-lg-8">
+      <div class="video-card main-video" data-aos="zoom-in"  data-aos-delay="200">
+  
+  <iframe width="100%" height="285" 
+  src="https://www.youtube.com/embed/962eYqe--Yc" 
+  title="YouTube video player" frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen>
+</iframe>
+
+        <h5>Master the Art of Public Speaking</h5>
+        <p>Discover techniques to speak with confidence and captivate any audience.</p>
+      </div>
+<div class="learning-insights mt-4 p-3 rounded">
+  <h5 class="mb-2"data-aos="zoom-in"  data-aos-delay="300"> Master Skills Faster</h5>
+  <p class="mb-3" data-aos="zoom-in"  data-aos-delay="300">
+    Learning is more than just watching — it’s about practice, reflection, and sharing. 
+    Follow these steps to turn knowledge into action.
+  </p>
+  <div class="row text-center">
+    <a href="#watch" style="text-decoration: none;">
+    <div class="col-4" data-aos="zoom-in" data-aos-delay="400" >
+      <i class="fas fa-play-circle fa-2x mb-1"></i>
+      <p class="small text-center" >Watch Carefully</p>
+      </a>
+    </div>
+    <div class="col-4" data-aos="zoom-in" data-aos-delay="450">
+      <a href="#skills" style="text-decoration: none;">
+      <i class="fas fa-pencil-alt fa-2x mb-1"></i>
+      <p class="small text-center">Take Notes</p>
+      </a>
+    </div>
+    <div class="col-4" data-aos="zoom-in" data-aos-delay="500">
+      <a href="#confidence" style="text-decoration: none;">
+      <i class="fas fa-lightbulb fa-2x mb-1"></i>
+      <p class="small text-center">Apply Daily</p>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="row mt-3">
+  <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="600">
+    <div class="did-you-know p-4 rounded">
+      <h5>💡 Did You Know?</h5>
+      <ul class="mb-0">
+        <li>85% of career success comes from well-developed soft skills.</li>
+        <li>Leaders with high emotional intelligence are 4.5× more effective.</li>
+        <li>Team communication boosts productivity by up to 25%.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="700">
+    <div class="action-plan p-4 rounded">
+      <h5>📝 Your 7-Day Action Plan</h5>
+      <ol>
+        <li>Pick one skill to focus on this week.</li>
+        <li>Watch one training video daily.</li>
+        <li>Write three ways to use it each day.</li>
+        <li>Ask for feedback from peers.</li>
+        <li>Reflect at the end of the week.</li>
+      </ol>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="video-card small-video" data-aos="zoom-in" data-aos-delay="800">
+
+      <iframe width="100%" height="215" 
+       src="https://www.youtube.com/embed/IitIl2C3Iy8" 
+       title="YouTube video player" frameborder="0" 
+       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+       allowfullscreen>
+      </iframe>
+      <h6 >Boost Your Confidence</h6>
+      </div>
+      <div class="video-card small-video mt-3" data-aos="zoom-in" data-aos-delay="850">
+      <iframe width="100%" height="215" 
+       src="https://www.youtube.com/embed/iONDebHX9qk" 
+       title="YouTube video player" frameborder="0" 
+       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+       allowfullscreen>
+      </iframe>
+      <h6>Time Management Tips</h6>
+      </div>
+      <div class="video-card small-video mt-3" data-aos="zoom-in" data-aos-delay="900">
+    
+      <iframe width="100%" height="215" 
+       src="https://www.youtube.com/embed/vlpKyLklDDY" 
+       title="YouTube video player" frameborder="0" 
+       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+       allowfullscreen>
+      </iframe>
+      <h6>Thinking Like a Leader</h6>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Confidence Boost Section -->
+<section class="softlux-download py-5 mb-3" id="confidence">
+  <div class="container">
+
+    <div class="text-center mb-4">
+      <h2 class="skill-heading fw-bold mt-2" style=" color: #d0a75a;"  data-aos="zoom-in"  data-aos-delay="100">Boost Your Confidence</h2>
+      <p class="softlux-subtitle " data-aos="fade-up" data-aos-delay="100" style="color: rgb(203, 203, 203);">
+      At the end of the day, the most important thing you carry with you is your confidence. 
+      You can have all the skills, knowledge, and talent in the world — but if you lack confidence, 
+      it’s like hiding your light under a blanket. Confidence is what pushes you to take action, 
+      face challenges head-on, and present the very best version of yourself to the world.
+    </p>
+    </div>
+
+   <!-- Confidence Tips -->
+<div class="softlux-inner mt-2" >
+  <ul class="softlux-tips"  data-aos="fade-up" data-aos-delay="300" style="text-align: left;">
+    <li><strong>Stand Tall:</strong> Good posture sends a message of self-respect before you even speak.</li>
+    <li><strong>Eye Contact:</strong> Connect with your audience — confidence is silent but visible.</li>
+    <li><strong>Master Your Voice:</strong> Speak clearly, at a steady pace, and with warmth in your tone.</li>
+    <li><strong>Dress with Intention:</strong> Your attire should reflect respect for yourself and the occasion.</li>
+    <li><strong>Mindful Manners:</strong> A polite greeting, a genuine smile, and listening attentively can open more doors than you think.</li>
+    <li><strong>Know Your Strengths:</strong> Focus on your abilities and leverage them to your advantage.</li>
+    <li><strong>Set Small Goals:</strong> Achieving small milestones builds momentum and self-belief.</li>
+    <li><strong>Discipline Daily:</strong> Small habits — waking early, organizing tasks — build a strong self-image.</li>
+    <li><strong>Prepare & Practice:</strong> Confidence is built on competence. Know your material and rehearse.</li>
+    <li><strong>Positive Self-Talk:</strong> Replace “I can’t” with “I’ll try” — your mind believes what you tell it.</li>
+    <li><strong>Embrace Mistakes:</strong> Every setback is a lesson in disguise, not a blow to your worth.</li>
+    <li><strong>Stay Informed:</strong> Knowledge fuels certainty — read, learn, and grow daily.</li>
+    <li><strong>Surround Yourself Well:</strong> Positive company inspires positive growth.</li>
+    <li><strong>Practice Gratitude:</strong> Appreciating what you have shifts your mindset towards confidence.</li>
+  </ul>
+
+  <!-- Motivational Fact -->
+  <blockquote class="softlux-quote mt-5 text-center" data-aos="fade-right" data-aos-delay="400" >
+    <i class="fa-solid fa-quote-left"></i>
+    85% of success in life is connected to your ability to communicate confidently — start shaping that skill today.
+    <i class="fa-solid fa-quote-right"></i>
+  </blockquote>
+</div>
+
+</section>
+<section id="chatbot-section">
+<!-- Floating Chat Icon -->
+    <div id="chatbot-icon">💬</div>
+
+    <!-- Chatbot Container -->
+    <div id="chatbot-container" class="hidden">
+      <div id="chatbot-header">
+        <span>Chatbot</span>
+        <button id="close-btn">&times;</button>
+      </div>
+      <div id="chatbot-body">
+        <div id="chatbot-messages"></div>
+      </div>
+      <div id="chatbot-input-container">
+        <input type="text" id="chatbot-input" placeholder="Type a message..." />
+        <button id="send-btn">Send</button>
+      </div>
+    </div>
+</section>
+<footer class="mt-4">
+<div class="container ">
+<div class="row">
+  <div class="col-md-4 text-md-start text-center">
+    <h2 class="footer-logo py-2" style="color: rgb(214,178,82);">MINDSPARK</h2>
+    <p style="font-size: 14px;">"Igniting Minds. Inspiring Futures."</p>
+    <p style="font-size: 13px; text-align: justify; max-width: 295px;">MindSpark is an educational platform that empowers learners with content, tools, and emotional intelligence to spark curiosity, foster growth, and build a smarter future.</p>
+  </div>
+  <div class="quick col-md-4 text-md-start text-center py-2  ">  
+    <h4 class="mt-1 ">Quick Links</h4>
+
+    <div class="row mt-3">
+    <div class="col-6">
+      <ul class="list-unstyled">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="lifestyle.html">lifestyle</a></li>
+      <li><a href="smart-studies.html">smart-studies</a></li>
+      <li><a href="career.html">career hub</a></li>
+      <li><a href="soft-edge.html">soft Edge</a></li>
+      <li><a href="tech.html#webdev">Web Development</a></li>
+      </ul>
+      </div>
+      <div class="col-6">
+      <ul class="list-unstyled">
+      <li><a href="tech.html#datasci">Data Science</a></li>
+      <li><a href="tech.html#seo">SEO</a></li>
+      <li><a href="tech.html#mern">MERN Stack</a></li>
+      <li><a href="tech.html#cyber">Cybersecurity</a></li>
+      <li><a href="tech.html#cloud">Cloud Computing</a></li>
+      <li><a href="tech.html#mobile">Mobile Development</a></li>
+      </ul>
+      </div>
+                   
+      </div> <!-- row -->
+      </div>
+      <div class="col-md-4 text-center text-md-start py-2 ">
+      <h4 class="mt-1 mb-4">Connect With Us</h4>
+
+      <div class="d-flex justify-content-center justify-content-md-start align-items-center gap-3 mt-4 f-icons" style="margin-top: 31px;">         
+      <a style="font-size: 22px;" href="https://facebook.com/mindspark" target="_blank"><i class="fab fa-facebook fa-lg"></i></a>
+      <a style="font-size: 22px;" href="https://instagram.com/mindspark" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+      <a style="font-size: 22px;" href="https://twitter.com/mindspark" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
+      <a style="font-size: 22px;" href="https://linkedin.com/company/mindspark" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+      <a style="font-size: 22px;" href="https://youtube.com/@mindspark" target="_blank"><i class="fab fa-youtube fa-lg"></i></a>
+      </div>
+   <!-- Email and Instagram side by side -->
+       <div class=" justify-content-center justify-content-md-start align-items-center mt-4" style="font-size: 14px;">
+        <p style="margin-top: 15px;">Email: <a href="mailto:mindspark@example.com" style="color:  rgb(214,178,82);">mindspark@example.com</a></p><br>
+        <p style="margin-top: -25px;">Instagram: <a href="https://instagram.com/mindspark" style="color:  rgb(214,178,82);" target="_blank">@mindspark</a></p>
+       </div>
+
+       </div>
+  </div>
+  </div>
+</footer>
+<!--  Enable dropdown on hover for larger screens -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  let counters = document.querySelectorAll(".counter");
+
+  counters.forEach(function(counter) {
+    let target = parseInt(counter.getAttribute("data-target"));
+    let count = 0;
+
+    let step = Math.ceil(target / 100); // how much to increase each time
+
+    let timer = setInterval(function() {
+      count += step;
+      counter.innerText = count;
+      if (count >= target) {
+        counter.innerText = target; // set to exact target
+        clearInterval(timer);
+      }
+    }, 20);
+  });
+});
+</script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/script.js"></script>
+
+  <script>
+  AOS.init({
+    once: false,
+    duration: 800,
+  });
+</script>
+<!-- chatbot -->
+<script>
+// script.js
+document.addEventListener("DOMContentLoaded", function () {
+  // ================================
+  // GET REFERENCES TO HTML ELEMENTS
+  // ================================
+  const chatbotContainer = document.getElementById("chatbot-container"); // The chatbot box
+  const chatbotIcon = document.getElementById("chatbot-icon");           // Floating chat icon
+  const closeButton = document.getElementById("close-btn");              // "X" button to close chatbot
+  const sendBtn = document.getElementById("send-btn");                   // Send button
+  const chatbotInput = document.getElementById("chatbot-input");         // Text input for user messages
+  const chatbotMessages = document.getElementById("chatbot-messages");   // Message display area
+
+  // ================================
+  // TOGGLE CHATBOT VISIBILITY
+  // ================================
+  
+  // When clicking the floating chat icon
+  chatbotIcon.addEventListener("click", function () {
+    chatbotContainer.classList.remove("hidden"); // Show chatbot window
+    chatbotIcon.style.display = "none"; // Hide floating icon
+  });
+
+  // When clicking the close button in chatbot header
+  closeButton.addEventListener("click", function () {
+    chatbotContainer.classList.add("hidden"); // Hide chatbot window
+    chatbotIcon.style.display = "flex"; // Show floating icon again
+  });
+
+  // ================================
+  // SEND MESSAGE EVENTS
+  // ================================
+  
+  // Click on the Send button
+  sendBtn.addEventListener("click", sendMessage);
+
+  // Press "Enter" in the input box
+  chatbotInput.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      sendMessage();
+    }
+  });
+
+  // ================================
+  // MAIN SEND MESSAGE FUNCTION
+  // ================================
+  function sendMessage() {
+    const userMessage = chatbotInput.value.trim(); // Get the message text
+    if (userMessage) {
+      appendMessage("user", userMessage); // Show the user's message in chat
+      chatbotInput.value = ""; // Clear the input box
+      getBotResponse(userMessage); // Call the bot response function
+    }
+  }
+
+  // ================================
+  // APPEND A MESSAGE TO CHAT AREA
+  // sender: "user" or "bot"
+  // message: text to display
+  // ================================
+  function appendMessage(sender, message) {
+    const messageElement = document.createElement("div");
+    messageElement.classList.add("message", sender); // Add classes for styling
+    messageElement.textContent = message; // Set the message text
+    chatbotMessages.appendChild(messageElement); // Add message to chat area
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight; // Auto scroll to latest message
+  }
+
+  // ================================
+  // GET BOT RESPONSE (Gemini API)
+  // ================================
+  async function getBotResponse(userMessage) {
+    // Replace with your Gemini API key
+    const apiKey = "AIzaSyBkXe3xpRZb6OxnKu4ZvuJwxAolNJc4BfY"; // <-- ADD YOUR KEY HERE
+
+    // Choose the model version you want to use
+    const model = "gemini-1.5-flash";
+
+    // Gemini API endpoint URL
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+
+    // ====================================
+    // STEP 1: Show "Bot is typing..." message
+    // ====================================
+    const typingEl = document.createElement("div");
+    typingEl.classList.add("message", "bot");
+    typingEl.textContent = "Bot is typing...";
+    chatbotMessages.appendChild(typingEl);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+    try {
+      // ====================================
+      // STEP 2: Make API Request to Gemini
+      // ====================================
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          contents: [
+            {
+              role: "user",
+              parts: [{ text: userMessage }],
+            },
+          ],
+        }),
+      });
+
+      const data = await response.json();
+
+      // ====================================
+      // STEP 3: Replace "Bot is typing..." with actual reply
+      // ====================================
+      const botMessage = data.candidates?.[0]?.content?.parts?.[0]?.text || 
+                         "Sorry, I couldn't understand that.";
+      typingEl.textContent = botMessage; // Update the same element's text
+    } catch (error) {
+      console.error("Error fetching bot response:", error);
+      typingEl.textContent = "Sorry, something went wrong. Please try again.";
+    }
+  }
+});
+</script>
+
+</body>
+</html>

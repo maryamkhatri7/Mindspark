@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Skills | MindSpark</title>
+     <link rel="stylesheet" href="css/all.min.css">  
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/aos.css"><!--AOS -->
+    <link rel="stylesheet" href="css/style.css">
+<style>
+  /* ================= HERO ================= */
+.mindsparkk-hero {
+  margin-top: clamp(10px, 3vw, 20px);
+  background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
+  color: #fff;
+  padding: clamp(40px, 8vw, 80px) 5%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.mindsparkk-hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(25px, 5vw, 40px);
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+/* LEFT */
+.mindsparkk-hero-left {
+  flex: 1 1 520px;
+}
+
+.mindsparkk-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  background: linear-gradient(to right, #d0a75a, #f3d796);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: clamp(16px, 3vw, 22px);
+}
+
+.mindsparkk-hero-subtitle {
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+  color: #d9d9d9;
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: clamp(22px, 4vw, 35px);
+}
+
+/* BUTTONS */
+.mindsparkk-hero-buttons {
+  display: flex;
+  gap: clamp(10px, 2vw, 15px);
+  flex-wrap: wrap;
+}
+
+.mindsparkk-btn-primary,
+.mindsparkk-btn-secondary {
+  padding: clamp(10px, 2vw, 12px) clamp(18px, 4vw, 26px);
+  font-size: clamp(0.85rem, 1vw, 0.95rem);
+  border-radius: 50px;
+  transition: 0.3s ease;
+}
+
+/* Primary */
+.mindsparkk-btn-primary {
+  background: linear-gradient(135deg, #d0a75a, #f3d796);
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Secondary */
+.mindsparkk-btn-secondary {
+  color: #f3d796;
+  border: 2px solid #f3d796;
+  text-decoration: none;
+  background: transparent;
+}
+
+/* RIGHT IMAGE */
+.mindsparkk-hero-right {
+  flex: 1 1 420px;
+  text-align: center;
+}
+
+.mindsparkk-hero-right img {
+  width: 100%;
+  max-width: clamp(280px, 45vw, 480px);
+  height: auto;
+  border-radius: 20px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .mindsparkk-hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mindsparkk-hero-subtitle {
+    max-width: 100%;
+  }
+
+  .mindsparkk-hero-buttons {
+    justify-content: center;
+  }
+}
+
+
+
+/* Layout */
+.tech-layout {
+  display: flex;
+  gap: 30px;
+  padding: 30px 1.5%;
+  font-family: 'Poppins', sans-serif;
+  background: #f9fafc; /* light page background */
+}
+
+/* Side Nav */
+.tech-side-nav {
+  position: sticky;
+  top: 70px;
+  flex: 0 0 230px;
+  background: #fff;
+  padding: 19px;
+  border-radius: 12px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  align-self: flex-start;
+}
+
+/* Scrollbar */
+.tech-side-nav::-webkit-scrollbar {
+  width: 4px;
+}
+.tech-side-nav::-webkit-scrollbar-thumb {
+  background: #f3d796;
+  border-radius: 10px;
+}
+.tech-side-nav::-webkit-scrollbar-track {
+  background: #eee;
+}
+
+.tech-side-nav h3 {
+  font-size: 1.2rem;
+  color: #0a1a2f;
+  margin-bottom: 12px;
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+  padding-bottom: 6px;
+}
+
+.tech-side-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tech-side-nav li {
+  margin: 5px 0;
+}
+
+.tech-side-nav a {
+  display: block;
+  color: #444;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.tech-side-nav a:hover,
+.tech-side-nav a.active {
+  background: #fdf3d7;
+  color: #d4a017;
+  transform: translateX(5px);
+}/* Ensure your content actually scrolls inside the container */
+#main-content {
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+/* Visible active state (gold + underline bottom of text) */
+.tech-side-nav a.active {
+  font-weight: 700;
+  color: #d4a017;          /* gold text */
+  border-bottom: 2px solid #d4a017; /* gold underline */
+  padding-bottom: 2px;     /* small spacing for underline */
+}
+
+/* Main Content */
+.tech-content {
+  flex: 1;
+  min-width: 0;
+  max-height: calc(100vh - 80px); 
+  overflow-y: auto;               
+  padding-right: 10px;
+
+}
+.tech-content::-webkit-scrollbar {
+  width: 6px;
+}
+.tech-content::-webkit-scrollbar-thumb {
+  background: #d4a017;
+  border-radius: 10px;
+}
+.tech-content::-webkit-scrollbar-track {
+  background: #eee;
+}
+
+.tech-section {
+  margin-bottom: 70px;
+  padding: 25px;
+  background: #fff;
+  color: #333;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  scroll-margin-top: 90px;
+}
+
+.tech-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.tech-section h2 {
+  font-size: 1.6rem;
+  color: #d4a017;
+  margin-bottom: 15px;
+}
+
+.tech-section p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .tech-layout {
+    flex-direction: column;
+  }
+  .tech-side-nav {
+    position: relative;
+    top: 0;
+    width: 100%;
+    max-height: none;
+  }
+}
+/* Layout */
+.tech-container {
+  display: flex;
+  height: calc(100vh - 80px); /* after hero */
+  overflow: hidden;
+}
+
+/* Main Content */
+.tech-main {
+  flex: 1;
+  padding: 40px;
+  overflow-y: scroll;
+  height: 100%;
+  background: #fafafa;
+}
+
+.tech-section {
+  margin-bottom: 80px;
+  padding: 30px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+
+.tech-section:hover {
+  transform: translateY(-5px);
+}
+
+.tech-section ul {
+  margin-left: 20px;
+}
+.tech-section h2 {
+  font-size: 1.4rem;  /* smaller */
+  color: #d0a75a;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.tech-section h3 {
+  font-size: 1.1rem; /* balanced subheading */
+  color:#d0a75a;
+  margin-top: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.tech-section .tip {
+  background: #fdf3d7;
+  border-left: 4px solid #d4a017;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  margin: 10px 0;
+}
+.tech-section p,
+.tech-section ul li {
+  font-size: 0.95rem;  /* just slightly smaller */
+  line-height: 1.6;    /* keeps readability */
+  color: #333;         /* softer than pure black */
+}
+/* Cards hover – visible on dark theme */
+#why-mindspark .rounded-4 {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+#why-mindspark .rounded-4:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.6),
+    0 0 18px rgba(208, 167, 90, 0.25);
+    cursor: pointer;
+}
+
+/* Button hover */
+#why-mindspark .btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#why-mindspark .btn:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(208, 167, 90, 0.35);
+    cursor: pointer;
+}
+@media (max-width: 1024px) {
+  .mindsparkk-hero-left {
+    flex: 1 1 420px;
+  }
+
+  .mindsparkk-hero-subtitle {
+    max-width: 420px;
+  }
+
+  .mindsparkk-hero-right img {
+    max-width: 420px;
+  }
+}
+@media (max-width: 768px) {
+  .mindsparkk-hero-right {
+    margin: 0!important;
+  }
+
+  .mindsparkk-hero-right img {
+    margin: 10px 0!important;
+  }
+}
+@media (max-width: 1100px) {
+  .mindsparkk-hero-left {
+    flex: 1 1 44%;
+  }
+
+  .mindsparkk-hero-right {
+    flex: 1 1 38%;
+  }
+
+  .mindsparkk-hero-right img {
+    max-width: 360px;   /* 🔑 real visible difference */
+  }
+}
+@media (max-width: 768px) {
+  .mindsparkk-hero-container {
+    gap: 18px;   /* pehle bohot zyada feel ho raha tha */
+  }
+
+  .mindsparkk-hero-right {
+    margin: 0;
+  }
+
+  .mindsparkk-hero-right img {
+    max-width: 300px;
+    margin: 6px auto;
+  }
+}
+@media (max-width: 1024px) and (min-width: 601px) {
+  .mindsparkk-hero-container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .mindsparkk-hero-left {
+    flex: 1 1 48%;
+  }
+
+  .mindsparkk-hero-subtitle {
+    max-width: 420px;
+  }
+
+  .mindsparkk-hero-right {
+    flex: 1 1 40%;
+  }
+
+  .mindsparkk-hero-right img {
+    max-width: 340px;
+  }
+}
+@media (max-width: 435px) {
+  .mindsparkk-hero-right {
+    display: none;
+  }
+}
+
+
+</style>
+
+
+<!-- for sections -->
+<script>
+(() => {
+  function init() {
+    const sections = Array.from(document.querySelectorAll(".tech-section"));
+    const navLinks = Array.from(document.querySelectorAll(".tech-side-nav a"));
+
+    // Try to use the scrollable container; fall back to window if not found
+    const container = document.getElementById("main-content");
+    const useWindow = !container;
+    const scrollEl = useWindow ? window : container;
+
+    if (sections.length === 0 || navLinks.length === 0) {
+      console.warn("[ScrollSpy] No sections or nav links found.");
+      return;
+    }
+
+    const OFFSET = 100; // adjust for sticky header/spacing
+
+    function getScrollTop() {
+      return useWindow
+        ? window.pageYOffset || document.documentElement.scrollTop || 0
+        : container.scrollTop;
+    }
+
+    function getContainerTop() {
+      return useWindow ? 0 : container.getBoundingClientRect().top;
+    }
+
+    function updateActive() {
+      const scrollPos = getScrollTop() + OFFSET;
+      let current = sections[0].id;
+
+      const containerTop = getContainerTop();
+      const baseScroll = useWindow ? getScrollTop() : container.scrollTop;
+
+      for (const section of sections) {
+        const sectionTop =
+          section.getBoundingClientRect().top - containerTop + baseScroll;
+        if (scrollPos >= sectionTop - 1) current = section.id;
+      }
+
+      for (const link of navLinks) {
+        const isActive = link.getAttribute("href") === `#${current}`;
+        link.classList.toggle("active", isActive);
+      }
+    }
+
+    scrollEl.addEventListener("scroll", updateActive, { passive: true });
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const targetId = link.getAttribute("href").slice(1);
+        const target = document.getElementById(targetId);
+        if (!target) return;
+
+        // Smooth scroll to the section; scrollIntoView will use the nearest scrollable ancestor
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        // Instant visual feedback
+        navLinks.forEach(a => a.classList.toggle("active", a === link));
+      });
+    });
+
+    updateActive();
+  }
+
+  // Ensure DOM is ready before querying elements
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+</script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" alt="Logo" class="logo img-fluid">
+      </a>
+
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <!-- </div> -->
+    <div class="collapse navbar-collapse mt-1 mt-lg-0" id="mainNavbar">
+      <ul class="navbar-nav ms-auto">
+        
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="fa-solid fa-house me-1" id="nav-icon"></i>home
+          </a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="lifestyleDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-bolt me-1" id="nav-icon"></i>Lifestyle
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="lifestyleDropdown">
+            <li><a class="dropdown-item" href="lifestyle.html#mental-wellness">Mental Wellness</a></li>
+            <li><a class="dropdown-item" href="lifestyle.html#productivity-habits">Productivity Habits</a></li>
+            <li><a class="dropdown-item" href="lifestyle.html#time-management">Time Management</a></li>
+            <li><a class="dropdown-item" href="lifestyle.html#daily-routine">Daily Routines</a></li>
+            <li><a class="dropdown-item" href="lifestyle.html#stress-relief">Stress Relief</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle " href="#" id="smartStudiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-book me-1" id="nav-icon"></i>Smart Studies
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="smartStudiesDropdown">
+            <li><a class="dropdown-item" href="smart-studies.html#study-notes">Study Notes</a></li>
+            <li><a class="dropdown-item" href="smart-studies.html#past-papers">Past Papers</a></li>
+            <li><a class="dropdown-item" href="smart-studies.html#exam-tricks">Exam Tricks</a></li>
+            <li><a class="dropdown-item" href="smart-studies.html#memory-boost">Memory Boost</a></li>
+
+          </ul>
+        </li>
+        
+        <li class="nav-item ">
+          <a class="nav-link" href="tech.html">
+            <i class="fa-solid fa-code me-1" id="nav-icon"></i>Tech Skills
+          </a>
+        </li>
+        
+        <li class="nav-item ">
+          <a class="nav-link" href="career.html">
+            <i class="fa-solid fa-graduation-cap me-1" id="nav-icon"></i>Career Hub
+          </a>
+        </li>
+        
+        <li class="nav-item ">
+          <a class="nav-link" href="soft-edge.html">
+            <i class="fa-brands fa-bluesky me-1" id="nav-icon"></i>Soft Edge
+          </a>
+        </li>
+        
+        <li class="nav-item ">
+          <a class="nav-link" href="contact.html">
+            <i class="fa-solid fa-lightbulb me-1" id="nav-icon"></i>Contact Us
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+
+<!-- Mindsparkk Hero Section -->
+<section class="mindsparkk-hero">
+  <div class="mindsparkk-hero-container">
+    <div class="mindsparkk-hero-left">
+      <h1 class="mindsparkk-hero-title"><span id="typing-text"></span></h1>
+      <p class="mindsparkk-hero-subtitle">
+      At Mindspark, we believe learning is more than just skills — it’s the spark that shapes your future.  
+      We guide you through the world of technology and innovation, helping you discover what truly matters,  
+      why it matters, and how to transform knowledge into opportunities that inspire growth and success.
+    </p>
+      <div class="mindsparkk-hero-buttons">
+        <a href="#courses" class="mindsparkk-btn-primary">Explore Courses</a>
+        <a href="#why-mindspark" class="mindsparkk-btn-secondary">Why Mindspark?</a>
+      </div>
+    </div>
+    <div class="mindsparkk-hero-right">
+      <img src="images/tech_image.png" class="img-fluid" alt="TECH-IMAGE">
+    </div>
+  </div>
+</section>
+<h1 id="courses" 
+    class="skill-heading  text-center mt-5 mb-3"> Tech Courses
+</h1>
+
+<div class="tech-layout" style="overflow-x: hidden;">
+  <!-- SIDE NAV -->
+  <aside class="tech-side-nav">
+    <h3>Topics</h3>
+    <ul>
+      <li><a href="#webdev">Web Development</a></li>
+      <li><a href="#datasci">Data Science</a></li>
+      <li><a href="#seo">SEO</a></li>
+      <li><a href="#mern">MERN Stack</a></li>
+      <li><a href="#ai">AI & ML</a></li>
+      <li><a href="#cyber">Cybersecurity</a></li>
+      <li><a href="#cloud">Cloud Computing</a></li>
+      <li><a href="#devops">DevOps</a></li>
+      <li><a href="#mobile">Mobile Development</a></li>
+      <li><a href="#resources">Learning Resources</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="tech-content" id="main-content">
+
+<section id="webdev" class="tech-section" data-aos="fade-up">
+  <h2> Web Development – Complete Guide</h2>
+  <p>
+    Web development powers the internet — from simple portfolio websites to large-scale applications like Facebook and Netflix. 
+    To become a skilled web developer, you should learn step by step, build real projects, and stay updated with the latest trends.
+  </p>
+
+  <!-- Row 1: Core Fundamentals + Advanced Topics -->
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Core Fundamentals</h3>
+      <ul>
+        <li style="margin-bottom: 1px;"><b>HTML5</b> – learn semantic tags, forms, and accessibility.</li>
+        <li><b>CSS3</b> – master layouts (Flexbox, Grid), animations, responsive design.</li>
+        <li><b>JavaScript (ES6+)</b> – focus on DOM, events, promises, async/await.</li>
+      </ul>
+      <p class="tip">💡 Tip: Practice by cloning simple websites (like a landing page) to strengthen your basics.</p>
+    </div>
+
+    <div class="col-md-6">
+      <h3> Advanced Topics</h3>
+      <ul>
+        <li><b>Performance</b>: image optimization, lazy loading, Lighthouse audits.</li>
+        <li><b>Progressive Web Apps (PWA)</b> – installable web apps.</li>
+        <li><b>Security</b>: prevent XSS, CSRF, SQL injection.</li>
+        <li><b>Deployment</b>: Vercel, Netlify, AWS, or DigitalOcean.</li>
+        <li><b>Testing & CI/CD</b>: unit tests, integration, GitHub Actions, automated pipelines.</li>
+        <li><b>APIs & Microservices</b>: REST, GraphQL, scalability.</li>
+
+
+      </ul>
+    </div>
+  </div>
+
+  <!-- Row 2: Frontend + Backend -->
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <h3> Frontend Development</h3>
+      <ul>
+        <li><b>React.js</b> – most popular, component-based, huge ecosystem.</li>
+        <li><b>Vue.js</b> – beginner-friendly, lightweight, flexible. Ideal for small to medium apps.</li>
+        <li><b>Angular</b> – opinionated, good for large projects.</li>
+        <li><b>Styling Libraries</b>: TailwindCSS, Bootstrap, Material UI.</li>
+      </ul>
+      <p class="tip">💡 Focus on <b>one framework</b> (React recommended) and learn state management (Redux, Context API, or Vuex).</p>
+    </div>
+
+    <div class="col-md-6">
+      <h3> Backend Development</h3>
+      <ul>
+        <li><b>Node.js</b> with Express.js – JavaScript backend.</li>
+        <li><b>Databases</b>: MongoDB (NoSQL) or PostgreSQL/MySQL (SQL).</li>
+        <li>REST APIs & GraphQL – communication between client and server.</li>
+        <li>Authentication & Security: JWT, OAuth, bcrypt, sessions.</li>
+      </ul>
+      <p class="tip">💡 Always secure your app: validate inputs, use HTTPS, and handle errors properly.</p>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <h3> Project Ideas</h3>
+  <ul>
+    <li>Portfolio Website with blog</li>
+    <li>Todo App with local storage & API</li>
+    <li>Authentication System (Login/Signup with JWT)</li>
+    <li>E-commerce store with cart & checkout</li>
+    <li>Chat app (Socket.io)</li>
+  </ul>
+  <p class="tip"> Build projects as soon as you learn a new concept. <b>Don’t wait until you “know everything.”</b></p>
+  <p><em>Learning Path:</em> Start with <b>fundamentals</b> → pick one <b>frontend framework</b> → add <b>backend</b> → 
+  finish by <b>deploying projects</b> to showcase your skills.</p>
+</section>
+<section id="datasci" class="tech-section" >
+  <h2> Data Science – Complete Guide</h2>
+  <p>
+    Data Science combines statistics, programming, and domain knowledge to extract insights from data. 
+    From predictive models to AI-driven solutions, it powers industries like healthcare, finance, and technology. 
+    Start small, practice with datasets, and grow towards machine learning and AI.
+  </p>
+
+  <!-- Row 1: Core Fundamentals + Advanced Topics -->
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Core Fundamentals</h3>
+      <ul>
+        <li><b>Math & Stats</b> – probability, linear algebra, calculus, hypothesis testing.</li>
+        <li><b>Python</b> – NumPy, Pandas, Matplotlib for data analysis & visualization.</li>
+        <li><b>SQL</b> – querying databases, joins, aggregations, window functions.</li>
+        <li style="margin-bottom: -2px;"><b>Problem Solving</b> – logical thinking, debugging, and algorithmic mindset.</li>
+      </ul>
+      <p class="tip">💡 Tip: Focus on <b>Pandas & SQL</b> early — they’re used in almost every data job.</p>
+    </div>
+
+    <div class="col-md-6">
+      <h3> Advanced Topics</h3>
+      <ul>
+        <li><b>Machine Learning</b>: regression, classification, clustering, Scikit-learn.</li>
+        <li><b>Deep Learning</b>: neural networks, TensorFlow, PyTorch.</li>
+        <li><b>Big Data</b>: Spark, Hadoop, distributed computing.</li>
+        <li><b>Data Engineering</b>: pipelines, ETL, Airflow, cloud platforms.</li>
+        <li><b>Model Deployment</b>: Flask/FastAPI, Docker, cloud hosting.</li>
+        <li><b>MLOps</b>: versioning, monitoring, CI/CD for ML.</li>
+        <li><b>APIs & Microservices</b>: REST, GraphQL, scalable design.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Row 2: Data Analysis + Visualization -->
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <h3> Data Analysis</h3>
+      <ul>
+        <li><b>Pandas</b> – data cleaning, manipulation, transformations.</li>
+        <li><b>NumPy</b> – arrays, vectorized computations, linear algebra.</li>
+        <li><b>SQL</b> – advanced queries, joins, indexing for performance.</li>
+      </ul>
+      <p class="tip">💡 Work with <b>Kaggle datasets</b> to sharpen your data wrangling skills.</p>
+    </div>
+
+    <div class="col-md-6">
+      <h3> Visualization</h3>
+      <ul>
+       <li><b>Matplotlib & Seaborn</b> – static plots & statistical charts used for quick data exploration.</li>
+       <li><b>Plotly</b> – interactive dashboards & 3D plots that work well on the web.</li>
+       <li><b>Power BI / Tableau</b> – professional BI dashboards widely used in businesses.</li>
+      </ul>
+      <p class="tip" style="margin-top: -2px;">💡 Always <b>tell a story</b> with your data, not just show graphs.</p>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <h3> Project Ideas</h3>
+  <ul>
+    <li>Exploratory Data Analysis (EDA) on real-world datasets.</li>
+    <li>Predictive Model (e.g., house prices, stock trends).</li>
+    <li>Customer Segmentation with clustering.</li>
+    <li>Sentiment Analysis on tweets/reviews.</li>
+    <li>End-to-End ML Pipeline with deployment.</li>
+  </ul>
+  <p class="tip"> Document your projects on <b>GitHub</b> and publish case studies on <b>Kaggle/Medium</b>.</p>
+  <p><em>Learning Path:</em> Start with <b>math, Python & SQL</b> → practice <b>EDA & visualization</b> → 
+  move to <b>ML & deep learning</b> → finish by <b>building projects & deploying models</b>.</p>
+</section>
+<section id="seo" class="tech-section">
+  <h2>🔍 SEO – Complete Guide</h2>
+  <p>
+    Search Engine Optimization (SEO) helps websites rank higher in search engines like Google, driving organic traffic without paid ads. 
+    It combines technical, content, and strategic practices. Mastering SEO makes your projects visible and valuable to users. 
+    Start with the basics, optimize continuously, and track results using analytics tools.
+  </p>
+
+  <!-- Row 1: Core Fundamentals + Advanced Topics -->
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Core Fundamentals</h3>
+      <ul>
+        <li><b>Keyword Research</b> – Google Keyword Planner, Ahrefs, SEMrush.</li>
+        <li><b>On-Page SEO</b> – titles, meta descriptions, headings, alt text.</li>
+        <li><b>Content Quality</b> – unique, valuable, and optimized for intent.</li>
+        <li><b>Technical SEO Basics</b> – site speed, mobile-friendly design, crawlability.</li>
+      </ul>
+      <p class="tip">💡 Always create content for <b>users first</b>, search engines second.</p>
+    </div>
+
+    <div class="col-md-6">
+      <h3>Advanced Topics</h3>
+      <ul>
+        <li><b>Link Building</b> – guest posts, digital PR, backlinks.</li>
+        <li><b>Structured Data</b> – schema markup for rich snippets.</li>
+        <li><b>Technical SEO</b> – sitemaps, robots.txt, canonical tags.</li>
+        <li><b>Local SEO</b> – Google Business Profile, NAP consistency.</li>
+        <li><b>Analytics & Tracking</b> – Google Search Console, Google Analytics.</li>
+        <li><b>SEO for Web Apps</b> – handling SPAs, dynamic rendering, indexing.</li>
+      </ul>
+      <p class="tip">💡 Advanced SEO is not about hacks — it’s about <b>scalability, automation, and long-term strategy</b>.</p>
+
+    </div>
+  </div>
+
+  <!-- Row 2: On-Page + Off-Page -->
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <h3>On-Page SEO</h3>
+      <ul>
+        <li><b>Title Tags & Meta Descriptions</b> – compelling, keyword-optimized.</li>
+        <li><b>Internal Linking</b> – better navigation & authority flow.</li>
+        <li><b>Image SEO</b> – compression, descriptive alt text, WebP format.</li>
+        <li><b>User Experience</b> – Core Web Vitals, readability, clear structure.</li>
+      </ul>
+      <p class="tip">💡 A fast, mobile-friendly website ranks higher in Google.</p>
+    </div>
+
+    <div class="col-md-6">
+      <h3>Off-Page SEO</h3>
+      <ul>
+        <li><b>Backlinks</b> – quality > quantity.</li>
+        <li><b>Guest Blogging</b> – contribute to relevant authority sites.</li>
+        <li><b>Social Signals</b> – brand mentions & shares improve trust.</li>
+        <li><b>Online Reputation</b> – reviews, citations, authority.</li>
+        <li><b>Influencer Outreach</b> – partner with influencers for backlinks.</li>
+      </ul>
+      <p class="tip">💡 Focus on <b>building relationships</b>, not just backlinks.</p>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <h3>Project Ideas</h3>
+  <ul>
+    <li>SEO-optimized blog with structured data.</li>
+    <li>Case study: improve ranking of a sample website.</li>
+    <li>Local SEO project for a business (Google Business Profile setup).</li>
+    <li>Technical SEO audit of a website.</li>
+    <li>Build a keyword research tool using Python/Google API.</li>
+  </ul>
+  <p class="tip"> SEO takes time — track rankings & traffic growth over months, not days.</p>
+  <p><em>Learning Path:</em> Start with <b>keyword research & on-page SEO</b> → move to <b>technical SEO & content strategy</b> → 
+  focus on <b>link building & analytics</b> → finish by <b>tracking rankings & optimizing continuously</b>.</p>
+</section>
+<section id="mern" class="tech-section" >
+  <h2> MERN Stack – Complete Guide</h2>
+  <p>
+    The MERN stack (MongoDB, Express.js, React, Node.js) is one of the most popular full-stack JavaScript frameworks. 
+    It allows you to build end-to-end web applications entirely using JavaScript — from database to frontend. 
+    Mastering MERN gives you the skills to create scalable, real-world apps like e-commerce stores, dashboards, and social networks.
+  </p>
+
+  <!-- Row 1: Core Fundamentals + Advanced Topics -->
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Core Fundamentals</h3>
+      <ul>
+        <li><b>React.js</b> – component-based UI development with hooks and state management.</li>
+        <li><b>Node.js</b> – server-side JavaScript runtime.</li>
+        <li><b>Express.js</b> – lightweight framework for APIs and backend logic.</li>
+        <li><b>MongoDB</b> – NoSQL database with JSON-like documents.</li>
+      </ul>
+      <p class="tip">💡 Learn how data flows from <b>React → Express → MongoDB</b> for full-stack mastery.</p>
+    </div>
+
+    <div class="col-md-6">
+      <h3>Advanced Topics</h3>
+      <ul>
+        <li><b>Authentication</b> – JWT, OAuth, sessions.</li>
+        <li><b>State Management</b> – Redux, Context API.</li>
+        <li><b>File Uploads</b> – Multer, Cloudinary, AWS S3.</li>
+        <li><b>Performance</b> – caching with Redis, query optimization.</li>
+        <li><b>Testing</b> – Jest, Supertest, Postman collections.</li>
+        <li><b>Deployment</b> – Vercel/Netlify (frontend), Render/Heroku/AWS (backend).</li>
+      </ul>
+      <p class="tip">💡 Focus on <b>scalability</b> — structure your MERN apps with clean architecture & reusable components.</p>
+    </div>
+  </div>
+
+  <!-- Row 2: Frontend + Backend -->
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <h3>Frontend (React)</h3>
+      <ul>
+        <li><b>Components</b> – functional components, props, hooks.</li>
+        <li><b>Routing</b> – React Router for navigation.</li>
+        <li><b>Styling</b> – TailwindCSS, Bootstrap, Material UI.</li>
+        <li><b>State Management</b> – Redux Toolkit, Context API for managing global state across the app.</li>
+      </ul>
+      <p class="tip">💡 Keep components <b>small & reusable</b> for better scalability.</p>
+    </div>
+
+    <div class="col-md-6">
+      <h3>Backend (Node + Express)</h3>
+      <ul>
+        <li><b>REST APIs</b> – CRUD operations with Express routes.</li>
+        <li><b>Database</b> – MongoDB with Mongoose ODM.</li>
+        <li><b>Authentication</b> – JWT tokens, bcrypt for password hashing.</li>
+        <li><b>Error Handling</b> – centralized error middleware.</li>
+      </ul>
+      <p class="tip">💡 Always validate requests with libraries like <b>Joi</b> or <b>Validator.js</b>.</p>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <h3>Project Ideas</h3>
+  <ul>
+    <li>Blog Platform with authentication and CRUD posts.</li>
+    <li>E-commerce app with cart, payments, and admin dashboard.</li>
+    <li>Chat App using Socket.io for real-time communication.</li>
+    <li>Task Manager with JWT authentication.</li>
+    <li>Social Media clone (posts, likes, comments).</li>
+  </ul>
+  <p class="tip"> Deploy your MERN projects early — use <b>Render, Vercel, or Netlify</b> to showcase your work.</p>
+  <p><em>Learning Path:</em> Start with <b>React basics</b> → build APIs with <b>Node & Express</b> → integrate <b>MongoDB</b> → 
+  add <b>authentication & deployment</b> → finish with <b>real-world projects</b>.</p>
+</section>
+<section id="ai" class="tech-section">
+  <h2> Artificial Intelligence & Machine Learning – Complete Guide</h2>
+  <p>
+    Artificial Intelligence (AI) and Machine Learning (ML) are transforming industries — from healthcare to finance, e-commerce to autonomous vehicles. 
+    Learning AI/ML equips you to build predictive models, intelligent systems, and data-driven solutions. 
+    It combines mathematics, programming, and real-world problem solving.
+  </p>
+
+  <!-- Row 1: Core Fundamentals + Advanced Topics -->
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Core Fundamentals</h3>
+      <ul>
+        <li><b>Mathematics</b> – linear algebra, calculus, probability, statistics.</li>
+        <li><b>Python</b> – NumPy, Pandas, Scikit-learn for ML pipelines and data analysis.</li>
+        <li><b>Data Preprocessing</b> – cleaning, normalization, feature engineering.</li>
+        <li><b>ML Algorithms</b> – regression, classification, clustering, decision trees.</li>
+        <li><b>Data Visualization</b> – Matplotlib, Seaborn for interpreting patterns.</li>
+        <li><b>Model Evaluation</b> – accuracy, precision, recall, F1, cross-validation.</li>
+      </ul>
+      <p class="tip">💡 Build a strong <b>math + coding foundation</b> to understand how algorithms actually work.</p>
+    </div>
+
+    <div class="col-md-6">
+      <h3>Advanced Topics</h3>
+      <ul>
+        <li><b>Deep Learning</b> – neural networks, CNNs, RNNs, transformers.</li>
+        <li><b>Natural Language Processing</b> – text classification, chatbots, LLMs.</li>
+        <li><b>Computer Vision</b> – image recognition, object detection, OpenCV.</li>
+        <li><b>Reinforcement Learning</b> – training agents via rewards & penalties.</li>
+        <li><b>AI in Production</b> – model deployment with Flask, FastAPI, TensorFlow Serving.</li>
+        <li><b>Ethics & Fairness</b> – bias reduction, responsible AI practices.</li>
+      </ul>
+      <p class="tip">💡 Focus on <b>real-world applications</b> like chatbots, fraud detection, and recommendation systems.</p>
+    </div>
+  </div>
+
+  <!-- Row 2: Tools + Libraries -->
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <h3>Popular Tools</h3>
+      <ul>
+        <li><b>Jupyter Notebook</b> – interactive coding & visualization.</li>
+        <li><b>Google Colab</b> – free cloud GPUs for ML experiments.</li>
+        <li><b>MLflow</b> – experiment tracking & model management.</li>
+        <li><b>Docker</b> – containerize ML apps for production.</li>
+        <li><b>Kaggle</b> – datasets, kernels, leaderboards, and ML competitions.</li>
+        <li><b>GitHub</b> – version control and collaboration platform.</li>
+
+      </ul>
+      <p class="tip">💡 Use <b>Colab</b> or <b>Kaggle</b> for free GPU-powered model training.</p>
+    </div>
+
+    <div class="col-md-6">
+      <h3>Key Libraries</h3>
+      <ul>
+        <li><b>Scikit-learn</b> – traditional ML algorithms.</li>
+        <li><b>TensorFlow</b> – deep learning framework by Google.</li>
+        <li><b>PyTorch</b> – popular for research & production deep learning.</li>
+        <li><b>Keras</b> – high-level API for rapid prototyping.</li>
+        <li><b>NLTK & spaCy</b> – natural language processing.</li>
+        <li><b>OpenCV</b> – computer vision tasks.</li>
+      </ul>
+      <p class="tip">💡 Choose <b>PyTorch</b> for flexibility, <b>TensorFlow</b> for large-scale production apps.</p>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <h3>Project Ideas</h3>
+  <ul>
+    <li>Movie recommendation system using collaborative filtering.</li>
+    <li>Spam email classifier with NLP.</li>
+    <li>Image classifier for handwritten digits (MNIST dataset).</li>
+    <li>Chatbot using RNNs or Transformers.</li>
+    <li>Stock price prediction with LSTM networks.</li>
+  </ul>
+  <p class="tip"> Showcase projects on <b>GitHub</b> with clear documentation & notebooks.</p>
+  <p><em>Learning Path:</em> Start with <b>Python & Math</b> → learn <b>ML basics</b> → practice with <b>Scikit-learn</b> → move to <b>Deep Learning (PyTorch/TensorFlow)</b> → specialize in <b>NLP, CV, or RL</b> → work on <b>real-world projects</b>.</p>
+</section>
+<section id="cyber" class="tech-section" >
+  <h2> Cybersecurity – Complete Guide</h2>
+  <p>
+    Cybersecurity protects systems, networks, and data from digital attacks.  
+    From individuals to global enterprises, safeguarding sensitive information is critical in today’s connected world.
+  </p>
+
+  <!-- Row 1: Core Fundamentals + Security Practices -->
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Core Fundamentals</h3>
+      <ul>
+        <li><b>Networking Basics</b> – TCP/IP, DNS, firewalls, and VPNs.</li>
+        <li><b>Operating Systems</b> – Windows, Linux, and server hardening.</li>
+        <li><b>Cryptography</b> – encryption, hashing, and digital signatures.</li>
+        <li><b>Threats & Attacks</b> – malware, phishing, DDoS, ransomware.</li>
+        <li><b>Security Policies</b> – access control, authentication, authorization.</li>
+      </ul>
+      <p class="tip">💡 Strong knowledge of <b>Linux + Networking</b> forms the base of cybersecurity skills.</p>
+    </div>
+
+    <div class="col-md-6">
+      <h3>Security Practices</h3>
+      <ul>
+        <li><b>Penetration Testing</b> – simulate attacks to find vulnerabilities.</li>
+        <li><b>Incident Response</b> – detect, contain, and recover from breaches.</li>
+        <li><b>Risk Management</b> – assess risks and apply mitigation strategies.</li>
+        <li><b>Cloud Security</b> – secure AWS, Azure, GCP environments.</li>
+        <li><b>Compliance</b> – GDPR, HIPAA, ISO standards, security audits.</li>
+      </ul>
+      <p class="tip">💡 Regular <b>security audits</b> reduce risks and ensure compliance.</p>
+    </div>
+  </div>
+
+  <!-- Row 2: Tools + Careers -->
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <h3>Popular Tools</h3>
+      <ul>
+        <li><b>Wireshark</b> – deep packet inspection and traffic analysis.</li>
+        <li><b>Nmap</b> – network scanning, host discovery, and port mapping.</li>
+        <li><b>Metasploit</b> – advanced penetration testing and exploit framework.</li>
+        <li><b>Burp Suite</b> – web application security and vulnerability scanning.</li>
+        <li><b>Kali Linux</b> – Linux distribution with powerful security tools pre-installed.</li>
+      </ul>
+      <p class="tip">💡 Use <b>Kali Linux</b> as a lab for practicing ethical hacking.</p>
+    </div>
+
+    <div class="col-md-6">
+      <h3>Career Paths</h3>
+      <ul>
+        <li><b>Ethical Hacker</b> – penetration testing & vulnerability assessment.</li>
+        <li><b>Security Analyst</b> – monitor, detect, and respond to threats.</li>
+        <li><b>Forensics Expert</b> – investigate breaches and recover evidence.</li>
+        <li><b>Security Engineer</b> – build secure networks and systems.</li>
+        <li><b>CISO</b> – lead enterprise cybersecurity strategy.</li>
+      </ul>
+      <p class="tip">💡 Start with <b>CompTIA Security+</b> and <b>CEH</b> certifications for career entry.</p>
+    </div>
+  </div>
+</section>
+<section id="cloud" class="tech-section" >
+  <h2> Cloud Computing – Complete Guide</h2>
+  <p>
+    Cloud computing delivers computing services like storage, databases, networking, and software over the internet.  
+    It enables businesses and developers to scale, deploy, and innovate faster without managing physical hardware.
+  </p>
+
+  <!-- Row 1: Core Concepts + Cloud Models -->
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Core Concepts</h3>
+      <ul>
+        <li><b>Virtualization</b> – abstraction of hardware using hypervisors and virtual machines.</li>
+        <li><b>Containers</b> – lightweight deployment with Docker and Kubernetes orchestration.</li>
+        <li><b>Scalability</b> – elastic scaling of compute and storage resources on demand.</li>
+        <li><b>Networking</b> – load balancers, CDNs, and secure VPN/cloud networks.</li>
+        <li><b>Storage</b> – object, block, and file storage for different workloads.</li>
+      </ul>
+      <p class="tip">💡 Learn <b>Docker + Kubernetes</b> as they are the backbone of modern cloud deployments.</p>
+    </div>
+
+    <div class="col-md-6">
+      <h3>Cloud Service Models</h3>
+      <ul>
+        <li><b>IaaS</b> – Infrastructure as a Service (VMs, storage, networking).</li>
+        <li><b>PaaS</b> – Platform as a Service (app hosting, databases, dev tools).</li>
+        <li><b>SaaS</b> – Software as a Service (Google Workspace, Salesforce, Zoom).</li>
+        <li><b>FaaS</b> – Function as a Service (serverless functions like AWS Lambda).</li>
+        <li><b>Hybrid & Multi-Cloud</b> – combining on-premises with public/private cloud.</li>
+      </ul>
+      <p class="tip">💡 Serverless computing is cost-efficient and great for event-driven apps.</p>
+    </div>
+  </div>
+
+  <!-- Row 2: Providers + Careers -->
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <h3>Popular Providers & Tools</h3>
+      <ul>
+        <li><b>AWS</b> – EC2, S3, Lambda, and the most widely adopted cloud platform.</li>
+        <li><b>Microsoft Azure</b> – enterprise cloud with deep Microsoft ecosystem integration.</li>
+        <li><b>Google Cloud</b> – strong in AI, ML, big data, and Kubernetes support.</li>
+        <li><b>Terraform</b> – infrastructure as code (IaC) for automated deployments.</li>
+        <li><b>Cloud Monitoring</b> – tools like CloudWatch, Datadog, and Prometheus.</li>
+      </ul>
+      <p class="tip">💡 Use <b>Terraform + GitHub Actions</b> for DevOps automation in cloud projects.</p>
+    </div>
+
+    <div class="col-md-6">
+      <h3>Career Paths</h3>
+      <ul>
+        <li><b>Cloud Engineer</b> – design, deploy, and manage cloud infrastructure.</li>
+        <li><b>DevOps Engineer</b> – CI/CD pipelines, automation, and cloud operations.</li>
+        <li><b>Cloud Architect</b> – create scalable, secure, and cost-efficient architectures.</li>
+        <li><b>Data Engineer</b> – build pipelines and manage big data in the cloud.</li>
+        <li><b>Cloud Security Specialist</b> – secure cloud environments against threats.</li>
+      </ul>
+      <p class="tip">💡 Start with <b>AWS Solutions Architect Associate</b> or <b>Azure Fundamentals</b> for certification.</p>
+    </div>
+  </div>
+<!-- Row 3: Use Cases + Future Trends -->
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <h3>Real-World Use Cases</h3>
+      <ul>
+        <li><b>Web Hosting</b> – scalable websites and apps hosted in the cloud.</li>
+        <li><b>Big Data & Analytics</b> – real-time processing with tools like BigQuery.</li>
+        <li><b>AI & Machine Learning</b> – cloud GPUs/TPUs for faster model training.</li>
+        <li><b>Disaster Recovery</b> – backup and failover systems to prevent downtime.</li>
+        <li><b>IoT Applications</b> – devices connected and managed via the cloud.</li>
+      </ul>
+      <p class="tip">💡 Start small: deploy a portfolio app or API on AWS/GCP to practice.</p>
+    </div>
+
+    <div class="col-md-6">
+      <h3>Future Trends</h3>
+      <ul>
+        <li><b>Edge Computing</b> – processing data closer to devices for lower latency.</li>
+        <li><b>AI + Cloud</b> – AI services like GPT, Vision AI, and AutoML integration.</li>
+        <li><b>Serverless Expansion</b> – growing adoption of event-driven architectures.</li>
+        <li><b>Green Cloud</b> – eco-friendly, energy-efficient data centers.</li>
+        <li><b>Multi-Cloud Strategies</b> – organizations using multiple providers together.</li>
+      </ul>
+      <p class="tip">💡 Keep learning — cloud evolves quickly, stay updated with <b>AWS re:Invent</b> & <b>Google Cloud Next</b>.</p>
+    </div>
+  </div>
+
+</section>
+<section id="devops" class="tech-section">
+  <h2> DevOps – Complete Guide</h2>
+  <p>
+    DevOps bridges the gap between development and operations by automating workflows, ensuring faster delivery, and improving reliability.  
+    It’s about culture, collaboration, and continuous improvement in software engineering.
+  </p>
+
+  <!-- Row 1: Core Principles + CI/CD -->
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Core Principles</h3>
+      <ul>
+        <li><b>Collaboration</b> – shared responsibility across Dev & Ops teams.</li>
+        <li><b>Automation</b> – infrastructure, builds, testing, and deployments.</li>
+        <li><b>Continuous Feedback</b> – monitoring and rapid iteration cycles.</li>
+        <li><b>Scalability</b> – resilient infrastructure for growing applications.</li>
+        <li><b>Security</b> – DevSecOps practices baked into workflows.</li>
+      </ul>
+      <p class="tip">💡 Start small: automate testing and deployments for one project.</p>
+    </div>
+
+    <div class="col-md-6">
+      <h3>CI/CD Pipeline</h3>
+      <ul>
+        <li><b>Continuous Integration</b> – merge code frequently, test automatically.</li>
+        <li><b>Continuous Delivery</b> – ensure production-ready builds at all times.</li>
+        <li><b>Continuous Deployment</b> – push changes live with zero downtime.</li>
+        <li><b>Version Control</b> – GitHub/GitLab for collaboration.</li>
+        <li><b>Quality Gates</b> – automated checks before moving to production.</li>
+      </ul>
+      <p class="tip">💡 Jenkins, GitHub Actions, or GitLab CI are great starting points.</p>
+    </div>
+  </div>
+
+  <!-- Row 2: Tools + Infrastructure as Code -->
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <h3>Popular Tools</h3>
+      <ul>
+        <li><b>Jenkins</b> – widely used CI/CD automation server.</li>
+        <li><b>Docker</b> – containerization for consistent app environments.</li>
+        <li><b>Kubernetes</b> – container orchestration and scaling.</li>
+        <li><b>Ansible</b> – automation for configuration management.</li>
+        <li><b>Terraform</b> – infrastructure as code across cloud providers.</li>
+        <li><b>Prometheus & Grafana</b> – monitoring and observability tools.</li>
+      </ul>
+      <p class="tip">💡 Learn Docker first, then move to Kubernetes for production-scale apps.</p>
+    </div>
+
+    <div class="col-md-6">
+      <h3>Infrastructure as Code (IaC)</h3>
+      <ul>
+        <li><b>Declarative Config</b> – describe desired state, let tools manage it automatically.</li>
+        <li><b>Consistency</b> – replicate environments reliably across dev, test, and production.</li>
+        <li><b>Scalability</b> – automate provisioning and scaling of cloud resources easily.</li>
+        <li><b>Versioning</b> – track infra changes like code in Git.</li>
+        <li><b>Security</b> – enforce compliance, role-based access, and audit logging.</li>
+      </ul>
+      <p class="tip">💡 Terraform + Ansible is a powerful combo for IaC projects.</p>
+    </div>
+  </div>
+
+  <!-- Row 3: Career Paths + Future Trends -->
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <h3>Career Paths</h3>
+      <ul>
+        <li><b>DevOps Engineer</b> – design CI/CD pipelines and cloud infrastructure.</li>
+        <li><b>SRE (Site Reliability Engineer)</b> – ensure uptime, reliability, and scaling.</li>
+        <li><b>Cloud DevOps Specialist</b> – AWS/Azure/GCP focused automation expert.</li>
+        <li><b>Platform Engineer</b> – build internal developer platforms for efficiency.</li>
+        <li><b>DevSecOps Engineer</b> – integrate security into DevOps pipelines.</li>
+      </ul>
+      <p class="tip">💡 AWS DevOps Engineer or CKA (Kubernetes) certs add strong value.</p>
+    </div>
+
+    <div class="col-md-6">
+      <h3>Future Trends</h3>
+      <ul>
+        <li><b>GitOps</b> – manage deployments using Git as the single source of truth.</li>
+        <li><b>AIOps</b> – AI-driven monitoring, incident detection, and root cause analysis.</li>
+        <li><b>Security Shift-Left</b> – integrating security earlier in development.</li>
+        <li><b>NoOps</b> – autonomous systems reducing operational overhead.</li>
+        <li><b>Cloud-Native DevOps</b> – full adoption of containers and microservices.</li>
+      </ul>
+      <p class="tip">💡 Stay ahead by following CNCF projects and DevOps communities.</p>
+    </div>
+  </div>
+</section>
+
+<section id="mobile" class="tech-section" >
+  <h2> Mobile Development – Complete Guide</h2>
+  <p>
+    Mobile apps drive the digital world — from social media to fintech. 
+    Mastering mobile development enables you to build powerful, secure, and 
+    user-friendly apps for Android and iOS using modern frameworks and tools.
+  </p>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Core Fundamentals</h3>
+      <ul>
+        <li><b>Languages</b> – Java, Kotlin (Android), Swift (iOS), Dart (Flutter).</li>
+        <li><b>UI/UX</b> – responsive layouts, adaptive design, accessibility.</li>
+        <li><b>APIs</b> – REST/GraphQL for backend communication.</li>
+        <li><b>Data Storage</b> – SQLite, Room, Core Data, or cloud storage.</li>
+        <li><b>Performance</b> – memory optimization & smooth animations.</li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <h3>Popular Frameworks</h3>
+      <ul>
+        <li><b>Flutter</b> – cross-platform apps with rich UI & single codebase.</li>
+        <li><b>React Native</b> – JavaScript + React for Android & iOS.</li>
+        <li><b>SwiftUI</b> – Apple’s declarative UI framework for iOS apps.</li>
+        <li><b>Kotlin Multiplatform</b> – share logic across Android & iOS.</li>
+        <li><b>Ionic</b> – hybrid apps using web tech (HTML, CSS, JS).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <h3>Testing & Deployment</h3>
+      <ul>
+        <li><b>Testing</b> – unit, integration, and UI tests for reliability.</li>
+        <li><b>CI/CD</b> – automate builds with Fastlane, GitHub Actions.</li>
+        <li><b>App Stores</b> – publish on Google Play & Apple App Store.</li>
+        <li><b>Beta Testing</b> – use TestFlight or Firebase App Distribution.</li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <h3>Advanced Topics</h3>
+      <ul>
+        <li><b>Offline Mode</b> – local caching & databases for offline access.</li>
+        <li><b>Security</b> – encryption, biometrics, and secure APIs.</li>
+        <li><b>Push Notifications</b> – FCM & Apple Push services.</li>
+        <li><b>Monetization</b> – ads, in-app purchases, subscriptions.</li>
+        <li><b>AR/VR</b> – build immersive apps with ARKit, ARCore.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="tip"><b>💡 Tip:</b> Start by building native apps, then move into cross-platform frameworks like Flutter or React Native to reach wider audiences faster.</p>
+</section>
+
+<section id="resources" class="tech-section" >
+  <h2> Learning Resources – Course Wise</h2>
+  <p>
+    A well-structured learning path needs reliable resources. 
+    Below are the best **platforms, YouTube channels, websites, and LinkedIn resources** 
+    for each course to help you master the skills step by step.
+  </p>
+
+  <!-- Web Development -->
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <h3> Web Development</h3>
+      <ul>
+        <li><b>YouTube</b> – FreeCodeCamp, Traversy Media, Net Ninja.</li>
+        <li><b>Platforms</b> – Codecademy, Scrimba, Udemy, Coursera.</li>
+        <li><b>Websites</b> – MDN Web Docs, W3Schools, GeeksforGeeks.</li>
+        <li><b>LinkedIn</b> – Web Development courses on LinkedIn Learning.</li>
+        <li><b>GitHub</b> – Open-source projects & starter templates.</li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <h3> Data Science</h3>
+      <ul>
+        <li><b>YouTube</b> – Krish Naik, StatQuest, Data School.</li>
+        <li><b>Platforms</b> – Kaggle, DataCamp, Coursera (IBM DS, Google DS).</li>
+        <li><b>Websites</b> – Towards Data Science, Analytics Vidhya.</li>
+        <li><b>LinkedIn</b> – Applied Data Science learning paths.</li>
+        <li><b>GitHub</b> – Kaggle notebooks, ML/DL open projects.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- AI & ML + Cyber Security -->
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <h3>AI & Machine Learning</h3>
+      <ul>
+        <li><b>YouTube</b> – 3Blue1Brown (maths), Sentdex, CodeEmporium.</li>
+        <li><b>Platforms</b> – Coursera (Andrew Ng), Fast.ai, Udacity.</li>
+        <li><b>Websites</b> – Papers With Code, Towards AI.</li>
+        <li><b>LinkedIn</b> – AI/ML foundations & applied ML courses.</li>
+        <li><b>GitHub</b> – TensorFlow, PyTorch, Hugging Face repos.</li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <h3> Cyber Security</h3>
+      <ul>
+        <li><b>YouTube</b> – NetworkChuck, The Cyber Mentor, John Hammond.</li>
+        <li><b>Platforms</b> – TryHackMe, HackTheBox, Cybrary, Coursera.</li>
+        <li><b>Websites</b> – OWASP, HackerOne, PortSwigger Blog.</li>
+        <li><b>LinkedIn</b> – Cybersecurity Analyst & Ethical Hacking paths.</li>
+        <li><b>GitHub</b> – ExploitDB, security tools collections.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Cloud + DevOps -->
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <h3> Cloud Computing</h3>
+      <ul>
+        <li><b>YouTube</b> – FreeCodeCamp (AWS, Azure, GCP tutorials).</li>
+        <li><b>Platforms</b> – A Cloud Guru, Coursera, Udemy.</li>
+        <li><b>Websites</b> – AWS Docs, Azure Learn, GCP Docs.</li>
+        <li><b>LinkedIn</b> – Cloud certification prep courses.</li>
+        <li><b>GitHub</b> – Terraform scripts, IaC templates.</li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <h3> DevOps</h3>
+      <ul>
+        <li><b>YouTube</b> – TechWorld with Nana, Amigoscode.</li>
+        <li><b>Platforms</b> – KodeKloud, Linux Academy, Coursera.</li>
+        <li><b>Websites</b> – DevOps.com, CNCF Blogs.</li>
+        <li><b>LinkedIn</b> – CI/CD pipelines, Docker & Kubernetes paths.</li>
+        <li><b>GitHub</b> – Helm charts, Jenkins pipelines, K8s manifests.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Mobile Development -->
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <h3> Mobile Development</h3>
+      <ul>
+        <li><b>YouTube</b> – Academind, CodeWithChris, Fireship.</li>
+        <li><b>Platforms</b> – Udemy (Flutter/React Native), Coursera.</li>
+        <li><b>Websites</b> – Flutter.dev, React Native docs, Android Dev Docs.</li>
+        <li><b>LinkedIn</b> – Mobile app development learning paths.</li>
+        <li><b>GitHub</b> – Mobile app templates & open-source apps.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="mt-3 tip"><b>💡 Tip:</b> Start with YouTube or free websites for basics, 
+    then move to professional platforms (Coursera, Udemy, LinkedIn Learning) 
+    and finally explore GitHub projects for real-world experience.
+  </p>
+</section>
+  </main>
+</div>
+<section id="why-mindspark" class="py-5" style=" background: linear-gradient(135deg, #1e1e1e,#2c2c2c, #292929, #343434);color: #fff; overflow-x: hidden; " data-aos="fade-up">
+  <div class="container text-center">
+    <h2 class="fw-bold display-5 mb-4">
+     Why <span style="color:#d0a75a;">MindSpark</span>?
+    </h2>
+    <p class="lead mb-5" style="color:#d9d9d9;font-size:clamp(0.8rem,2.2vw,1.2rem);">
+      At <b>MindSpark</b>, we combine <span style="color:#d0a75a;">cutting-edge innovation</span>, 
+      <span style="color:#d0a75a;">world-class learning</span>, and <span style="color:#d0a75a;">career-focused growth</span> 
+      to create an experience that transforms learners into leaders.
+    </p>
+
+    <div class="row g-4">
+      <!-- Card -->
+      <div class="col-md-4">
+        <div class="p-4 h-100 rounded-4 shadow-lg" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); border:1px solid rgba(255,255,255,0.1);">
+          <div class="fs-1 mb-3" style="color:#d0a75a;"><i class="fas fa-rocket" style="color:#d0a75a;"></i>
+</div>
+          <h4 class="fw-bold mb-2">Cutting-Edge Curriculum</h4>
+          <p style="color:#ccc;">Stay ahead with programs built around the latest tools, frameworks, and industry best practices.</p>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="col-md-4">
+        <div class="p-4 h-100 rounded-4 shadow-lg" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); border:1px solid rgba(255,255,255,0.1);">
+          <div class="fs-1 mb-3" ><i class="fas fa-chalkboard-teacher" style="color:#d0a75a;"></i>
+</div>
+          <h4 class="fw-bold mb-2">Elite Mentorship</h4>
+          <p style="color:#ccc;">Learn from seasoned experts and global professionals who guide you every step of the way.</p>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="col-md-4">
+        <div class="p-4 h-100 rounded-4 shadow-lg" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); border:1px solid rgba(255,255,255,0.1);">
+          <div class="fs-1 mb-3"><i class="fas fa-globe" style="color:#d0a75a;"></i>
+</div>
+          <h4 class="fw-bold mb-2">Global Network</h4>
+          <p style="color:#ccc;">Join a worldwide learning community and build connections with innovators and leaders.</p>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="col-md-4">
+        <div class="p-4 h-100 rounded-4 shadow-lg" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); border:1px solid rgba(255,255,255,0.1);">
+          <div class="fs-1 mb-3" ><i class="fas fa-briefcase" style="color:#d0a75a;"></i>
+</div>
+          <h4 class="fw-bold mb-2">Career-Focused</h4>
+          <p style="color:#ccc;">Gain practical skills with real projects, portfolio building, and placement preparation.</p>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="col-md-4">
+        <div class="p-4 h-100 rounded-4 shadow-lg" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); border:1px solid rgba(255,255,255,0.1);">
+          <div class="fs-1 mb-3" ><i class="fas fa-bolt" style="color:#d0a75a;"></i>
+</div>
+          <h4 class="fw-bold mb-2">Hands-On Learning</h4>
+          <p style="color:#ccc;">Experience live projects, hackathons, and case studies that prepare you for the real world.</p>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="col-md-4">
+        <div class="p-4 h-100 rounded-4 shadow-lg" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); border:1px solid rgba(255,255,255,0.1);">
+          <div class="fs-1 mb-3" ><i class="fas fa-trophy" style="color:#d0a75a;"></i>
+</div>
+          <h4 class="fw-bold mb-2">Trusted Excellence</h4>
+          <p style="color:#ccc;">Recognized globally for quality, innovation, and impactful results in tech education.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-5">
+      <a href="contact.html" class="btn btn-lg px-5 py-3 rounded-pill shadow" 
+         style="background-color: #d0a75a; border: none; color:#000; font-weight:600;">
+        Start Your Journey with MindSpark 
+      </a>
+    </div>
+  </div>
+</section>
+<section id="chatbot-section">
+<!-- Floating Chat Icon -->
+    <div id="chatbot-icon">💬</div>
+
+    <!-- Chatbot Container -->
+    <div id="chatbot-container" class="hidden">
+      <div id="chatbot-header">
+        <span>Chatbot</span>
+        <button id="close-btn">&times;</button>
+      </div>
+      <div id="chatbot-body">
+        <div id="chatbot-messages"></div>
+      </div>
+      <div id="chatbot-input-container">
+        <input type="text" id="chatbot-input" placeholder="Type a message..." />
+        <button id="send-btn">Send</button>
+      </div>
+    </div>
+</section>
+<footer class="mt-4">
+<div class="container ">
+<div class="row">
+  <div class="col-md-4 text-md-start text-center">
+    <h2 class="footer-logo py-2" style="color: rgb(214,178,82);">MINDSPARK</h2>
+    <p style="font-size: 14px;">"Igniting Minds. Inspiring Futures."</p>
+    <p style="font-size: 13px; text-align: justify; max-width: 295px;">MindSpark is an educational platform that empowers learners with content, tools, and emotional intelligence to spark curiosity, foster growth, and build a smarter future.</p>
+  </div>
+  <div class="quick col-md-4 text-md-start text-center py-2  ">  
+    <h4 class="mt-1 ">Quick Links</h4>
+
+    <div class="row mt-3">
+    <div class="col-6">
+      <ul class="list-unstyled">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="lifestyle.html">lifestyle</a></li>
+      <li><a href="smart-studies.html">smart-studies</a></li>
+      <li><a href="career.html">career hub</a></li>
+      <li><a href="soft-edge.html">soft Edge</a></li>
+      <li><a href="tech.html#webdev">Web Development</a></li>
+      </ul>
+      </div>
+      <div class="col-6">
+      <ul class="list-unstyled">
+      <li><a href="tech.html#datasci">Data Science</a></li>
+      <li><a href="tech.html#seo">SEO</a></li>
+      <li><a href="tech.html#mern">MERN Stack</a></li>
+      <li><a href="tech.html#cyber">Cybersecurity</a></li>
+      <li><a href="tech.html#cloud">Cloud Computing</a></li>
+      <li><a href="tech.html#mobile">Mobile Development</a></li>
+      </ul>
+      </div>
+                   
+      </div> <!-- row -->
+      </div>
+      <div class="col-md-4 text-center text-md-start py-2 ">
+      <h4 class="mt-1 mb-4">Connect With Us</h4>
+
+      <div class="d-flex justify-content-center justify-content-md-start align-items-center gap-3 mt-4 f-icons" style="margin-top: 31px;">         
+      <a style="font-size: 22px;" href="https://facebook.com/mindspark" target="_blank"><i class="fab fa-facebook fa-lg"></i></a>
+      <a style="font-size: 22px;" href="https://instagram.com/mindspark" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+      <a style="font-size: 22px;" href="https://twitter.com/mindspark" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
+      <a style="font-size: 22px;" href="https://linkedin.com/company/mindspark" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+      <a style="font-size: 22px;" href="https://youtube.com/@mindspark" target="_blank"><i class="fab fa-youtube fa-lg"></i></a>
+      </div>
+   <!-- Email and Instagram side by side -->
+       <div class=" justify-content-center justify-content-md-start align-items-center mt-4" style="font-size: 14px;">
+        <p style="margin-top: 15px;">Email: <a href="mailto:mindspark@example.com" style="color:  rgb(214,178,82);">mindspark@example.com</a></p><br>
+        <p style="margin-top: -25px;">Instagram: <a href="https://instagram.com/mindspark" style="color:  rgb(214,178,82);" target="_blank">@mindspark</a></p>
+       </div>
+
+       </div>
+
+  </div>
+  </div>
+</footer> 
+  
+<h1 id="typing-text"></h1>
+<script>
+  const typingText = document.getElementById("typing-text");
+  const message = "Master Technology,<br>Shape the Future";
+  let index = 0;
+
+  function typeText() {
+    if (index < message.length) {
+      // If next part is <br>, skip typing it letter by letter
+      if (message.substring(index, index + 4) === "<br>") {
+        typingText.innerHTML += "<br>";
+        index += 4; // skip the <br> tag
+      } else {
+        typingText.innerHTML += message.charAt(index);
+        index++;
+      }
+      setTimeout(typeText, 95);
+    }
+  }
+
+  typeText();
+</script>
+<!-- chatbot -->
+<script>
+// script.js
+document.addEventListener("DOMContentLoaded", function () {
+  // ================================
+  // GET REFERENCES TO HTML ELEMENTS
+  // ================================
+  const chatbotContainer = document.getElementById("chatbot-container"); // The chatbot box
+  const chatbotIcon = document.getElementById("chatbot-icon");           // Floating chat icon
+  const closeButton = document.getElementById("close-btn");              // "X" button to close chatbot
+  const sendBtn = document.getElementById("send-btn");                   // Send button
+  const chatbotInput = document.getElementById("chatbot-input");         // Text input for user messages
+  const chatbotMessages = document.getElementById("chatbot-messages");   // Message display area
+
+  // ================================
+  // TOGGLE CHATBOT VISIBILITY
+  // ================================
+  
+  // When clicking the floating chat icon
+  chatbotIcon.addEventListener("click", function () {
+    chatbotContainer.classList.remove("hidden"); // Show chatbot window
+    chatbotIcon.style.display = "none"; // Hide floating icon
+  });
+
+  // When clicking the close button in chatbot header
+  closeButton.addEventListener("click", function () {
+    chatbotContainer.classList.add("hidden"); // Hide chatbot window
+    chatbotIcon.style.display = "flex"; // Show floating icon again
+  });
+
+  // ================================
+  // SEND MESSAGE EVENTS
+  // ================================
+  
+  // Click on the Send button
+  sendBtn.addEventListener("click", sendMessage);
+
+  // Press "Enter" in the input box
+  chatbotInput.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      sendMessage();
+    }
+  });
+
+  // ================================
+  // MAIN SEND MESSAGE FUNCTION
+  // ================================
+  function sendMessage() {
+    const userMessage = chatbotInput.value.trim(); // Get the message text
+    if (userMessage) {
+      appendMessage("user", userMessage); // Show the user's message in chat
+      chatbotInput.value = ""; // Clear the input box
+      getBotResponse(userMessage); // Call the bot response function
+    }
+  }
+
+  // ================================
+  // APPEND A MESSAGE TO CHAT AREA
+  // sender: "user" or "bot"
+  // message: text to display
+  // ================================
+  function appendMessage(sender, message) {
+    const messageElement = document.createElement("div");
+    messageElement.classList.add("message", sender); // Add classes for styling
+    messageElement.textContent = message; // Set the message text
+    chatbotMessages.appendChild(messageElement); // Add message to chat area
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight; // Auto scroll to latest message
+  }
+
+  // ================================
+  // GET BOT RESPONSE (Gemini API)
+  // ================================
+  async function getBotResponse(userMessage) {
+    // Replace with your Gemini API key
+    const apiKey = "AIzaSyBkXe3xpRZb6OxnKu4ZvuJwxAolNJc4BfY"; // <-- ADD YOUR KEY HERE
+
+    // Choose the model version you want to use
+    const model = "gemini-1.5-flash";
+
+    // Gemini API endpoint URL
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+
+    // ====================================
+    // STEP 1: Show "Bot is typing..." message
+    // ====================================
+    const typingEl = document.createElement("div");
+    typingEl.classList.add("message", "bot");
+    typingEl.textContent = "Bot is typing...";
+    chatbotMessages.appendChild(typingEl);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+    try {
+      // ====================================
+      // STEP 2: Make API Request to Gemini
+      // ====================================
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          contents: [
+            {
+              role: "user",
+              parts: [{ text: userMessage }],
+            },
+          ],
+        }),
+      });
+
+      const data = await response.json();
+
+      // ====================================
+      // STEP 3: Replace "Bot is typing..." with actual reply
+      // ====================================
+      const botMessage = data.candidates?.[0]?.content?.parts?.[0]?.text || 
+                         "Sorry, I couldn't understand that.";
+      typingEl.textContent = botMessage; // Update the same element's text
+    } catch (error) {
+      console.error("Error fetching bot response:", error);
+      typingEl.textContent = "Sorry, something went wrong. Please try again.";
+    }
+  }
+});
+</script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/script.js"></script>
+
+   <script>
+  AOS.init({
+    once: false,
+    duration: 800,
+  });
+</script>
+
+   </body>
+</html>

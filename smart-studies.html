@@ -1,0 +1,2139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Studies | MindSpark</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> 
+     <link rel="stylesheet" href="css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">  -->
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <!--<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> AOS --> <!--can't run without internet -->
+    <link rel="stylesheet" href="css/aos.css"><!--AOS -->
+    <link rel="stylesheet" href="css/style.css">
+<style>
+  /* .smart-hero {
+  height: 616px;
+ background: url('../images/smart-studies.jpg') center/cover no-repeat;
+z-index: 1;
+position: relative;
+}
+.smart-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); 
+  z-index: 0;
+} */
+.note-card {
+  background: #fff;
+  transition: all 0.3s ease;
+}
+.note-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+.download-btn {
+  background-color:white;
+  color:#1877f2;
+  border-radius: 30px;
+  padding: 8px 20px;
+  transition: 0.3s;
+  border: 2px solid #1e1e1ed3;
+}
+.download-btn:hover {
+  background-color:#1e1e1ed3;
+  color: white;
+}
+
+/* Popup Notification Styling */
+.popup-top {
+  position: fixed;
+  top: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color:#1e1e1e;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 500;
+  display: none;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}#notes-search {
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease;
+}.smart-hero .btn{
+  background-color: rgb(214,178,82);
+  color:#1e1e1e;
+  padding: 10px 30px;
+  font-family: Poppins, sans-serif;
+  transition: 0.3s;
+  font-weight: 700;
+
+}
+.smart-hero .btn:hover{
+ transform: scale(1.05);
+}
+#notes-search:focus {
+  outline: none;
+  box-shadow: 0 0 10px  rgba(0, 0, 0, 0.2);
+  border-color: #1e1e1e;
+}
+.class a{
+  text-decoration: none;
+  font-size: 12px;
+  color: #1877f2;
+}table {
+  border-spacing: 0 60px;
+  border:0;
+
+} table i:hover{
+  color: rgb(214,178,82);
+  cursor: pointer;
+}
+tr {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.304);
+  
+}
+.exam-tricks-section {
+  background-color: #fdfcf9;
+  color: #1e1e1e;
+  font-family: 'Poppins', sans-serif;
+}
+
+.lifestyle-sec-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000;
+  position: relative;
+}
+
+.tip-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.tip-card .icon {
+  font-size: 2.5rem;
+  color: rgb(208,167,90); /* Your golden highlight */
+  margin-bottom: 15px;
+}
+
+.tip-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.tip-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+#memory-boost {
+  background-color: #fdfcf9;
+  background-image: url('https://cdn.pixabay.com/photo/2016/11/18/16/22/stars-1832261_960_720.png');
+  background-repeat: repeat;
+  animation: sparkle 15s linear infinite;
+  padding: 80px 20px;
+  overflow-x: hidden;
+  z-index: -1;
+}
+
+
+#memory-boost li:hover {
+  color: rgb(208,167,90);
+  transition: 0.3s ease;
+  transform: translateX(6px);
+}
+
+#memory-boost .btn:hover {
+  transform: scale(1.05);
+}
+.memory-cards{
+  background: #fff;
+  border-left: 4px solid rgb(208,167,90);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.03);
+  transition: transform 0.3s ease,box-shadow 0.3s ease;
+}
+.memory-cards:hover{
+  box-shadow:4px 8px 10px rgba(0,0,0,0.03) ;
+  transform: translateY(5px);
+  cursor: pointer;
+}
+@keyframes sparkle {
+  from { background-position: 0 0; }
+  to { background-position: 100% 100%; }
+}
+/* Modal wrapper */
+.auth-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Modal content box */
+.auth-box {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px 40px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  animation: popIn 0.4s ease-out;
+  position: relative;
+}
+.auth-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-box input {
+  padding: 12px;
+  margin-bottom: 22px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+
+.auth-box input:focus{
+  outline: none;
+  border-color: #ffc107;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.4);
+}
+.auth-box input{
+  border-color: #ffc107;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.input-group {
+  position: relative;
+}
+.auth-box label{
+  color:  #ffc107;
+font-size: 11px;
+  left: 9px; 
+  top: 50%;
+  transform: translateY(-120%);
+  position: absolute;
+  pointer-events: none;
+  top: 12px;
+  padding: 0 3px;
+  background-color:  #ffffff;
+  
+}
+/* Button styles */
+.auth-box button {
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+  color: #fff;
+  background-color: goldenrod;
+}
+
+.close-auth {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #555;
+  background: transparent;
+  border: none;
+  font-weight: bold;
+}
+
+.auth-text {
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: center;
+  color: #444;
+}
+
+.success-message {
+  text-align: center;
+  padding: 20px;
+  background: #e8ffe6;
+  border: 1px solid #84d68d;
+  color: #2d7a36;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+/* Invalid input border */
+.input-error {
+  border: 2px solid red !important;
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Shake animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+.error-msg {
+  color: red;
+  font-size: 0.85rem;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+.shake {
+  animation: shake 0.5s;
+}
+/* ===== Mobile font size fixes ===== */
+@media (max-width: 576px) {
+
+  /* Memory boost cards */
+  .memory-cards h4 {
+    font-size: 1rem;   /* pehle ~1.25rem hota hai */
+  }
+
+  .memory-cards p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  /* Main section heading */
+  .lifestyle-sec-heading {
+    font-size: 1.8rem;
+  }
+
+  /* 5-Minute Daily Memory Hack heading */
+  .skill-heading {
+    font-size: 1.3rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+  /* ===== Responsive Adjustments ===== */
+@media (max-width: 992px) {
+  /* Hero section */
+  .smart-hero {
+    height: 550px; /* slightly smaller for tablets */
+  }
+  .smart-hero .btn {
+    padding: 8px 25px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Hero section for small devices */
+  .smart-hero {
+    height: 500px;
+  }
+  /* Headings */
+  .lifestyle-sec-heading {
+    font-size: 2rem;
+  }
+  .tip-title {
+    font-size: 1.1rem;
+  }
+  /* Buttons */
+  .smart-hero .btn,
+  .download-btn {
+    padding: 6px 20px;
+    font-size: 0.9rem;
+  }
+  /* Memory card text */
+  .memory-cards {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Hero section for mobile */
+  .smart-hero {
+    height: 450px;
+  }
+  /* Headings */
+  .lifestyle-sec-heading {
+    font-size: 1.5rem;
+  }
+  .tip-title {
+    font-size: 1rem;
+  }
+  /* Buttons */
+  .smart-hero .btn,
+  .download-btn {
+    padding: 5px 15px;
+    font-size: 0.85rem;
+  }
+  /* Modal adjustments */
+  .auth-box {
+    width: 90%;
+    padding: 20px 15px;
+  }
+  .auth-box label {
+    font-size: 10px;
+    top: 10px;
+  }
+  .auth-box input {
+    padding: 10px;
+  }
+  .auth-box button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  /* Tip card adjustments */
+  .tip-card {
+    padding: 20px;
+  }
+  /* Memory cards */
+  .memory-cards {
+    padding: 15px;
+  }
+}
+/* Modal adjustments for small devices */
+@media (max-width: 576px) {
+  .auth-box {
+    padding: 20px 25px; /* smaller padding */
+    max-width: 90%; /* fit better on small screens */
+  }
+
+  .auth-text {
+    font-size: 12px; /* smaller intro text */
+  }
+
+  .success-message {
+    font-size: 13px; 
+    padding: 15px;
+  }
+
+  .auth-box label {
+    font-size: 10px;
+    top: 8px; /* adjust label position */
+  }
+
+  .auth-box input {
+    font-size: 0.85rem; /* smaller text inside input */
+    padding: 8px 10px;   /* smaller height */
+  }
+
+  .auth-box input::placeholder {
+    font-size: 0.8rem; /* smaller placeholder text */
+  }
+
+  .auth-box button {
+    font-size: 0.85rem; 
+    padding: 8px 15px;
+  }
+
+  .close-auth {
+    font-size: 20px; /* smaller close button */
+  }
+}
+table a{
+  color: #1e1e1e!important;
+  font-weight: 700;
+}
+table a:hover{
+  color:rgb(208,167,90)!important;
+  font-weight: 700;
+}
+.note-card-item i ,.note-card-item button{
+  color: rgb(208,167,90)!important;
+
+}#notes-search {
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+}
+.smart-hero{
+  position: relative;
+  min-height: 616px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* HERO IMAGE */
+.smart-hero-img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* DARK OVERLAY */
+.smart-hero-overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 1;
+}
+
+/* CONTENT ABOVE */
+.smart-hero-content{
+  position: relative;
+  z-index: 2;
+}
+
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" alt="Logo" class="logo img-fluid">
+      </a>
+
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <!-- </div> -->
+    <div class="collapse navbar-collapse mt-1 mt-lg-0" id="mainNavbar">
+      <ul class="navbar-nav ms-auto">
+        
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="fa-solid fa-house me-1" id="nav-icon"></i>home
+          </a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="lifestyleDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-bolt me-1" id="nav-icon"></i>Lifestyle
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="lifestyleDropdown">
+            <li><a class="dropdown-item" href="lifestyle.html#mental-wellness">Mental Wellness</a></li>
+            <li><a class="dropdown-item" href="lifestyle.html#productivity-habits">Productivity Habits</a></li>
+            <li><a class="dropdown-item" href="lifestyle.html#time-management">Time Management</a></li>
+            <li><a class="dropdown-item" href="lifestyle.html#daily-routine">Daily Routines</a></li>
+            <li><a class="dropdown-item" href="lifestyle.html#stress-relief">Stress Relief</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle " href="#" id="smartStudiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-book me-1" id="nav-icon"></i>Smart Studies
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="smartStudiesDropdown">
+            <li><a class="dropdown-item" href="smart-studies.html#study-notes">Study Notes</a></li>
+            <li><a class="dropdown-item" href="smart-studies.html#past-papers">Past Papers</a></li>
+            <li><a class="dropdown-item" href="smart-studies.html#exam-tricks">Exam Tricks</a></li>
+            <li><a class="dropdown-item" href="smart-studies.html#memory-boost">Memory Boost</a></li>
+
+          </ul>
+        </li>
+        
+        <li class="nav-item ">
+          <a class="nav-link" href="tech.html">
+            <i class="fa-solid fa-code me-1" id="nav-icon"></i>Tech Skills
+          </a>
+        </li>
+        
+        <li class="nav-item ">
+          <a class="nav-link" href="career.html">
+            <i class="fa-solid fa-graduation-cap me-1" id="nav-icon"></i>Career Hub
+          </a>
+        </li>
+        
+        <li class="nav-item ">
+          <a class="nav-link" href="soft-edge.html">
+            <i class="fa-brands fa-bluesky me-1" id="nav-icon"></i>Soft Edge
+          </a>
+        </li>
+        
+        <li class="nav-item ">
+          <a class="nav-link" href="contact.html">
+            <i class="fa-solid fa-lightbulb me-1" id="nav-icon"></i>Contact Us
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+
+  </div>
+</nav>
+<section class="smart-hero text-center">
+
+  <!-- HERO IMAGE -->
+  <img src="images/smart-studies.jpg" alt="Smart Studies" class="smart-hero-img">
+
+  <!-- OVERLAY -->
+  <div class="smart-hero-overlay"></div>
+
+  <!-- CONTENT -->
+  <div class="container text-white text-center smart-hero-content mt-5">
+    <h1 class="display-3 fw-bold mb-2 shadow">Smart Studies</h1>
+    <p id="typewriter" class="lead mb-4 fw-medium fst-italic"></p>
+    <a href="#study-notes" class="btn px-4 py-2 rounded-pill shadow">
+      Explore Now
+    </a>
+  </div>
+
+</section>
+
+<!-- <section class="smart-hero d-flex align-items-center justify-content-center text-center position-relative w-100  overflow-hidden">
+ <div class="container text-white text-center z-2 position-relative mt-5">
+  <h1 class="display-3 fw-bold mb-2 shadow">Smart Studies</h1>
+  <p id="typewriter" class="lead mb-4 fw-medium s fst-italic">
+  </p>
+  <a href="#study-notes" class="btn px-4 py-2 rounded-pill shadow">Explore Now</a>
+</div>
+
+</section>         -->
+<script>
+  const text = "Boost your memory. Crack exams smarter. Learn with purpose.";
+  let i = 0;
+  const speed = 50;
+  function typeWriter() {
+    if (i < text.length) {
+      document.getElementById("typewriter").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+ document.addEventListener("DOMContentLoaded", typeWriter);
+
+</script>
+<section id="study-notes" class="py-5">
+  <div class="container py-5">
+    <h2 class="skill-heading text-center fw-bold mb-5"> Study Notes</h2>
+    <!-- 🔍 Search bar -->
+    <div class="d-flex justify-content-center mb-5">
+      <input type="text" id="notes-search" class="form-control w-50 rounded-pill px-4 py-2" placeholder="Need notes? Begin with a subject — we’ll handle the rest">
+    </div>
+    <div class="row g-4" id="notes-grid">
+      <!-- Math -->
+      <div class="col-md-4 note-card-item" >
+        <div class="note-card p-4 shadow rounded-4 text-center h-100">
+          <div class="note-icon mb-3"><i class="fas fa-square-root-alt fa-2x" style="color:  rgb(214,178,82);"></i></div>
+          <h5 class="fw-semibold mb-2 subject-name">Math Notes</h5>
+          <p class="text-muted">Master formulas, tricks, and past paper methods to ace problem-solving.</p>
+          <button class="btn download-btn mt-3" onclick="openAuthModal('Math')">
+            <i class="fas fa-download me-2"></i>Download PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- English -->
+      <div class="col-md-4 note-card-item">
+        <div class="note-card p-4 shadow rounded-4 text-center h-100">
+          <div class="note-icon mb-3"><i class="fas fa-book-open fa-2x"style="color:  rgb(214,178,82);"></i></div>
+          <h5 class="fw-semibold mb-2 subject-name">English Notes</h5>
+          <p class="text-muted">Grammar, comprehension techniques, and essay writing frameworks.</p>
+          <button class="btn download-btn mt-3" onclick="openAuthModal('English')">
+            <i class="fas fa-download me-2"></i>Download PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- Physics -->
+      <div class="col-md-4 note-card-item">
+        <div class="note-card p-4 shadow rounded-4 text-center h-100">
+          <div class="note-icon mb-3"><i class="fas fa-atom fa-2x" style="color:  rgb(214,178,82);"></i></div>
+          <h5 class="fw-semibold mb-2 subject-name">Physics Notes</h5>
+          <p class="text-muted">Conceptual summaries with solved numericals and formulas explained.</p>
+          <button class="btn download-btn mt-3" onclick="openAuthModal('Physics')">
+            <i class="fas fa-download me-2"></i>Download PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- Chemistry -->
+      <div class="col-md-4 note-card-item" >
+        <div class="note-card p-4 shadow rounded-4 text-center h-100">
+          <div class="note-icon mb-3"><i class="fas fa-vials fa-2x" style="color:  rgb(214,178,82);"></i></div>
+          <h5 class="fw-semibold mb-2 subject-name">Chemistry Notes</h5>
+          <p class="text-muted">Reaction mechanisms, balancing equations, and practical tips.</p>
+          <button class="btn download-btn mt-3" onclick="openAuthModal('Chemistry')">
+            <i class="fas fa-download me-2"></i>Download PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- Biology -->
+      <div class="col-md-4 note-card-item" >
+        <div class="note-card p-4 shadow rounded-4 text-center h-100">
+          <div class="note-icon mb-3"><i class="fas fa-dna fa-2x"style="color:  rgb(214,178,82);"></i></div>
+          <h5 class="fw-semibold mb-2 subject-name">Biology Notes</h5>
+          <p class="text-muted">Diagrams, explanations, and key biological processes simplified.</p>
+          <button class="btn download-btn mt-3" onclick="openAuthModal('Biology')">
+            <i class="fas fa-download me-2"></i>Download PDF
+          </button>
+        </div>
+      </div>
+      <!-- Urdu -->
+      <div class="col-md-4 note-card-item" >
+        <div class="note-card p-4 shadow rounded-4 text-center h-100">
+          <div class="note-icon mb-3"><i class="fas fa-language fa-2x" style="color: rgb(214,178,82);"></i></div>
+          <h5 class="fw-semibold mb-2 subject-name">Urdu Notes</h5>
+          <p class="text-muted">Poetry, prose summaries, grammar rules, and important questions.</p>
+          <button class="btn download-btn mt-3" onclick="openAuthModal('Urdu')">
+            <i class="fas fa-download me-2"></i>Download PDF
+          </button>
+        </div>
+      </div>
+
+<!-- Computer -->
+      <div class="col-md-4 note-card-item" >
+        <div class="note-card p-4 shadow rounded-4 text-center h-100">
+          <div class="note-icon mb-3"><i class="fas fa-laptop-code fa-2x" style="color: rgb(214,178,82);"></i></div>
+          <h5 class="fw-semibold mb-2 subject-name">Computer Notes</h5>
+          <p class="text-muted">Programming basics, flowcharts, and system concepts clearly explained.</p>
+          <button class="btn download-btn mt-3" onclick="openAuthModal('Computer')">
+            <i class="fas fa-download me-2"></i>Download PDF
+          </button>
+        </div>
+      </div>
+
+<!-- Islamiat -->
+      <div class="col-md-4 note-card-item" >
+        <div class="note-card p-4 shadow rounded-4 text-center h-100">
+          <div class="note-icon mb-3"><i class="fas fa-mosque fa-2x" style="color: rgb(214,178,82);"></i></div>
+          <h5 class="fw-semibold mb-2 subject-name">Islamiat Notes</h5>
+          <p class="text-muted">Ahadith, Quranic verses, and life of the Prophet summarized.</p>
+          <button class="btn download-btn mt-3" onclick="openAuthModal('Islamiat')">
+            <i class="fas fa-download me-2"></i>Download PDF
+          </button>
+        </div>
+      </div>
+
+<!-- Social Studies -->
+      <div class="col-md-4 note-card-item" >
+        <div class="note-card p-4 shadow rounded-4 text-center h-100">
+          <div class="note-icon mb-3"><i class="fas fa-globe-asia fa-2x" style="color: rgb(214,178,82);"></i></div>
+          <h5 class="fw-semibold mb-2 subject-name">Social Studies Notes</h5>
+          <p class="text-muted">History, geography, and civics explained with timelines and maps.</p>
+          <button class="btn download-btn mt-3" onclick="openAuthModal('Social Studies')">
+            <i class="fas fa-download me-2"></i>Download PDF
+          </button>
+        </div>
+      </div>
+
+<!-- Sindhi -->
+      <div class="col-md-4 note-card-item" >
+        <div class="note-card p-4 shadow rounded-4 text-center h-100">
+          <div class="note-icon mb-3"><i class="fas fa-pen-nib fa-2x" style="color: rgb(214,178,82);"></i></div>
+          <h5 class="fw-semibold mb-2 subject-name">Sindhi Notes</h5>
+          <p class="text-muted">Literature, essays, and grammar topics simplified for quick understanding.</p>
+          <button class="btn download-btn mt-3" onclick="openAuthModal('Sindhi')">
+            <i class="fas fa-download me-2"></i>Download PDF
+          </button>
+        </div>
+      </div>
+
+<!-- General Science -->
+      <div class="col-md-4 note-card-item" >
+        <div class="note-card p-4 shadow rounded-4 text-center h-100">
+          <div class="note-icon mb-3"><i class="fas fa-atom fa-2x" style="color: rgb(214,178,82);"></i></div>
+          <h5 class="fw-semibold mb-2 subject-name">General Science Notes</h5>
+          <p class="text-muted">Core science topics from everyday chemistry, physics, and biology.</p>
+          <button class="btn download-btn mt-3" onclick="openAuthModal('General Science')">
+            <i class="fas fa-download me-2"></i>Download PDF
+          </button>
+        </div>
+      </div>
+
+<!-- Environmental Management -->
+<div class="col-md-4 note-card-item" >
+  <div class="note-card p-4 shadow rounded-4 text-center h-100">
+    <div class="note-icon mb-3"><i class="fas fa-leaf fa-2x" style="color: rgb(214,178,82);"></i></div>
+    <h5 class="fw-semibold mb-2 subject-name">Environmental Management</h5>
+    <p class="text-muted">Ecosystems, sustainability, and human-environment interactions explained.</p>
+    <button class="btn download-btn mt-3" onclick="openAuthModal('Environmental Management')">
+      <i class="fas fa-download me-2"></i>Download PDF
+    </button>
+  </div>
+</div>
+
+<!-- Economics -->
+<div class="col-md-4 note-card-item" >
+  <div class="note-card p-4 shadow rounded-4 text-center h-100">
+    <div class="note-icon mb-3"><i class="fas fa-chart-line fa-2x" style="color: rgb(214,178,82);"></i></div>
+    <h5 class="fw-semibold mb-2 subject-name">Economics Notes</h5>
+    <p class="text-muted">Graphs, key terms, and real-world examples of economic principles.</p>
+    <button class="btn download-btn mt-3" onclick="openAuthModal('Economics')">
+      <i class="fas fa-download me-2"></i>Download PDF
+    </button>
+  </div>
+</div>
+
+<!-- Business Studies -->
+<div class="col-md-4 note-card-item" >
+  <div class="note-card p-4 shadow rounded-4 text-center h-100">
+    <div class="note-icon mb-3"><i class="fas fa-briefcase fa-2x" style="color: rgb(214,178,82);"></i></div>
+    <h5 class="fw-semibold mb-2 subject-name">Business Studies</h5>
+    <p class="text-muted">Business concepts, case studies, and exam-focused strategies.</p>
+    <button class="btn download-btn mt-3" onclick="openAuthModal('Business Studies')">
+      <i class="fas fa-download me-2"></i>Download PDF
+    </button>
+  </div>
+</div>
+
+<!-- Accounting -->
+      <div class="col-md-4 note-card-item" >
+        <div class="note-card p-4 shadow rounded-4 text-center h-100">
+          <div class="note-icon mb-3"><i class="fas fa-file-invoice-dollar fa-2x" style="color: rgb(214,178,82);"></i></div>
+          <h5 class="fw-semibold mb-2 subject-name">Accounting Notes</h5>
+          <p class="text-muted">Double-entry bookkeeping, trial balances, and financial statements.</p>
+          <button class="btn download-btn mt-3" onclick="openAuthModal('Accounting')">
+            <i class="fas fa-download me-2"></i>Download PDF
+          </button>
+        </div>
+      </div>
+
+<!-- History -->
+      <div class="col-md-4 note-card-item" >
+        <div class="note-card p-4 shadow rounded-4 text-center h-100">
+          <div class="note-icon mb-3"><i class="fas fa-landmark fa-2x" style="color: rgb(214,178,82);"></i></div>
+          <h5 class="fw-semibold mb-2 subject-name">History Notes</h5>
+          <p class="text-muted">Chronological events, personalities, and historical timelines.</p>
+          <button class="btn download-btn mt-3" onclick="openAuthModal('History')">
+            <i class="fas fa-download me-2"></i>Download PDF
+          </button>
+        </div>
+      </div>
+
+<!-- Geography -->
+      <div class="col-md-4 note-card-item" >
+        <div class="note-card p-4 shadow rounded-4 text-center h-100">
+          <div class="note-icon mb-3"><i class="fas fa-globe-asia fa-2x" style="color: rgb(214,178,82);"></i></div>
+          <h5 class="fw-semibold mb-2 subject-name">Geography Notes</h5>
+          <p class="text-muted">Maps, regions, climate, and global interdependence topics.</p>
+          <button class="btn download-btn mt-3" onclick="openAuthModal('Geography')">
+            <i class="fas fa-download me-2"></i>Download PDF
+          </button>
+        </div>
+      </div>
+<!-- ICT -->
+      <div class="col-md-4 note-card-item" >
+        <div class="note-card p-4 shadow rounded-4 text-center h-100">
+          <div class="note-icon mb-3"><i class="fas fa-desktop fa-2x" style="color: rgb(214,178,82);"></i></div>
+          <h5 class="fw-semibold mb-2 subject-name">ICT Notes</h5>
+          <p class="text-muted">Spreadsheets, networks, databases, and communication systems.</p>
+          <button class="btn download-btn mt-3" onclick="openAuthModal('ICT')">
+            <i class="fas fa-download me-2"></i>Download PDF
+          </button>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+  <div id="no-results-message" class="text-center d-none ">
+    <i class="fas fa-exclamation-circle me-2 text-danger"></i><p>No matching subjects found.</p>
+</div>
+
+
+  <!-- Popup Notification -->
+  <div id="popup-notification" class="popup-top">Your notes have been downloaded</div>
+</section>
+<section id="past-papers" class="past-papers py-5">
+<h2 class="skill-heading text-center fw-bold mb-5" > Past Papers</h2>
+<div class="container">
+  <div class="row d-flex align-items-center">
+
+    <div class="class col-md-6">
+      <h3 class="mb-4 mt-3" style="border-bottom:3px solid rgb(208,167,90); ">Class 9th</h3>
+      <table>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>English</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/english.pdf" download>2015 | </a>
+    <a href="past_papers/english.pdf" download>2016 | </a>
+    <a href="past_papers/english.pdf" download>2017 | </a>
+    <a href="past_papers/english.pdf" download>2018 | </a>
+    <a href="past_papers/english.pdf" download>2019 | </a>
+    <a href="past_papers/english.pdf" download>2020 | </a>
+    <a href="past_papers/english.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/english.pdf" download>2022 | </a>
+    <a href="past_papers/english.pdf" download>2023 | </a>
+    <a href="past_papers/english.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Urdu</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/urdu.pdf" download>2015 | </a>
+    <a href="past_papers/urdu.pdf" download>2016 | </a>
+    <a href="past_papers/urdu.pdf" download>2017 | </a>
+    <a href="past_papers/urdu.pdf" download>2018 | </a>
+    <a href="past_papers/urdu.pdf" download>2019 | </a>
+    <a href="past_papers/urdu.pdf" download>2020 | </a>
+    <a href="past_papers/urdu.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/urdu.pdf" download>2022 | </a>
+    <a href="past_papers/urdu.pdf" download>2023 | </a>
+    <a href="past_papers/urdu.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Sindhi</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/sindhi.pdf" download>2015 | </a>
+    <a href="past_papers/sindhi.pdf" download>2016 | </a>
+    <a href="past_papers/sindhi.pdf" download>2017 | </a>
+    <a href="past_papers/sindhi.pdf" download>2018 | </a>
+    <a href="past_papers/sindhi.pdf" download>2019 | </a>
+    <a href="past_papers/sindhi.pdf" download>2020 | </a>
+    <a href="past_papers/sindhi.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/sindhi.pdf" download>2022 | </a>
+    <a href="past_papers/sindhi.pdf" download>2023 | </a>
+    <a href="past_papers/sindhi.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Islamiat</td>
+   <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/islamiat.pdf" download>2015 | </a>
+    <a href="past_papers/islamiat.pdf" download>2016 | </a>
+    <a href="past_papers/islamiat.pdf" download>2017 | </a>
+    <a href="past_papers/islamiat.pdf" download>2018 | </a>
+    <a href="past_papers/islamiat.pdf" download>2019 | </a>
+    <a href="past_papers/islamiat.pdf" download>2020 | </a>
+    <a href="past_papers/islamiat.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/islamiat.pdf" download>2022 | </a>
+    <a href="past_papers/islamiat.pdf" download>2023 | </a>
+    <a href="past_papers/islamiat.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>PST</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/pst.pdf" download>2015 | </a>
+    <a href="past_papers/pst.pdf" download>2016 | </a>
+    <a href="past_papers/pst.pdf" download>2017 | </a>
+    <a href="past_papers/pst.pdf" download>2018 | </a>
+    <a href="past_papers/pst.pdf" download>2019 | </a>
+    <a href="past_papers/pst.pdf" download>2020 | </a>
+    <a href="past_papers/pst.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/pst.pdf" download>2022 | </a>
+    <a href="past_papers/pst.pdf" download>2023 | </a>
+    <a href="past_papers/pst.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Physics</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/physics.pdf" download>2015 | </a>
+    <a href="past_papers/physics.pdf" download>2016 | </a>
+    <a href="past_papers/physics.pdf" download>2017 | </a>
+    <a href="past_papers/physics.pdf" download>2018 | </a>
+    <a href="past_papers/physics.pdf" download>2019 | </a>
+    <a href="past_papers/physics.pdf" download>2020 | </a>
+    <a href="past_papers/physics.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/physics.pdf" download>2022 | </a>
+    <a href="past_papers/physics.pdf" download>2023 | </a>
+    <a href="past_papers/physics.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Mathematics</td>
+   <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/maths.pdf" download>2015 | </a>
+    <a href="past_papers/maths.pdf" download>2016 | </a>
+    <a href="past_papers/maths.pdf" download>2017 | </a>
+    <a href="past_papers/maths.pdf" download>2018 | </a>
+    <a href="past_papers/maths.pdf" download>2019 | </a>
+    <a href="past_papers/maths.pdf" download>2020 | </a>
+    <a href="past_papers/maths.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/maths.pdf" download>2022 | </a>
+    <a href="past_papers/maths.pdf" download>2023 | </a>
+    <a href="past_papers/maths.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Chemistry</td>
+   <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/chemistry.pdf" download>2015 | </a>
+    <a href="past_papers/chemistry.pdf" download>2016 | </a>
+    <a href="past_papers/chemistry.pdf" download>2017 | </a>
+    <a href="past_papers/chemistry.pdf" download>2018 | </a>
+    <a href="past_papers/chemistry.pdf" download>2019 | </a>
+    <a href="past_papers/chemistry.pdf" download>2020 | </a>
+    <a href="past_papers/chemistry.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/chemistry.pdf" download>2022 | </a>
+    <a href="past_papers/chemistry.pdf" download>2023 | </a>
+    <a href="past_papers/chemistry.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Biology</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/biology.pdf" download>2015 | </a>
+    <a href="past_papers/biology.pdf" download>2016 | </a>
+    <a href="past_papers/biology.pdf" download>2017 | </a>
+    <a href="past_papers/biology.pdf" download>2018 | </a>
+    <a href="past_papers/biology.pdf" download>2019 | </a>
+    <a href="past_papers/biology.pdf" download>2020 | </a>
+    <a href="past_papers/biology.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/biology.pdf" download>2022 | </a>
+    <a href="past_papers/biology.pdf" download>2023 | </a>
+    <a href="past_papers/biology.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Computer</td>
+   <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/computer.pdf" download>2015 | </a>
+    <a href="past_papers/computer.pdf" download>2016 | </a>
+    <a href="past_papers/computer.pdf" download>2017 | </a>
+    <a href="past_papers/computer.pdf" download>2018 | </a>
+    <a href="past_papers/computer.pdf" download>2019 | </a>
+    <a href="past_papers/computer.pdf" download>2020 | </a>
+    <a href="past_papers/computer.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/computer.pdf" download>2022 | </a>
+    <a href="past_papers/computer.pdf" download>2023 | </a>
+    <a href="past_papers/computer.pdf" download>2024</a> </td>
+  </tr>
+      </table>
+    </div>
+    <div class="class col-md-6">
+      <h3 class="mb-4 mt-3" style="border-bottom:3px solid  rgb(208,167,90); ">Class 10th</h3>
+        <table>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>English</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/english.pdf" download>2015 | </a>
+    <a href="past_papers/english.pdf" download>2016 | </a>
+    <a href="past_papers/english.pdf" download>2017 | </a>
+    <a href="past_papers/english.pdf" download>2018 | </a>
+    <a href="past_papers/english.pdf" download>2019 | </a>
+    <a href="past_papers/english.pdf" download>2020 | </a>
+    <a href="past_papers/english.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/english.pdf" download>2022 | </a>
+    <a href="past_papers/english.pdf" download>2023 | </a>
+    <a href="past_papers/english.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Urdu</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/urdu.pdf" download>2015 | </a>
+    <a href="past_papers/urdu.pdf" download>2016 | </a>
+    <a href="past_papers/urdu.pdf" download>2017 | </a>
+    <a href="past_papers/urdu.pdf" download>2018 | </a>
+    <a href="past_papers/urdu.pdf" download>2019 | </a>
+    <a href="past_papers/urdu.pdf" download>2020 | </a>
+    <a href="past_papers/urdu.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/urdu.pdf" download>2022 | </a>
+    <a href="past_papers/urdu.pdf" download>2023 | </a>
+    <a href="past_papers/urdu.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Sindhi</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/sindhi.pdf" download>2015 | </a>
+    <a href="past_papers/sindhi.pdf" download>2016 | </a>
+    <a href="past_papers/sindhi.pdf" download>2017 | </a>
+    <a href="past_papers/sindhi.pdf" download>2018 | </a>
+    <a href="past_papers/sindhi.pdf" download>2019 | </a>
+    <a href="past_papers/sindhi.pdf" download>2020 | </a>
+    <a href="past_papers/sindhi.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/sindhi.pdf" download>2022 | </a>
+    <a href="past_papers/sindhi.pdf" download>2023 | </a>
+    <a href="past_papers/sindhi.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Islamiat</td>
+   <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/islamiat.pdf" download>2015 | </a>
+    <a href="past_papers/islamiat.pdf" download>2016 | </a>
+    <a href="past_papers/islamiat.pdf" download>2017 | </a>
+    <a href="past_papers/islamiat.pdf" download>2018 | </a>
+    <a href="past_papers/islamiat.pdf" download>2019 | </a>
+    <a href="past_papers/islamiat.pdf" download>2020 | </a>
+    <a href="past_papers/islamiat.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/islamiat.pdf" download>2022 | </a>
+    <a href="past_papers/islamiat.pdf" download>2023 | </a>
+    <a href="past_papers/islamiat.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>PST</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/pst.pdf" download>2015 | </a>
+    <a href="past_papers/pst.pdf" download>2016 | </a>
+    <a href="past_papers/pst.pdf" download>2017 | </a>
+    <a href="past_papers/pst.pdf" download>2018 | </a>
+    <a href="past_papers/pst.pdf" download>2019 | </a>
+    <a href="past_papers/pst.pdf" download>2020 | </a>
+    <a href="past_papers/pst.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/pst.pdf" download>2022 | </a>
+    <a href="past_papers/pst.pdf" download>2023 | </a>
+    <a href="past_papers/pst.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Physics</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/physics.pdf" download>2015 | </a>
+    <a href="past_papers/physics.pdf" download>2016 | </a>
+    <a href="past_papers/physics.pdf" download>2017 | </a>
+    <a href="past_papers/physics.pdf" download>2018 | </a>
+    <a href="past_papers/physics.pdf" download>2019 | </a>
+    <a href="past_papers/physics.pdf" download>2020 | </a>
+    <a href="past_papers/physics.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/physics.pdf" download>2022 | </a>
+    <a href="past_papers/physics.pdf" download>2023 | </a>
+    <a href="past_papers/physics.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Mathematics</td>
+   <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/maths.pdf" download>2015 | </a>
+    <a href="past_papers/maths.pdf" download>2016 | </a>
+    <a href="past_papers/maths.pdf" download>2017 | </a>
+    <a href="past_papers/maths.pdf" download>2018 | </a>
+    <a href="past_papers/maths.pdf" download>2019 | </a>
+    <a href="past_papers/maths.pdf" download>2020 | </a>
+    <a href="past_papers/maths.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/maths.pdf" download>2022 | </a>
+    <a href="past_papers/maths.pdf" download>2023 | </a>
+    <a href="past_papers/maths.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Chemistry</td>
+   <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/chemistry.pdf" download>2015 | </a>
+    <a href="past_papers/chemistry.pdf" download>2016 | </a>
+    <a href="past_papers/chemistry.pdf" download>2017 | </a>
+    <a href="past_papers/chemistry.pdf" download>2018 | </a>
+    <a href="past_papers/chemistry.pdf" download>2019 | </a>
+    <a href="past_papers/chemistry.pdf" download>2020 | </a>
+    <a href="past_papers/chemistry.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/chemistry.pdf" download>2022 | </a>
+    <a href="past_papers/chemistry.pdf" download>2023 | </a>
+    <a href="past_papers/chemistry.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Biology</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/biology.pdf" download>2015 | </a>
+    <a href="past_papers/biology.pdf" download>2016 | </a>
+    <a href="past_papers/biology.pdf" download>2017 | </a>
+    <a href="past_papers/biology.pdf" download>2018 | </a>
+    <a href="past_papers/biology.pdf" download>2019 | </a>
+    <a href="past_papers/biology.pdf" download>2020 | </a>
+    <a href="past_papers/biology.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/biology.pdf" download>2022 | </a>
+    <a href="past_papers/biology.pdf" download>2023 | </a>
+    <a href="past_papers/biology.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Computer</td>
+   <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/computer.pdf" download>2015 | </a>
+    <a href="past_papers/computer.pdf" download>2016 | </a>
+    <a href="past_papers/computer.pdf" download>2017 | </a>
+    <a href="past_papers/computer.pdf" download>2018 | </a>
+    <a href="past_papers/computer.pdf" download>2019 | </a>
+    <a href="past_papers/computer.pdf" download>2020 | </a>
+    <a href="past_papers/computer.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/computer.pdf" download>2022 | </a>
+    <a href="past_papers/computer.pdf" download>2023 | </a>
+    <a href="past_papers/computer.pdf" download>2024</a> </td>
+  </tr>
+      </table>
+    </div>
+
+    
+
+  </div>
+</div>
+<div class="container mt-5">
+  <div class="row d-flex align-items-center">
+
+    <div class="class col-md-6">
+      <h3 class="mb-4 mt-3" style="border-bottom:3px solid rgb(208,167,90); ">Class 11th</h3>
+  <table>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>English</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/english.pdf" download>2015 | </a>
+    <a href="past_papers/english.pdf" download>2016 | </a>
+    <a href="past_papers/english.pdf" download>2017 | </a>
+    <a href="past_papers/english.pdf" download>2018 | </a>
+    <a href="past_papers/english.pdf" download>2019 | </a>
+    <a href="past_papers/english.pdf" download>2020 | </a>
+    <a href="past_papers/english.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/english.pdf" download>2022 | </a>
+    <a href="past_papers/english.pdf" download>2023 | </a>
+    <a href="past_papers/english.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Urdu</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/urdu.pdf" download>2015 | </a>
+    <a href="past_papers/urdu.pdf" download>2016 | </a>
+    <a href="past_papers/urdu.pdf" download>2017 | </a>
+    <a href="past_papers/urdu.pdf" download>2018 | </a>
+    <a href="past_papers/urdu.pdf" download>2019 | </a>
+    <a href="past_papers/urdu.pdf" download>2020 | </a>
+    <a href="past_papers/urdu.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/urdu.pdf" download>2022 | </a>
+    <a href="past_papers/urdu.pdf" download>2023 | </a>
+    <a href="past_papers/urdu.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Sindhi</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/sindhi.pdf" download>2015 | </a>
+    <a href="past_papers/sindhi.pdf" download>2016 | </a>
+    <a href="past_papers/sindhi.pdf" download>2017 | </a>
+    <a href="past_papers/sindhi.pdf" download>2018 | </a>
+    <a href="past_papers/sindhi.pdf" download>2019 | </a>
+    <a href="past_papers/sindhi.pdf" download>2020 | </a>
+    <a href="past_papers/sindhi.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/sindhi.pdf" download>2022 | </a>
+    <a href="past_papers/sindhi.pdf" download>2023 | </a>
+    <a href="past_papers/sindhi.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Islamiat</td>
+   <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/islamiat.pdf" download>2015 | </a>
+    <a href="past_papers/islamiat.pdf" download>2016 | </a>
+    <a href="past_papers/islamiat.pdf" download>2017 | </a>
+    <a href="past_papers/islamiat.pdf" download>2018 | </a>
+    <a href="past_papers/islamiat.pdf" download>2019 | </a>
+    <a href="past_papers/islamiat.pdf" download>2020 | </a>
+    <a href="past_papers/islamiat.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/islamiat.pdf" download>2022 | </a>
+    <a href="past_papers/islamiat.pdf" download>2023 | </a>
+    <a href="past_papers/islamiat.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>PST</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/pst.pdf" download>2015 | </a>
+    <a href="past_papers/pst.pdf" download>2016 | </a>
+    <a href="past_papers/pst.pdf" download>2017 | </a>
+    <a href="past_papers/pst.pdf" download>2018 | </a>
+    <a href="past_papers/pst.pdf" download>2019 | </a>
+    <a href="past_papers/pst.pdf" download>2020 | </a>
+    <a href="past_papers/pst.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/pst.pdf" download>2022 | </a>
+    <a href="past_papers/pst.pdf" download>2023 | </a>
+    <a href="past_papers/pst.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Physics</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/physics.pdf" download>2015 | </a>
+    <a href="past_papers/physics.pdf" download>2016 | </a>
+    <a href="past_papers/physics.pdf" download>2017 | </a>
+    <a href="past_papers/physics.pdf" download>2018 | </a>
+    <a href="past_papers/physics.pdf" download>2019 | </a>
+    <a href="past_papers/physics.pdf" download>2020 | </a>
+    <a href="past_papers/physics.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/physics.pdf" download>2022 | </a>
+    <a href="past_papers/physics.pdf" download>2023 | </a>
+    <a href="past_papers/physics.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Mathematics</td>
+   <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/maths.pdf" download>2015 | </a>
+    <a href="past_papers/maths.pdf" download>2016 | </a>
+    <a href="past_papers/maths.pdf" download>2017 | </a>
+    <a href="past_papers/maths.pdf" download>2018 | </a>
+    <a href="past_papers/maths.pdf" download>2019 | </a>
+    <a href="past_papers/maths.pdf" download>2020 | </a>
+    <a href="past_papers/maths.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/maths.pdf" download>2022 | </a>
+    <a href="past_papers/maths.pdf" download>2023 | </a>
+    <a href="past_papers/maths.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Chemistry</td>
+   <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/chemistry.pdf" download>2015 | </a>
+    <a href="past_papers/chemistry.pdf" download>2016 | </a>
+    <a href="past_papers/chemistry.pdf" download>2017 | </a>
+    <a href="past_papers/chemistry.pdf" download>2018 | </a>
+    <a href="past_papers/chemistry.pdf" download>2019 | </a>
+    <a href="past_papers/chemistry.pdf" download>2020 | </a>
+    <a href="past_papers/chemistry.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/chemistry.pdf" download>2022 | </a>
+    <a href="past_papers/chemistry.pdf" download>2023 | </a>
+    <a href="past_papers/chemistry.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Biology</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/biology.pdf" download>2015 | </a>
+    <a href="past_papers/biology.pdf" download>2016 | </a>
+    <a href="past_papers/biology.pdf" download>2017 | </a>
+    <a href="past_papers/biology.pdf" download>2018 | </a>
+    <a href="past_papers/biology.pdf" download>2019 | </a>
+    <a href="past_papers/biology.pdf" download>2020 | </a>
+    <a href="past_papers/biology.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/biology.pdf" download>2022 | </a>
+    <a href="past_papers/biology.pdf" download>2023 | </a>
+    <a href="past_papers/biology.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Computer</td>
+   <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/computer.pdf" download>2015 | </a>
+    <a href="past_papers/computer.pdf" download>2016 | </a>
+    <a href="past_papers/computer.pdf" download>2017 | </a>
+    <a href="past_papers/computer.pdf" download>2018 | </a>
+    <a href="past_papers/computer.pdf" download>2019 | </a>
+    <a href="past_papers/computer.pdf" download>2020 | </a>
+    <a href="past_papers/computer.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/computer.pdf" download>2022 | </a>
+    <a href="past_papers/computer.pdf" download>2023 | </a>
+    <a href="past_papers/computer.pdf" download>2024</a> </td>
+  </tr>
+      </table>
+    </div>
+    <div class="class col-md-6">
+      <h3 class="mb-4 mt-3" style="border-bottom:3px solid  rgb(208,167,90); ">Class 12th</h3>
+  <table>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>English</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/english.pdf" download>2015 | </a>
+    <a href="past_papers/english.pdf" download>2016 | </a>
+    <a href="past_papers/english.pdf" download>2017 | </a>
+    <a href="past_papers/english.pdf" download>2018 | </a>
+    <a href="past_papers/english.pdf" download>2019 | </a>
+    <a href="past_papers/english.pdf" download>2020 | </a>
+    <a href="past_papers/english.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/english.pdf" download>2022 | </a>
+    <a href="past_papers/english.pdf" download>2023 | </a>
+    <a href="past_papers/english.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Urdu</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/urdu.pdf" download>2015 | </a>
+    <a href="past_papers/urdu.pdf" download>2016 | </a>
+    <a href="past_papers/urdu.pdf" download>2017 | </a>
+    <a href="past_papers/urdu.pdf" download>2018 | </a>
+    <a href="past_papers/urdu.pdf" download>2019 | </a>
+    <a href="past_papers/urdu.pdf" download>2020 | </a>
+    <a href="past_papers/urdu.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/urdu.pdf" download>2022 | </a>
+    <a href="past_papers/urdu.pdf" download>2023 | </a>
+    <a href="past_papers/urdu.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Sindhi</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/sindhi.pdf" download>2015 | </a>
+    <a href="past_papers/sindhi.pdf" download>2016 | </a>
+    <a href="past_papers/sindhi.pdf" download>2017 | </a>
+    <a href="past_papers/sindhi.pdf" download>2018 | </a>
+    <a href="past_papers/sindhi.pdf" download>2019 | </a>
+    <a href="past_papers/sindhi.pdf" download>2020 | </a>
+    <a href="past_papers/sindhi.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/sindhi.pdf" download>2022 | </a>
+    <a href="past_papers/sindhi.pdf" download>2023 | </a>
+    <a href="past_papers/sindhi.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Islamiat</td>
+   <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/islamiat.pdf" download>2015 | </a>
+    <a href="past_papers/islamiat.pdf" download>2016 | </a>
+    <a href="past_papers/islamiat.pdf" download>2017 | </a>
+    <a href="past_papers/islamiat.pdf" download>2018 | </a>
+    <a href="past_papers/islamiat.pdf" download>2019 | </a>
+    <a href="past_papers/islamiat.pdf" download>2020 | </a>
+    <a href="past_papers/islamiat.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/islamiat.pdf" download>2022 | </a>
+    <a href="past_papers/islamiat.pdf" download>2023 | </a>
+    <a href="past_papers/islamiat.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>PST</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/pst.pdf" download>2015 | </a>
+    <a href="past_papers/pst.pdf" download>2016 | </a>
+    <a href="past_papers/pst.pdf" download>2017 | </a>
+    <a href="past_papers/pst.pdf" download>2018 | </a>
+    <a href="past_papers/pst.pdf" download>2019 | </a>
+    <a href="past_papers/pst.pdf" download>2020 | </a>
+    <a href="past_papers/pst.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/pst.pdf" download>2022 | </a>
+    <a href="past_papers/pst.pdf" download>2023 | </a>
+    <a href="past_papers/pst.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Physics</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/physics.pdf" download>2015 | </a>
+    <a href="past_papers/physics.pdf" download>2016 | </a>
+    <a href="past_papers/physics.pdf" download>2017 | </a>
+    <a href="past_papers/physics.pdf" download>2018 | </a>
+    <a href="past_papers/physics.pdf" download>2019 | </a>
+    <a href="past_papers/physics.pdf" download>2020 | </a>
+    <a href="past_papers/physics.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/physics.pdf" download>2022 | </a>
+    <a href="past_papers/physics.pdf" download>2023 | </a>
+    <a href="past_papers/physics.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Mathematics</td>
+   <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/maths.pdf" download>2015 | </a>
+    <a href="past_papers/maths.pdf" download>2016 | </a>
+    <a href="past_papers/maths.pdf" download>2017 | </a>
+    <a href="past_papers/maths.pdf" download>2018 | </a>
+    <a href="past_papers/maths.pdf" download>2019 | </a>
+    <a href="past_papers/maths.pdf" download>2020 | </a>
+    <a href="past_papers/maths.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/maths.pdf" download>2022 | </a>
+    <a href="past_papers/maths.pdf" download>2023 | </a>
+    <a href="past_papers/maths.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Chemistry</td>
+   <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/chemistry.pdf" download>2015 | </a>
+    <a href="past_papers/chemistry.pdf" download>2016 | </a>
+    <a href="past_papers/chemistry.pdf" download>2017 | </a>
+    <a href="past_papers/chemistry.pdf" download>2018 | </a>
+    <a href="past_papers/chemistry.pdf" download>2019 | </a>
+    <a href="past_papers/chemistry.pdf" download>2020 | </a>
+    <a href="past_papers/chemistry.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/chemistry.pdf" download>2022 | </a>
+    <a href="past_papers/chemistry.pdf" download>2023 | </a>
+    <a href="past_papers/chemistry.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Biology</td>
+    <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/biology.pdf" download>2015 | </a>
+    <a href="past_papers/biology.pdf" download>2016 | </a>
+    <a href="past_papers/biology.pdf" download>2017 | </a>
+    <a href="past_papers/biology.pdf" download>2018 | </a>
+    <a href="past_papers/biology.pdf" download>2019 | </a>
+    <a href="past_papers/biology.pdf" download>2020 | </a>
+    <a href="past_papers/biology.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/biology.pdf" download>2022 | </a>
+    <a href="past_papers/biology.pdf" download>2023 | </a>
+    <a href="past_papers/biology.pdf" download>2024</a> </td>
+  </tr>
+  <tr class="d-flex">
+    <td class="d-flex me-2 p-3" style="min-width: 160px;"><i class="fa-solid fa-caret-right me-1" style="margin-top: 5px; font-size: 16px;"></i>Computer</td>
+   <td><i class="fa-solid fa-circle-down" style="font-size: 11px;"></i>
+    <a href="past_papers/computer.pdf" download>2015 | </a>
+    <a href="past_papers/computer.pdf" download>2016 | </a>
+    <a href="past_papers/computer.pdf" download>2017 | </a>
+    <a href="past_papers/computer.pdf" download>2018 | </a>
+    <a href="past_papers/computer.pdf" download>2019 | </a>
+    <a href="past_papers/computer.pdf" download>2020 | </a>
+    <a href="past_papers/computer.pdf" download>2021</a>
+    <br>
+    <a href="past_papers/computer.pdf" download>2022 | </a>
+    <a href="past_papers/computer.pdf" download>2023 | </a>
+    <a href="past_papers/computer.pdf" download>2024</a> </td>
+  </tr>
+      </table>
+    </div>
+
+    
+
+  </div>
+</div>
+
+</section>
+
+<section id="exam-tricks" class="exam-tricks-section py-5">
+  <div class="container">
+    <h2 class="text-center skill-heading mb-3" data-aos="fade-up"> Exam Tricks to Crack It Smartly</h2>
+    <p class="text-center text-muted mb-5" data-aos="fade-up" data-aos-delay="100">
+      Master these clever strategies and techniques designed to boost your performance and reduce exam stress.
+    </p>
+
+    <div class="row g-4">
+      <!-- Tip 1 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+        <div class="tip-card">
+          <i class="fas fa-stopwatch icon"></i>
+          <h5 class="tip-title">Time Block Strategy</h5>
+          <p>Allocate time per section. Avoid overthinking. Move on when time’s up!</p>
+        </div>
+      </div>
+
+      <!-- Tip 2 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="tip-card">
+          <i class="fas fa-lightbulb icon"></i>
+          <h5 class="tip-title">Mark & Move</h5>
+          <p>Skip tough MCQs, mark them, and return later to save time and stay confident.</p>
+        </div>
+      </div>
+
+      <!-- Tip 3 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
+        <div class="tip-card">
+          <i class="fas fa-brain icon"></i>
+          <h5 class="tip-title">Last-Minute Mind Maps</h5>
+          <p>Revise full topics in minutes by creating colorful mind maps the night before.</p>
+        </div>
+      </div>
+
+      <!-- Tip 4 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="tip-card">
+          <i class="fas fa-feather-alt icon"></i>
+          <h5 class="tip-title">Presentation Boost</h5>
+          <p>Write headings, underline key points, and keep neat margins. Impression matters!</p>
+        </div>
+      </div>
+
+      <!-- Tip 5 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="350">
+        <div class="tip-card">
+          <i class="fas fa-bed icon"></i>
+          <h5 class="tip-title">Sleep > Cram</h5>
+          <p>A well-rested brain performs better. Sleep at least 6–7 hours before exam day.</p>
+        </div>
+      </div>
+
+      <!-- Tip 6 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="tip-card">
+          <i class="fas fa-check-circle icon"></i>
+          <h5 class="tip-title">Answer the Easy First</h5>
+          <p>Start with questions you know well. Builds confidence and secures marks early.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Memory Boost Tips Section -->
+<section id="memory-boost" >
+  <div class="container text-center" style="max-width: 1100px; margin: auto; ">
+    <h2 class="skill-heading mb-4" data-aos="fade-up" >
+       Memory Boost Tips
+    </h2>
+    <p style="color: #5c5c5c; font-family: Poppins, sans-serif; font-size: 1.1rem; margin-bottom: 40px;" data-aos="fade-up" data-aos-delay="100">
+      Smart, practical ways to enhance your memory daily — no stress, just smart strategies.
+    </p>
+
+    <div class="tips-grid text-left" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;" >
+
+      <div class="memory-cards"  data-aos="fade-right" data-aos-delay="150">
+        <h4 style="color: #1e1e1e; font-family: 'Times New Roman', serif;">Chunking Technique</h4>
+        <p style="color: #444; font-family: Poppins, sans-serif;">Break large information into smaller “chunks” (e.g., 1947-India, 1776-USA) to retain better.</p>
+      </div>
+
+      <div class="memory-cards" data-aos="fade-left" data-aos-delay="150">
+        <h4 style="color: #1e1e1e; font-family: 'Times New Roman', serif;">Spaced Repetition</h4>
+        <p style="color: #444; font-family: Poppins, sans-serif;">Review content over increasing time gaps: 1 day, 3 days, 7 days... to lock it in.</p>
+      </div>
+
+      <div class="memory-cards" data-aos="fade-right" data-aos-delay="200">
+        <h4 style="color: #1e1e1e; font-family: 'Times New Roman', serif;">Sleep on It</h4>
+        <p style="color: #444; font-family: Poppins, sans-serif;">Study hard, then rest. Sleep solidifies new memories and sharpens recall.</p>
+      </div>
+
+      <div class="memory-cards" data-aos="fade-left" data-aos-delay="200">
+        <h4 style="color: #1e1e1e; font-family: 'Times New Roman', serif;">Recall > Re-read</h4>
+        <p style="color: #444; font-family: Poppins, sans-serif;">Try to write or speak what you remember. It boosts memory more than passive re-reading.</p>
+      </div>
+    </div>
+
+    <div style="margin-top: 40px;">
+      <a href="#memory-boost" class="btn shadow fw-bold rounded-pill" style="background-color: rgb(214,178,82); color:#1e1e1e; padding: 10px 30px;  font-family: Poppins, sans-serif; text-decoration: none; transition: 0.3s;"onclick="openAuthModal('memory-tips pdf/')">
+         Download Memory Tips PDF
+      </a>
+    </div>
+
+     <div style="margin-top: 60px;">
+
+        <h2 class="skill-heading" data-aos="zoom-in"> 5-Minute Daily Memory Hack</h2>
+        <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100">  Boost focus and recall with a simple daily practice.</p>
+      <div class="video-card main-video" data-aos="zoom-in"  data-aos-delay="200">
+      <iframe width="100%" height="300" 
+        src="https://www.youtube.com/embed/Sxbv0Vh6uT4" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+      </div>
+
+      </div>
+
+  </div><!--container-->
+</section>
+
+<div id="authModal" class="auth-modal">
+  <div class="auth-box">
+    <span class="close-auth" onclick="closeAuthModal()">×</span>
+    <p class="auth-text">
+      Please fill this form to download notes.<br>
+      <span id="registerMsg">
+        New here? Register below. Already registered?
+        <a href="#" onclick="toggleAuthForm('login')">Login here</a>.
+      </span>
+      <span id="loginMsg" style="display:none;">
+        Already have an account? Login below. New user?
+        <a href="#" onclick="toggleAuthForm('register')">Register here</a>.
+      </span>
+    </p>
+
+    <!-- Success message -->
+    <div id="successMessage" class="success-message" style="display:none;">
+      🎉 Successfully Submitted! Your download will begin shortly...
+    </div>
+
+    <!-- Register Form -->
+    <form id="registerForm" onsubmit="submitForm(event, 'register')">
+      <div class="input-group">
+        <input type="text" id="regName" placeholder="Full Name" required>
+        <label for="regName">Full Name</label>
+      </div>
+
+      <div class="input-group">
+        <input type="date" id="regBirth" required>
+        <label for="regBirth">Date of Birth</label>
+      </div>
+
+      <div class="input-group">
+        <input type="tel" id="regPhone" placeholder="03XXXXXXXXX" pattern="03[0-9]{9}" required>
+        <label for="regPhone">Phone</label>
+      </div>
+
+      <div class="input-group">
+        <input type="email" id="regEmail" placeholder="Email" required>
+        <label for="regEmail">Email</label>
+      </div>
+      <div id="regEmailError" class="error-msg"></div>
+
+      <div class="input-group">
+        <input type="password" id="regPassword" placeholder="Password" required>
+        <label for="regPassword">Password</label>
+      </div>
+      <div id="regPassError" class="error-msg"></div>
+
+      <button type="submit">Register & Download</button>
+    </form>
+
+    <!-- Login Form -->
+    <form id="loginForm" style="display:none;" onsubmit="submitForm(event, 'login')">
+      <div class="input-group">
+        <input type="email" id="loginEmail" placeholder="Email" required>
+        <label for="loginEmail">Email</label>
+      </div>
+      <div id="loginEmailError" class="error-msg"></div>
+
+      <div class="input-group">
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <label for="loginPassword">Password</label>
+      </div>
+      <div id="loginPassError" class="error-msg"></div>
+
+      <button type="submit">Login & Download</button>
+    </form>
+  </div>
+</div>
+<script>
+// --- Modal Open/Close ---
+function openAuthModal(subject) {
+  document.getElementById("authModal").style.display = "flex";
+  localStorage.setItem("requestedSubject", subject);
+}
+
+function closeAuthModal() {
+  document.getElementById("authModal").style.display = "none";
+  document.getElementById("registerForm").style.display = "flex";
+  document.getElementById("loginForm").style.display = "none";
+  document.getElementById("successMessage").style.display = "none";
+  document.getElementById("registerMsg").style.display = "inline";
+  document.getElementById("loginMsg").style.display = "none";
+}
+
+function toggleAuthForm(type) {
+  const isLogin = type === 'login';
+  document.getElementById("registerForm").style.display = isLogin ? "none" : "flex";
+  document.getElementById("loginForm").style.display = isLogin ? "flex" : "none";
+  document.getElementById("registerMsg").style.display = isLogin ? "none" : "inline";
+  document.getElementById("loginMsg").style.display = isLogin ? "inline" : "none";
+}
+
+// --- Regex Patterns ---
+const emailPattern = /^[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+const passPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_=+|?/><])[A-Za-z0-9!@#$%^&*()_=+|?/><]{8,}$/;
+
+// --- Shake Animation ---
+function shakeInput(input) {
+  input.classList.add("shake");
+  setTimeout(() => input.classList.remove("shake"), 500);
+}
+
+// --- Field Validation ---
+function validateFields(type) {
+  let isValid = true;
+  document.querySelectorAll(".error-msg").forEach(el => el.textContent = "");
+  document.querySelectorAll("input").forEach(input => input.classList.remove("input-error", "shake"));
+
+  let email, pass, emailError, passError;
+
+  if (type === "register") {
+    email = document.getElementById("regEmail");
+    pass = document.getElementById("regPassword");
+    emailError = document.getElementById("regEmailError");
+    passError = document.getElementById("regPassError");
+  } else {
+    email = document.getElementById("loginEmail");
+    pass = document.getElementById("loginPassword");
+    emailError = document.getElementById("loginEmailError");
+    passError = document.getElementById("loginPassError");
+  }
+
+  if (!emailPattern.test(email.value.trim())) {
+    email.classList.add("input-error");
+    emailError.textContent = "Invalid email format";
+    emailError.style.textAlign = "right";
+    shakeInput(email);
+    isValid = false;
+  }
+
+  if (!passPattern.test(pass.value.trim())) {
+    pass.classList.add("input-error");
+    passError.textContent = "Password must be 8+ chars, include uppercase, lowercase, number & special char";
+    shakeInput(pass);
+    isValid = false;
+  }
+
+  return isValid;
+}
+
+// --- Form Submit ---
+function submitForm(event, type) {
+  event.preventDefault();
+
+  if (!validateFields(type)) return; // stop if invalid
+
+  // Show success
+  document.getElementById("registerForm").style.display = "none";
+  document.getElementById("loginForm").style.display = "none";
+  document.getElementById("registerMsg").style.display = "none";
+  document.getElementById("loginMsg").style.display = "none";
+  document.getElementById("successMessage").style.display = "block";
+
+  // Reset form
+  document.getElementById(type === "register" ? "registerForm" : "loginForm").reset();
+
+//   setTimeout(() => {
+//     closeAuthModal();
+//     const subject = localStorage.getItem("requestedSubject");
+//     if (typeof showPopup === "function") {
+//       showPopup(subject || "Subject");
+//     }
+//     localStorage.removeItem("requestedSubject");
+//   }, 2200);
+// }
+
+setTimeout(() => {
+  closeAuthModal();
+  const subject = localStorage.getItem("requestedSubject");
+
+  // ✅ Subject → File mapping
+  const fileMap = {
+    "Math": "past_papers/Maths notes.pdf",
+    "English": "past_papers/English notes.pdf",
+    "Physics": "past_papers/Physics notes.pdf",
+    "Chemistry": "past_papers/Chemistry notes.pdf",
+    "Biology": "past_papers/Biology notes.pdf",
+    "Urdu": "past_papers/Urdu notes.pdf",
+    "Computer": "past_papers/Computer notes.pdf",
+    "Islamiat": "past_paperses/Islamiat notes.pdf",
+    "Social Studies": "past_papers/Social Studies notes.pdf",
+    "Sindhi": "past_papers/Sindhi notes.pdf",
+    "General Science": "past_papers/General Science notes.pdf",
+    "Environmental Management": "past_papers/Environmental Management notes.pdf",
+    "Economics": "past_papers/Economics notes.pdf",
+    "Business Studies": "past_papers/Business Studies notes.pdf",
+    "Accounting": "past_papers/Accounting notes.pdf",
+    "History": "past_papers/History notes.pdf",
+    "Geography": "past_papers/Geography notes.pdf",
+    "ICT": "past_papers/ICT notes.pdf"
+  };
+
+  // Pick file based on subject OR fallback
+  let fileUrl = fileMap[subject] || "past_papers/general.pdf";
+
+  // ✅ Trigger file download
+  if (fileUrl) {
+    const a = document.createElement("a");
+    a.href = fileUrl;
+    a.download = fileUrl.split("/").pop(); // downloads as maths.pdf, physics.pdf etc.
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
+  // ✅ Show your popup message
+  if (typeof showPopup === "function") {
+    showPopup(subject || "Subject");
+  }
+
+  localStorage.removeItem("requestedSubject");
+}, 2200);
+
+}
+</script>
+
+<section id="chatbot-section">
+<!-- Floating Chat Icon -->
+    <div id="chatbot-icon">💬</div>
+
+    <!-- Chatbot Container -->
+    <div id="chatbot-container" class="hidden">
+      <div id="chatbot-header">
+        <span>Chatbot</span>
+        <button id="close-btn">&times;</button>
+      </div>
+      <div id="chatbot-body">
+        <div id="chatbot-messages"></div>
+      </div>
+      <div id="chatbot-input-container">
+        <input type="text" id="chatbot-input" placeholder="Type a message..." />
+        <button id="send-btn">Send</button>
+      </div>
+    </div>
+</section>
+
+<footer class="mt-4">
+<div class="container ">
+<div class="row">
+  <div class="col-md-4 text-md-start text-center">
+    <h2 class="footer-logo py-2" style="color: rgb(214,178,82);">MINDSPARK</h2>
+    <p style="font-size: 14px;">"Igniting Minds. Inspiring Futures."</p>
+    <p style="font-size: 13px; text-align: justify; max-width: 295px;">MindSpark is an educational platform that empowers learners with content, tools, and emotional intelligence to spark curiosity, foster growth, and build a smarter future.</p>
+  </div>
+  <div class="quick col-md-4 text-md-start text-center py-2  ">  
+    <h4 class="mt-1 ">Quick Links</h4>
+
+    <div class="row mt-3">
+    <div class="col-6">
+      <ul class="list-unstyled">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="lifestyle.html">lifestyle</a></li>
+      <li><a href="smart-studies.html">smart-studies</a></li>
+      <li><a href="career.html">career hub</a></li>
+      <li><a href="soft-edge.html">soft Edge</a></li>
+      <li><a href="tech.html#webdev">Web Development</a></li>
+      </ul>
+      </div>
+      <div class="col-6">
+      <ul class="list-unstyled">
+      <li><a href="tech.html#datasci">Data Science</a></li>
+      <li><a href="tech.html#seo">SEO</a></li>
+      <li><a href="tech.html#mern">MERN Stack</a></li>
+      <li><a href="tech.html#cyber">Cybersecurity</a></li>
+      <li><a href="tech.html#cloud">Cloud Computing</a></li>
+      <li><a href="tech.html#mobile">Mobile Development</a></li>
+      </ul>
+      </div>
+                   
+      </div> <!-- row -->
+      </div>
+      <div class="col-md-4 text-center text-md-start py-2 ">
+      <h4 class="mt-1 mb-4">Connect With Us</h4>
+
+      <div class="d-flex justify-content-center justify-content-md-start align-items-center gap-3 mt-4 f-icons" style="margin-top: 31px;">         
+      <a style="font-size: 22px;" href="https://facebook.com/mindspark" target="_blank"><i class="fab fa-facebook fa-lg"></i></a>
+      <a style="font-size: 22px;" href="https://instagram.com/mindspark" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+      <a style="font-size: 22px;" href="https://twitter.com/mindspark" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
+      <a style="font-size: 22px;" href="https://linkedin.com/company/mindspark" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+      <a style="font-size: 22px;" href="https://youtube.com/@mindspark" target="_blank"><i class="fab fa-youtube fa-lg"></i></a>
+      </div>
+   <!-- Email and Instagram side by side -->
+       <div class=" justify-content-center justify-content-md-start align-items-center mt-4" style="font-size: 14px;">
+        <p style="margin-top: 15px;">Email: <a href="mailto:mindspark@example.com" style="color:  rgb(214,178,82);">mindspark@example.com</a></p><br>
+        <p style="margin-top: -25px;">Instagram: <a href="https://instagram.com/mindspark" style="color:  rgb(214,178,82);" target="_blank">@mindspark</a></p>
+       </div>
+
+       </div>
+
+  </div>
+  </div>
+</footer> 
+
+
+                                            <!-- popper and js links and AOS,lottie -->
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
+    <!-- <script>
+      AOS.init();
+    </script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
+
+  <script>
+  AOS.init({
+    once: false,
+    duration: 800,
+  });
+</script>
+
+                                        <!-- search -->
+<script>
+  const search = document.getElementById("notes-search"); 
+
+  search.addEventListener("input", function () {
+    let filter = search.value.toLowerCase();
+    let cards = document.querySelectorAll(".note-card-item");
+    let visibleCards = 0;
+
+    cards.forEach(function (card) {
+        let subjectName = card.querySelector(".subject-name").textContent.toLowerCase();
+        if (subjectName.includes(filter)) {
+            card.classList.remove("d-none");
+            visibleCards++;
+        } else {
+            card.classList.add("d-none");
+        }
+    });
+    let noResultsMessage = document.getElementById("no-results-message");
+    if (visibleCards === 0) {
+        noResultsMessage.classList.remove("d-none");
+    } else {
+        noResultsMessage.classList.add("d-none");
+    }
+  });
+</script>
+
+<script>
+function showPopup(subject) {
+  const popup = document.getElementById("popup-notification");
+  popup.textContent = `Your ${subject} notes have been successfully downloaded`;
+  popup.style.display = "block";
+
+  setTimeout(() => {
+    popup.style.display = "none";
+  }, 3000);
+}
+
+</script>
+<!-- chatbot -->
+<script>
+// script.js
+document.addEventListener("DOMContentLoaded", function () {
+  // ================================
+  // GET REFERENCES TO HTML ELEMENTS
+  // ================================
+  const chatbotContainer = document.getElementById("chatbot-container"); // The chatbot box
+  const chatbotIcon = document.getElementById("chatbot-icon");           // Floating chat icon
+  const closeButton = document.getElementById("close-btn");              // "X" button to close chatbot
+  const sendBtn = document.getElementById("send-btn");                   // Send button
+  const chatbotInput = document.getElementById("chatbot-input");         // Text input for user messages
+  const chatbotMessages = document.getElementById("chatbot-messages");   // Message display area
+
+  // ================================
+  // TOGGLE CHATBOT VISIBILITY
+  // ================================
+  
+  // When clicking the floating chat icon
+  chatbotIcon.addEventListener("click", function () {
+    chatbotContainer.classList.remove("hidden"); // Show chatbot window
+    chatbotIcon.style.display = "none"; // Hide floating icon
+  });
+
+  // When clicking the close button in chatbot header
+  closeButton.addEventListener("click", function () {
+    chatbotContainer.classList.add("hidden"); // Hide chatbot window
+    chatbotIcon.style.display = "flex"; // Show floating icon again
+  });
+
+  // ================================
+  // SEND MESSAGE EVENTS
+  // ================================
+  
+  // Click on the Send button
+  sendBtn.addEventListener("click", sendMessage);
+
+  // Press "Enter" in the input box
+  chatbotInput.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      sendMessage();
+    }
+  });
+
+  // ================================
+  // MAIN SEND MESSAGE FUNCTION
+  // ================================
+  function sendMessage() {
+    const userMessage = chatbotInput.value.trim(); // Get the message text
+    if (userMessage) {
+      appendMessage("user", userMessage); // Show the user's message in chat
+      chatbotInput.value = ""; // Clear the input box
+      getBotResponse(userMessage); // Call the bot response function
+    }
+  }
+
+  // ================================
+  // APPEND A MESSAGE TO CHAT AREA
+  // sender: "user" or "bot"
+  // message: text to display
+  // ================================
+  function appendMessage(sender, message) {
+    const messageElement = document.createElement("div");
+    messageElement.classList.add("message", sender); // Add classes for styling
+    messageElement.textContent = message; // Set the message text
+    chatbotMessages.appendChild(messageElement); // Add message to chat area
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight; // Auto scroll to latest message
+  }
+
+  // ================================
+  // GET BOT RESPONSE (Gemini API)
+  // ================================
+  async function getBotResponse(userMessage) {
+    // Replace with your Gemini API key
+    const apiKey = "AIzaSyBkXe3xpRZb6OxnKu4ZvuJwxAolNJc4BfY"; // <-- ADD YOUR KEY HERE
+
+    // Choose the model version you want to use
+    const model = "gemini-1.5-flash";
+
+    // Gemini API endpoint URL
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+
+    // ====================================
+    // STEP 1: Show "Bot is typing..." message
+    // ====================================
+    const typingEl = document.createElement("div");
+    typingEl.classList.add("message", "bot");
+    typingEl.textContent = "Bot is typing...";
+    chatbotMessages.appendChild(typingEl);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+    try {
+      // ====================================
+      // STEP 2: Make API Request to Gemini
+      // ====================================
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          contents: [
+            {
+              role: "user",
+              parts: [{ text: userMessage }],
+            },
+          ],
+        }),
+      });
+
+      const data = await response.json();
+
+      // ====================================
+      // STEP 3: Replace "Bot is typing..." with actual reply
+      // ====================================
+      const botMessage = data.candidates?.[0]?.content?.parts?.[0]?.text || 
+                         "Sorry, I couldn't understand that.";
+      typingEl.textContent = botMessage; // Update the same element's text
+    } catch (error) {
+      console.error("Error fetching bot response:", error);
+      typingEl.textContent = "Sorry, something went wrong. Please try again.";
+    }
+  }
+});
+</script>
+<script> 
+  AOS.init({
+    duration: 800,
+    once: false
+  });
+</script>
+ 
+<!-- success msg -->
+<script>
+function showSuccessPopup(message) {
+  const popup = document.getElementById("popup-notification");
+  popup.textContent = message;
+  popup.style.display = "block";
+  setTimeout(() => {
+    popup.style.display = "none";
+  }, 3000);
+}
+</script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/script.js"></script>
+   <script>
+  AOS.init({
+    once: false,
+    duration: 800,
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Hub | MindSpark</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> 
+     <link rel="stylesheet" href="css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">  -->
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <!--<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> AOS --> <!--can't run without internet -->
+    <link rel="stylesheet" href="css/aos.css"><!--AOS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<style>
+  html,body{
+  max-width:100%;
+  overflow-x:hidden;
+    overflow-y:auto;
+
+}
+
+  .career-card{background:#fff;border-radius:15px;transition:.3s ease;text-align:center}
+.career-card:hover{transform:translateY(-5px);box-shadow:0 6px 15px rgba(0,0,0,.1)}
+.career-banner{ height:100vh;background:url('../images/i8.jpg') center/cover no-repeat;position:relative;z-index:1}
+.career-banner::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.2);z-index:-1}
+.career-banner h1,.career-banner p{color:#fff;z-index:1}
+.section-title{font-weight:600;margin-bottom:20px;color:#1e1e1e}
+.resume-tips li,
+.interview-tips li{
+  font-size:clamp(0.95rem,2.4vw,1.05rem);
+  margin-bottom:clamp(8px,1.5vw,12px);
+  display:flex;
+  align-items:flex-start;
+  line-height:1.6;
+}
+.resume-tips li i,
+.interview-tips li i{
+  margin-top:4px;
+  flex-shrink:0;
+}
+.resume-preview{border:1px solid #e6e6e6;background:#fff;transition:.3s ease}
+.resume-preview:hover{transform:scale(1.02);box-shadow:0 6px 15px rgba(0,0,0,.1)}
+.interview-section{background:#fdfcf9}
+.btn-outline-dark{transition:.3s ease; color: #1e1e1e;}
+.btn-outline-dark:hover{transform:scale(1.05); color: #fff;}
+@media(max-width:768px){.career-banner{height:70vh}}
+#career-guide{background:#f9f9f9;padding:60px 0;font-family:'Poppins',sans-serif}
+/* #career-guide h2{font-weight:700;color:#1d3557} */
+#career-guide h3{font-weight:600;color:#2b2d42}
+#career-guide h5{font-weight:600;color:  #d0a75a; font-size: clamp(0.9rem,2.2vw,1.2rem)!important;}
+#career-guide .lead{color:#555;font-size: clamp(0.9rem,2.2vw,1.2rem);}
+.fields-section .table{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.05)}
+.fields-section .table th,.fields-section .table td{vertical-align:middle;font-size:15px}
+.colleges-section ul{list-style:none;padding-left:0}
+.colleges-section ul li::before{content:"🎓 ";margin-right:6px}
+.colleges-section h5{color:#0077b6}
+.scholarship-section .card{border:1px solid #eee;transition:.3s ease;border-radius:10px}
+.scholarship-section .card:hover{transform:translateY(-6px);box-shadow:0 10px 20px rgba(0,0,0,.1)}
+.scholarship-section .btn-outline-primary{border-radius:25px;padding:10px 25px;font-weight:500;font-size:16px}
+.scholarship-section .btn-outline-primary:hover{transform:scale(1.05)}
+.tips-box{border-left:5px solid #d0a75a;background:#fffbea;font-size:16px}
+.tips-box ul{padding-left:20px;margin:0}
+.tips-box li{margin-bottom:8px;font-weight:500;color:#444;  font-size:clamp(0.95rem,2.3vw,1.05rem);
+}
+.earn-learn-section{background:#fdfcf9}
+.section-heading{font-family:'Times New Roman',serif;font-weight:bold;color:#1e1e1e}
+.section-subheading{color:#555;font-size:clamp(0.9rem,2.2vw,1.2rem)!important;}
+.modal-content{border-radius:1rem}
+.modal-header,.modal-footer{border:none}
+.popup-top{position:fixed;top:75px;left:50%;transform:translateX(-50%);background:#1e1e1e;color:#fff;padding:12px 24px;border-radius:30px;font-weight:500;display:none;z-index:9999;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+#heading-effect{font-size:50px;display:inline-block;overflow:hidden;position:relative;margin:0 50px}
+#heading-effect::before,#heading-effect::after{content:"";position:absolute;width:40%;height:100%;background:#fff;top:0;animation:reveal 3s ease forwards}
+#heading-effect::before{left:0}#heading-effect::after{right:0}
+@keyframes reveal{0%{width:50%}100%{width:0}}
+#btn{transition:.6s ease}#btn:hover{transform:scale(1.05)}
+html{font-size:100%}
+@media(max-width:1200px){html{font-size:95%}}
+@media(max-width:992px){html{font-size:90%}}
+@media(max-width:768px){html{font-size:85%}}
+@media(max-width:576px){html{font-size:80%}}
+@media(max-width:420px){html{font-size:75%}}
+.career-hero-section{min-height:75vh;padding:50px 5%}
+.career-hero-content{max-width:850px;margin:0 auto;text-align:center}
+.top-cards{display:flex;flex-wrap:nowrap;gap:15px;overflow-x:auto;padding-bottom:10px;scrollbar-width:none}
+.top-cards::-webkit-scrollbar{display:none}
+.top-cards .career-card{flex:0 0 auto;width:23%;min-width:230px;padding:18px;border-radius:12px}
+@media(max-width:768px){.top-cards .career-card{width:28%;min-width:200px}}
+@media(max-width:576px){.top-cards .career-card{width:40%;min-width:180px}}
+.career-card{padding:22px;border-radius:14px;margin-bottom:25px}
+.career-card .sec-title{font-size:1.6rem;margin-bottom:10px}
+.career-card ul li{font-size:1.05rem;line-height:1.55rem}
+@media(max-width:768px){.career-card{padding:18px}.career-card .sec-title{font-size:1.45rem}.career-card ul li{font-size:.95rem}}
+@media(max-width:576px){.career-card{padding:15px}.career-card .sec-title{font-size:1.35rem}.career-card ul li{font-size:.9rem}}
+.fields-section .table{width:100%;display:block;overflow-x:auto}
+.fields-section .table th,.fields-section .table td{font-size:.95rem}
+@media(max-width:576px){.fields-section .table th,.fields-section .table td{font-size:.85rem;padding:8px 6px}}
+.career-banner h1,.section-title,#career-guide h2,#career-guide h3,#career-guide h5,.earn-learn-section .section-heading,.earn-learn-section .section-subheading{font-size:clamp(1.2rem,2.8vw,3rem)}
+
+#txtleft{
+  font-size: clamp(1.4rem, 4vw, 2.2rem); /* 📱➡️🖥️ auto scale */
+  font-weight: 800;
+  color: #1e1e1e;
+  margin-bottom: clamp(1.3rem, 3.4vw, 2.4rem)!important;
+  text-align: left;
+}
+
+#txtleft::after {
+  content: "";
+  display: block;
+  width: clamp(80px, 25vw, 150px); /* underline responsive */
+  height: clamp(2px, 0.6vw, 3px);
+  margin: clamp(6px, 1.5vw, 10px) 0 0!important;
+  background: linear-gradient(
+    90deg,
+    rgb(208,167,90),
+    #f5e1b7,
+    rgb(208,167,90)
+  );
+  background-size: 200% 100%;
+  border-radius: 2px;
+  animation: borderSlide 2s infinite linear;
+}
+
+.resume-img-col{
+  padding-left: 0;
+}
+@media (min-width: 992px){
+  .resume-img-col{
+    padding-left: 80px;
+  }
+}
+#bgc{transition: 0.3s ease;}
+#bgc:hover{transform: scale(1.05);background-color: #d0a75a!important; color: #fff!important;}
+.table-responsive{
+  overflow-x:auto;
+}
+.fields-section{
+  overflow-x:hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top-cards{
+  padding-inline:10px;
+}
+.container,.row{
+  max-width:100%;
+}
+.scholarship-section .card-title{
+  font-size:clamp(1.05rem,2.6vw,1.25rem);
+}
+.scholarship-section .card-text{
+  font-size:clamp(0.95rem,2.3vw,1.05rem);
+  line-height:1.6;
+}
+.career-banner {
+  margin-top:0px ;
+  margin-bottom:clamp(12px,2vw,20px);
+}
+@media (max-width:769px) {
+  .career-banner{
+    margin-top: 40px!important;
+  }
+}
+
+@media (max-width: 576px){
+  .career-banner h1{
+    font-size: 1.8rem!important;
+  }
+}
+@media (min-width:768px) and (max-width:991px){
+
+  #resume-section .row{
+    display:flex;
+    align-items:center;
+  }
+
+  #resume-section .resume-img-col{
+    flex:0 0 50%;
+    max-width:50%;
+  }
+
+  #resume-section [data-aos="fade-left"]{
+    flex:0 0 50%;
+    max-width:50%;
+  }
+}
+@media (min-width:768px) and (max-width:991px){
+
+  #interview-section .row{
+    display:flex;
+    align-items:center;
+  }
+
+  #interview-section .row > div:first-child{
+    flex:0 0 48%;
+    max-width:48%;
+  }
+
+  #interview-section .row > div:last-child{
+    flex:0 0 52%;
+    max-width:52%;
+  }
+}
+@media (min-width:768px) and (max-width:991px){
+  .resume-tips,
+  .interview-tips{
+    padding-right:20px;
+  }
+}
+
+/* Modal wrapper */
+.auth-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Modal content box */
+.auth-box {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px 40px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  animation: popIn 0.4s ease-out;
+  position: relative;
+}
+.auth-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-box input {
+  padding: 12px;
+  margin-bottom: 22px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+
+.auth-box input:focus{
+  outline: none;
+  border-color: #ffc107;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.4);
+}
+.auth-box input{
+  border-color: #ffc107;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.input-group {
+  position: relative;
+}
+.auth-box label{
+  color:  #ffc107;
+font-size: 11px;
+  left: 9px; 
+  top: 50%;
+  transform: translateY(-120%);
+  position: absolute;
+  pointer-events: none;
+  top: 12px;
+  padding: 0 3px;
+  background-color:  #ffffff;
+  
+}
+/* Button styles */
+.auth-box button {
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+  color: #fff;
+  background-color: goldenrod;
+}
+
+.close-auth {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #555;
+  background: transparent;
+  border: none;
+  font-weight: bold;
+}
+
+.auth-text {
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: center;
+  color: #444;
+}
+
+.success-message {
+  text-align: center;
+  padding: 20px;
+  background: #e8ffe6;
+  border: 1px solid #84d68d;
+  color: #2d7a36;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+/* Invalid input border */
+.input-error {
+  border: 2px solid red !important;
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Shake animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+.error-msg {
+  color: red;
+  font-size: 0.85rem;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+.shake {
+  animation: shake 0.5s;
+}
+
+
+
+@media (max-width: 576px) {
+
+  /* Modal adjustments */
+  .auth-box {
+    width: 90%;
+    padding: 20px 15px;
+  }
+  .auth-box label {
+    font-size: 10px;
+    top: 10px;
+  }
+  .auth-box input {
+    padding: 10px;
+  }
+  .auth-box button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+/* Modal adjustments for small devices */
+@media (max-width: 576px) {
+  .auth-box {
+    padding: 20px 25px; /* smaller padding */
+    max-width: 90%; /* fit better on small screens */
+  }
+
+  .auth-text {
+    font-size: 12px; /* smaller intro text */
+  }
+
+  .success-message {
+    font-size: 13px; 
+    padding: 15px;
+  }
+
+  .auth-box label {
+    font-size: 10px;
+    top: 8px; /* adjust label position */
+  }
+
+  .auth-box input {
+    font-size: 0.85rem; /* smaller text inside input */
+    padding: 8px 10px;   /* smaller height */
+  }
+
+  .auth-box input::placeholder {
+    font-size: 0.8rem; /* smaller placeholder text */
+  }
+
+  .auth-box button {
+    font-size: 0.85rem; 
+    padding: 8px 15px;
+  }
+
+  .close-auth {
+    font-size: 20px; /* smaller close button */
+  }
+}
+</style>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top" >
+  <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" alt="Logo" class="logo img-fluid">
+      </a>
+
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <!-- </div> -->
+    <div class="collapse navbar-collapse mt-1 mt-lg-0" id="mainNavbar">
+      <ul class="navbar-nav ms-auto">
+        
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="fa-solid fa-house me-1" id="nav-icon"></i>home
+          </a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="lifestyleDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-bolt me-1" id="nav-icon"></i>Lifestyle
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="lifestyleDropdown">
+            <li><a class="dropdown-item" href="lifestyle.html#mental-wellness">Mental Wellness</a></li>
+            <li><a class="dropdown-item" href="lifestyle.html#productivity-habits">Productivity Habits</a></li>
+            <li><a class="dropdown-item" href="lifestyle.html#time-management">Time Management</a></li>
+            <li><a class="dropdown-item" href="lifestyle.html#daily-routine">Daily Routines</a></li>
+            <li><a class="dropdown-item" href="lifestyle.html#stress-relief">Stress Relief</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle " href="#" id="smartStudiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-book me-1" id="nav-icon"></i>Smart Studies
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="smartStudiesDropdown">
+            <li><a class="dropdown-item" href="smart-studies.html#study-notes">Study Notes</a></li>
+            <li><a class="dropdown-item" href="smart-studies.html#past-papers">Past Papers</a></li>
+            <li><a class="dropdown-item" href="smart-studies.html#exam-tricks">Exam Tricks</a></li>
+            <li><a class="dropdown-item" href="smart-studies.html#memory-boost">Memory Boost</a></li>
+
+          </ul>
+        </li>
+        
+        <li class="nav-item ">
+          <a class="nav-link" href="tech.html">
+            <i class="fa-solid fa-code me-1" id="nav-icon"></i>Tech Skills
+          </a>
+        </li>
+        
+        <li class="nav-item ">
+          <a class="nav-link" href="career.html">
+            <i class="fa-solid fa-graduation-cap me-1" id="nav-icon"></i>Career Hub
+          </a>
+        </li>
+        
+        <li class="nav-item ">
+          <a class="nav-link" href="soft-edge.html">
+            <i class="fa-brands fa-bluesky me-1" id="nav-icon"></i>Soft Edge
+          </a>
+        </li>
+        
+        <li class="nav-item ">
+          <a class="nav-link" href="contact.html">
+            <i class="fa-solid fa-lightbulb me-1" id="nav-icon"></i>Contact Us
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="career-banner text-white d-flex align-items-center justify-content-center  " >
+  <div class="container text-center">
+    <div class="text-center "><h1 class="display-4 fw-bold" id="heading-effect">Unlock Your Career Potential</h1></div>
+    <p class="lead">Explore your path. Be future-ready. MindSpark guides you every step of the way.</p>
+    <a href="#career-sections" class="btn px-4 py-2 rounded-1 shadow mt-3 px-4 fw-bold text-dark" style="background-color: rgb(214,178,82);" id="btn">Explore CareerHub</a>
+  </div> 
+
+</section>
+  <!-- Cards Section -->
+  <section id="career-sections" class="container py-5">
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3 mb-2">
+        <div class="career-card p-4 shadow-sm h-100" >
+          <a href="#resume-section" class="text-decoration-none text-dark">
+          <i class="fas fa-file-alt fa-2x mb-3" style="color:  #d0a75a;"></i>
+          <h5 >Resume Tips</h5>
+          <p>Learn how to write a winning resume that gets noticed and lands interviews.</p>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-2">
+        <div class="career-card p-4 shadow-sm h-100">
+          <a href="#interview-section" class="text-decoration-none text-dark">
+          <i class="fas fa-comments fa-2x mb-3 " style="color:  #d0a75a;"></i>
+          <h5>Interview Tricks</h5>
+          <p>Master body language, confidence, and smart answers for every type of interview.</p>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="career-card p-4 shadow-sm h-100">
+          <a href="#career-guide" class="text-decoration-none text-dark">
+          <i class="fas fa-graduation-cap fa-2x mb-3 " style="color:  #d0a75a;"></i>
+          <h5>Career & Scholarships Guide</h5>
+          <p>Tech vs Non-Tech? Discover what suits you best – based on your interests and skills.</p>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="career-card p-4 shadow-sm h-100">
+          <a href="#resume-section" class="text-decoration-none text-dark">
+          <i class="fas fa-laptop-code fa-2x mb-3" style="color:  #d0a75a;"></i>
+          <h5>Earn While You Learn</h5>
+          <p>Learn. Grow. Earn. Nurture your skills and let them open doors—alongside your studies.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- RESUME TIPS SECTION -->
+<section id="resume-section" class="container py-5">
+  <div class="row align-items-center">
+    <div class="col-md-6 mb-2 resume-img-col">
+      <img src="images/resume.jpeg" class="img-fluid rounded shadow mb-4" style="max-height: 390px;" alt="Sample Resume">
+    </div>
+      <div class="col-lg-6 order-lg-1 order-2 mb-2" data-aos="fade-left">
+      <h2 class="fw-medium text-left skill-heading" style="color: #1e1e1e;" id="txtleft"> Resume Building Tips
+      </h2>
+      <p class="lead">A resume is your first impression—make it count!</p>
+      <ul class="resume-tips list-unstyled">
+        <li><i class="fas fa-check-circle  me-2" style="color:  #d0a75a;"></i> Use powerful action verbs like “Managed”, “Led”, “Created”.</li>
+        <li><i class="fas fa-check-circle me-2" style="color:  #d0a75a;"></i> Focus on relevant skills, academic projects, and achievements.</li>
+        <li><i class="fas fa-check-circle me-2" style="color:  #d0a75a;"></i> Keep the format clean, modern, and 1-page max for students.</li>
+        <li><i class="fas fa-check-circle me-2" style="color:  #d0a75a;"></i> Include a brief objective that aligns with your career goal.</li>
+        <li><i class="fas fa-check-circle  me-2" style="color:  #d0a75a;"></i> Highlight leadership, teamwork, and problem-solving experience.</li>
+      </ul>
+      <!-- <button download class="btn btn-outline-primary mt-4" download>
+        <i class="fas fa-download me-2"></i> Download Sample Resume (PDF)
+      </button> -->
+      <a href="past_papers/resume.jpg" download class="btn btn-outline-dark mt-4">
+        <i class="fas fa-download me-2"></i> Download Sample Resume (PDF)
+      </a>
+
+       </div>
+  </div>
+</section>
+
+<!-- INTERVIEW TRICKS SECTION -->
+<section class="container py-5" id="interview-section">
+  <div class="row">
+     <div class="col-lg-6 mb-2" data-aos="fade-right"  data-aos-duration="1000">
+        <h2 class="fw-medium text-left skill-heading " style="color: #1e1e1e;" id="txtleft">
+         Ace Your Interview
+        </h2>
+        <p class="lead">Confidence, preparation, and attitude make all the difference.</p>
+        <ul class="interview-tips list-unstyled">
+          <li><i class="fas fa-lightbulb  me-2" style="color:  #d0a75a;"></i> Research the company’s mission and recent achievements.</li>
+          <li><i class="fas fa-user-check  me-2" style="color:  #d0a75a;"></i> Practice mock interviews using the STAR method.</li>
+          <li><i class="fas fa-tshirt  me-2" style="color:  #d0a75a;"></i> Dress appropriately for the role – clean, professional, and confident.</li>
+          <li><i class="fas fa-eye  me-2" style="color:  #d0a75a;"></i> Maintain good eye contact and sit with positive posture.</li>
+          <li><i class="fas fa-question-circle me-2" style="color:  #d0a75a;"></i> Prepare 1–2 smart questions to ask at the end.</li>
+        </ul> 
+      </div>
+    <div class="col-md-6 mb-2">
+      <div class="ratio ratio-16x9">
+      <iframe 
+       src="https://www.youtube.com/embed/ZMByWenSRdI" 
+       title="YouTube video player" 
+       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+       allowfullscreen>
+      </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 🎓 Career & Scholarships Guide Section -->
+<section id="career-guide" class="career-section py-5">
+  <div class="container">
+    <div class="text-center"><h2 class="text-center mb-4 skill-heading" data-aos="fade-down"> Career & Scholarships Guide</h2>  </div>
+    <p class="lead text-center mb-5" style="font-size: clamp(0.9rem,2.2vw,1.3rem)!important;" data-aos="fade-up">Your complete roadmap to careers, colleges, and scholarships in Pakistan.</p>
+      <h3 class="mb-3 text-center"style="font-size: clamp(1.3rem,2.5vw,1.9rem);">Choose Your Path Smartly</h3>
+
+    <!-- 1. Explore Fields After Inter -->
+    <div class="fields-section mb-5 py-4 " data-aos="fade-right" data-aos-delay="100">
+      <div class="table-responsive">
+        <table class="table table-bordered ">
+          <thead class="">
+            <tr>
+              <th style="background-color:  #d0a75a;">Stream</th>
+              <th style="background-color:  #d0a75a;">Possible Fields / Careers</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pre-Medical</td>
+              <td>MBBS, BDS, Pharmacy (Pharm-D), DPT, Biotechnology, Psychology,
+              Medical Lab Technology, Nursing, Public Health</td>
+            </tr>
+            <tr>
+              <td>Pre-Engineering</td>
+              <td> Mechanical, Civil, Electrical, Software, Mechatronics,
+              Chemical Engineering, Industrial Engineering, Telecom Engineering</td>
+            </tr>
+            <tr>
+              <td>Computer Science</td>
+              <td>BSCS, BSSE, Information Technology, Data Science, Artificial Intelligence,
+                Cybersecurity, Game Development, Cloud Computing</td>
+            </tr>
+            <tr>
+              <td>Commerce</td>
+              <td>BBA, B.Com, ACCA, CA, Banking & Finance,
+              E-Commerce, Entrepreneurship, Business Analytics</td>
+            </tr>
+            <tr>
+              <td>Humanities</td>
+              <td>Journalism & Mass Communication, CSS, Law (LLB),
+              Education, Psychology, International Relations, Social Work
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+<!-- 2. Top Colleges and Universities in Karachi -->
+<section class="edu-guide-section mb-5">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="skill-heading text-center mb-4" data-aos="fade-down" >Top Colleges & Universities in Karachi</h2>
+    </div>
+
+    <div class="row">
+      <!-- Colleges Column -->
+      <div class="col-md-6">
+        <h3 class="sub-heading mb-4 fw-bold" style="color: #bfa14d;" data-aos="fade-right"> Top 10 Colleges</h3>
+
+        <div class="edu-card girls-college mb-4" data-aos="fade-right"  data-aos-delay="100">
+          <h5 class="mb-3 ms-5">👩‍🎓 For Girls</h5>
+          <ul>
+            <li>St. Joseph’s College</li>
+            <li>St. Lawrence Government College for Women</li>
+            <li>Sir Syed Government Girls College</li>
+            <li>Khatoon-e-Pakistan Government College</li>
+            <li>PECHS Government College for Women</li>
+            <li>Govt Degree College for Women Nazimabad</li>
+            <li>Apwa Govt College for Women</li>
+            <li>Rana Liaquat Ali Khan College</li>
+            <li>Govt College for Women Korangi</li>
+            <li>Govt Zam Zama Girls College</li>
+          </ul>
+        </div>
+
+        <div class="edu-card boys-college" data-aos="fade-right"  data-aos-delay="100">
+          <h5 class="mb-3 ms-5">👨‍🎓 For Boys</h5>
+          <ul >
+            <li>Adamjee Government Science College</li>
+            <li>Government Degree Science College</li>
+            <li>DJ Science College</li>
+            <li>Islamia Science College</li>
+            <li>Govt National College</li>
+            <li>Jinnah Government College</li>
+            <li>Govt College for Men Nazimabad</li>
+            <li>Shipowners Government College</li>
+            <li>SM Government Science College</li>
+            <li>Government Premier College</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Universities Column -->
+      <div class="col-md-6">
+        <h3 class="sub-heading mb-5 fw-bold" style="color: #bfa14d;" data-aos="fade-right"  data-aos-delay="200"> Top 10 Universities</h3>
+
+        <div class="edu-card girls-uni " data-aos="fade-right"  data-aos-delay="250">
+          <!-- <h5 style="display: none;">👩‍🎓 For Girls</h5> -->
+          <ul style="margin-top: 62px;">
+            <li>Dow Medical College (Best for Medical Students)</li>
+            <li>Jinnah University for Women</li>
+            <li>Bahria University</li>
+            <li>NED University (Co-Education)</li>
+            <li>University of Karachi (Co-Education)</li>
+            <li>Institute of Business Administration (IBA)</li>
+            <li>Dawood University of Engineering</li>
+            <li>Aga Khan University</li>
+            <li>Ziauddin University</li>
+            <li>Benazir Bhutto Shaheed University for Women</li>
+          </ul>
+        </div>
+
+        <div class="edu-card boys-uni" data-aos="fade-right"  data-aos-delay="250">
+          <!-- <h5 >👨‍🎓 For Boys</h5> -->
+          <ul style="margin-top:60px;">
+            <li>NED University (Co-Education)</li>
+            <li>FAST-NUCES</li>
+            <li>Iqra University (Co-Education)</li>
+            <li>Sir Syed University (Co-Education)</li>
+            <li>University of Karachi (Co-Education)</li>
+            <li>Institute of Business Administration (IBA)</li>
+            <li>Dawood University of Engineering</li>
+            <li>Indus University</li>
+            <li>Ilma University</li>
+            <li>Usman Institute of Technology (UIT)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- 3. Scholarship Opportunities -->
+    <div class="scholarship-section mb-5">
+      <h3 class="mb-3" data-aos="fade-right">Don’t Let Fees Stop Your Dreams</h3>
+      <div class="row g-4" data-aos="fade-down"  data-aos-delay="100">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">HEC Need-Based</h5>
+              <p class="card-text">For financially challenged students applying to public universities. Covers tuition + stipend.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Ehsaas UG Scholarship</h5>
+              <p class="card-text">Government scholarship covering 4-year degrees in 129 universities. For low-income households.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">PEEF / NEST / IBA</h5>
+              <p class="card-text">Apply to province-based or university-specific programs. Many offer 100% tuition waivers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 text-center">
+        <button class="btn download-btn btn-outline-dark mt-3 " onclick="openAuthModal('scholarship-guide pdf/')" data-aos="fade-down"  data-aos-delay="100"> Download Scholarship Guide</button>
+      </div>
+    </div>
+    <!-- 4. Bonus Tips -->
+    <div class="tips-box p-4 bg-light rounded" data-aos="fade-left"  data-aos-delay="100">
+      <h4> Tips to Win Scholarships</h4>
+      <ul>
+        <li>✅ Keep all academic and financial documents ready (CNIC, income proof)</li>
+        <li>✅ Write a strong personal statement</li>
+        <li>✅ Apply before the deadline</li>
+        <li>✅ Regularly check official HEC and university websites</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- Popup Notification -->
+  <div id="popup-notification" class="popup-top">Your notes have been downloaded</div>
+
+<!-- 3. Earn While You Learn -->
+<section class="earn-learn-section py-5" >
+  <div class="container">
+    <div class="text-center"><h2 class="skill-heading text-center mb-4" data-aos="fade-down" > Earn While You Learn</h2></div>
+    <p class="section-subheading text-center mb-5" data-aos="fade-up" >Learn. Grow. Earn. Let your skills work for you—while you study.</p>
+
+    <div class="row g-4" data-aos="fade-up"  data-aos-delay="150">
+      <!-- Card 1: Freelancing -->
+      <div class="col-md-6 col-lg-4">
+        <div class="career-card shadow-lg p-4 rounded-4 h-100 border-0" style="background: linear-gradient(135deg, #fdfcf9, #f3f3f3);">
+          <a href="#" class="text-decoration-none text-dark" data-bs-toggle="modal" data-bs-target="#freelancingModal">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-laptop-code fa-2x  me-3" style="color:  #d0a75a;"></i>
+              <h5 class="m-0">Earn While You Learn</h5>
+            </div>
+            <p class="text-muted small">Learn. Grow. Earn. Let your skills work for you — while you study.</p>
+            <button class="btn  btn-sm mt-2" style="border:1px solid  #d0a75a; color: #d0a75a;"id="bgc">Explore Guide</button>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2: Skill Courses -->
+      <div class="col-md-6 col-lg-4">
+        <div class="career-card shadow-lg p-4 rounded-4 h-100 border-0" style="background: linear-gradient(135deg, #fdfcf9, #f3f3f3);">
+          <a href="#" class="text-decoration-none text-dark" data-bs-toggle="modal" data-bs-target="#coursesModal">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-layer-group fa-2x  me-3" style="color:  #d0a75a;"></i>
+              <h5 class="m-0">Skill Courses</h5>
+            </div>
+            <p class="text-muted small">Top short-term courses to build career-ready skills along with studies.</p>
+            <button class="btn btn-sm mt-2" style="border:1px solid  #d0a75a; color: #d0a75a;"id="bgc">Explore</button>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3: Online Income Ideas -->
+      <div class="col-md-6 col-lg-4">
+        <div class="career-card shadow-lg p-4 rounded-4 h-100 border-0" style="background: linear-gradient(135deg, #fdfcf9, #f3f3f3);">
+          <a href="#" class="text-decoration-none text-dark" data-bs-toggle="modal" data-bs-target="#incomeModal">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-rocket fa-2x me-3" style="color:  #d0a75a;"></i>
+              <h5 class="m-0">Online Income Ideas</h5>
+            </div>
+            <p class="text-muted small">Discover smart, student-friendly ways to earn online while studying.</p>
+            <button class="btn  btn-sm mt-2" style="border:1px solid  #d0a75a; color: #d0a75a;" id="bgc">View Ideas</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal 1: Freelancing Guide -->
+<div class="modal fade" id="freelancingModal" tabindex="-1" aria-labelledby="freelancingModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header  text-white rounded-top-4" style="background-color:  #d0a75a;">
+        <h5 class="modal-title" id="freelancingModalLabel">Freelancing & Beyond</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-4">
+        <p class="mb-3">You're more than just a student — you're a growing creator. It's time to explore the world beyond traditional academics.</p>
+        <h6 class="fw-bold">💼 Why Freelancing?</h6>
+        <ul>
+          <li>Start building a portfolio early</li>
+          <li>Earn part-time income</li>
+          <li>Work on real-world projects</li>
+          <li>Enhance skills while staying flexible</li>
+        </ul>
+
+        <h6 class="fw-bold mt-4">🚀 Where to Begin?</h6>
+        <ul>
+          <li>Pick a skill: writing, design, coding, editing, etc.</li>
+          <li>Build your profile on Fiverr, Upwork, Freelancer</li>
+          <li>Start small, deliver well, and gather reviews</li>
+          <li>Join freelancing groups, learn from others</li>
+        </ul>
+
+        <h6 class="fw-bold mt-4">🎓 Skill Courses to Consider</h6>
+        <ul>
+          <li>Graphic Designing</li>
+          <li>Content Writing & Blogging</li>
+          <li>Video Editing</li>
+          <li>Social Media Marketing</li>
+          <li>Web Development</li>
+        </ul>
+
+        <p class="mt-4"><strong>Remember:</strong> Freelancing doesn’t require perfection — it requires passion and persistence.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn " data-bs-dismiss="modal" style="border:1px solid  #d0a75a; color: #d0a75a;" id="bgc">Got It</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal 2: Skill Courses -->
+<div class="modal fade" id="coursesModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header  text-white rounded-top-4"style="background-color:  #d0a75a;">
+        <h5 class="modal-title">Top Skill-Based Courses</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-4">
+        <p>Short-term skill courses are a game-changer. Gain career-ready skills even while pursuing your degree:</p>
+        <ul>
+          <li>🎨 Graphic Designing</li>
+          <li>💻 Web Development / WordPress</li>
+          <li>🧾 Content Writing & Blogging</li>
+          <li>📊 Digital Marketing & SEO</li>
+          <li>🎥 Video Editing / Animation</li>
+        </ul>
+        <p class="mt-3">Find these on platforms like <strong>DigiSkills, Coursera, YouTube, Skillshare</strong> — many are free or affordable!</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn " data-bs-dismiss="modal" style="border:1px solid  #d0a75a; color: #d0a75a;" id="bgc">Thanks!</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal 3: Online Income Ideas -->
+<div class="modal fade" id="incomeModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header text-white rounded-top-4" style="background-color:  #d0a75a;">
+        <h5 class="modal-title">Smart Online Income Ideas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-4">
+        <p>Don’t just rely on one source of income. Here are some smart ways students can earn online:</p>
+        <ul>
+          <li>💼 Offer services on Fiverr / Upwork</li>
+          <li>✍️ Start a blog or YouTube channel</li>
+          <li>📚 Tutor online locally or internationally</li>
+          <li>📱 Run a digital store on Instagram/Facebook</li>
+          <li>🛍️ Do affiliate marketing via Amazon, Daraz, etc.</li>
+        </ul>
+        <p class="mt-3">Start small. Stay consistent. And grow from there!</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn " data-bs-dismiss="modal" style="border:1px solid  #d0a75a; color: #d0a75a;" id="bgc">Got It!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="authModal" class="auth-modal">
+  <div class="auth-box">
+    <span class="close-auth" onclick="closeAuthModal()">×</span>
+    <p class="auth-text">
+      Please fill this form to download notes.<br>
+      <span id="registerMsg">
+        New here? Register below. Already registered?
+        <a href="#" onclick="toggleAuthForm('login')">Login here</a>.
+      </span>
+      <span id="loginMsg" style="display:none;">
+        Already have an account? Login below. New user?
+        <a href="#" onclick="toggleAuthForm('register')">Register here</a>.
+      </span>
+    </p>
+
+    <!-- Success message -->
+    <div id="successMessage" class="success-message" style="display:none;">
+      🎉 Successfully Submitted! Your download will begin shortly...
+    </div>
+
+    <!-- Register Form -->
+    <form id="registerForm" onsubmit="submitForm(event, 'register')">
+      <div class="input-group">
+        <input type="text" id="regName" placeholder="Full Name" required>
+        <label for="regName">Full Name</label>
+      </div>
+
+      <div class="input-group">
+        <input type="date" id="regBirth" required>
+        <label for="regBirth">Date of Birth</label>
+      </div>
+
+      <div class="input-group">
+        <input type="tel" id="regPhone" placeholder="03XXXXXXXXX" pattern="03[0-9]{9}" required>
+        <label for="regPhone">Phone</label>
+      </div>
+
+      <div class="input-group">
+        <input type="email" id="regEmail" placeholder="Email" required>
+        <label for="regEmail">Email</label>
+      </div>
+      <div id="regEmailError" class="error-msg"></div>
+
+      <div class="input-group">
+        <input type="password" id="regPassword" placeholder="Password" required>
+        <label for="regPassword">Password</label>
+      </div>
+      <div id="regPassError" class="error-msg"></div>
+
+      <button type="submit">Register & Download</button>
+    </form>
+
+    <!-- Login Form -->
+    <form id="loginForm" style="display:none;" onsubmit="submitForm(event, 'login')">
+      <div class="input-group">
+        <input type="email" id="loginEmail" placeholder="Email" required>
+        <label for="loginEmail">Email</label>
+      </div>
+      <div id="loginEmailError" class="error-msg"></div>
+
+      <div class="input-group">
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <label for="loginPassword">Password</label>
+      </div>
+      <div id="loginPassError" class="error-msg"></div>
+
+      <button type="submit">Login & Download</button>
+    </form>
+  </div>
+</div>
+<script>
+// --- Modal Open/Close ---
+function openAuthModal(subject) {
+  document.getElementById("authModal").style.display = "flex";
+  localStorage.setItem("requestedSubject", subject);
+}
+
+function closeAuthModal() {
+  document.getElementById("authModal").style.display = "none";
+  document.getElementById("registerForm").style.display = "flex";
+  document.getElementById("loginForm").style.display = "none";
+  document.getElementById("successMessage").style.display = "none";
+  document.getElementById("registerMsg").style.display = "inline";
+  document.getElementById("loginMsg").style.display = "none";
+}
+
+function toggleAuthForm(type) {
+  const isLogin = type === 'login';
+  document.getElementById("registerForm").style.display = isLogin ? "none" : "flex";
+  document.getElementById("loginForm").style.display = isLogin ? "flex" : "none";
+  document.getElementById("registerMsg").style.display = isLogin ? "none" : "inline";
+  document.getElementById("loginMsg").style.display = isLogin ? "inline" : "none";
+}
+
+// --- Regex Patterns ---
+const emailPattern = /^[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+const passPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_=+|?/><])[A-Za-z0-9!@#$%^&*()_=+|?/><]{8,}$/;
+
+// --- Shake Animation ---
+function shakeInput(input) {
+  input.classList.add("shake");
+  setTimeout(() => input.classList.remove("shake"), 500);
+}
+
+// --- Field Validation ---
+function validateFields(type) {
+  let isValid = true;
+  document.querySelectorAll(".error-msg").forEach(el => el.textContent = "");
+  document.querySelectorAll("input").forEach(input => input.classList.remove("input-error", "shake"));
+
+  let email, pass, emailError, passError;
+
+  if (type === "register") {
+    email = document.getElementById("regEmail");
+    pass = document.getElementById("regPassword");
+    emailError = document.getElementById("regEmailError");
+    passError = document.getElementById("regPassError");
+  } else {
+    email = document.getElementById("loginEmail");
+    pass = document.getElementById("loginPassword");
+    emailError = document.getElementById("loginEmailError");
+    passError = document.getElementById("loginPassError");
+  }
+
+  if (!emailPattern.test(email.value.trim())) {
+    email.classList.add("input-error");
+    emailError.textContent = "Invalid email format";
+    emailError.style.textAlign = "right";
+    shakeInput(email);
+    isValid = false;
+  }
+
+  if (!passPattern.test(pass.value.trim())) {
+    pass.classList.add("input-error");
+    passError.textContent = "Password must be 8+ chars, include uppercase, lowercase, number & special char";
+    shakeInput(pass);
+    isValid = false;
+  }
+
+  return isValid;
+}
+
+// --- Form Submit ---
+function submitForm(event, type) {
+  event.preventDefault();
+
+  if (!validateFields(type)) return; // stop if invalid
+
+  // Show success
+  document.getElementById("registerForm").style.display = "none";
+  document.getElementById("loginForm").style.display = "none";
+  document.getElementById("registerMsg").style.display = "none";
+  document.getElementById("loginMsg").style.display = "none";
+  document.getElementById("successMessage").style.display = "block";
+
+  // Reset form
+  document.getElementById(type === "register" ? "registerForm" : "loginForm").reset();
+
+//   setTimeout(() => {
+//     closeAuthModal();
+//     const subject = localStorage.getItem("requestedSubject");
+//     if (typeof showPopup === "function") {
+//       showPopup(subject || "Subject");
+//     }
+//     localStorage.removeItem("requestedSubject");
+//   }, 2200);
+// }
+
+setTimeout(() => {
+  closeAuthModal();
+  const subject = localStorage.getItem("requestedSubject");
+
+  // ✅ Subject → File mapping
+  const fileMap = {
+    "Math": "past_papers/Maths notes.pdf",
+    "English": "past_papers/English notes.pdf",
+    "Physics": "past_papers/Physics notes.pdf",
+    "Chemistry": "past_papers/Chemistry notes.pdf",
+    "Biology": "past_papers/Biology notes.pdf",
+    "Urdu": "past_papers/Urdu notes.pdf",
+    "Computer": "past_papers/Computer notes.pdf",
+    "Islamiat": "past_paperses/Islamiat notes.pdf",
+    "Social Studies": "past_papers/Social Studies notes.pdf",
+    "Sindhi": "past_papers/Sindhi notes.pdf",
+    "General Science": "past_papers/General Science notes.pdf",
+    "Environmental Management": "past_papers/Environmental Management notes.pdf",
+    "Economics": "past_papers/Economics notes.pdf",
+    "Business Studies": "past_papers/Business Studies notes.pdf",
+    "Accounting": "past_papers/Accounting notes.pdf",
+    "History": "past_papers/History notes.pdf",
+    "Geography": "past_papers/Geography notes.pdf",
+    "ICT": "past_papers/ICT notes.pdf"
+  };
+
+  // Pick file based on subject OR fallback
+  let fileUrl = fileMap[subject] || "past_papers/general.pdf";
+
+  // ✅ Trigger file download
+  if (fileUrl) {
+    const a = document.createElement("a");
+    a.href = fileUrl;
+    a.download = fileUrl.split("/").pop(); // downloads as maths.pdf, physics.pdf etc.
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
+  // ✅ Show your popup message
+  if (typeof showPopup === "function") {
+    showPopup(subject || "Subject");
+  }
+
+  localStorage.removeItem("requestedSubject");
+}, 2200);
+
+}
+</script>
+
+
+
+<section id="chatbot-section">
+<!-- Floating Chat Icon -->
+    <div id="chatbot-icon">💬</div>
+
+    <!-- Chatbot Container -->
+    <div id="chatbot-container" class="hidden">
+      <div id="chatbot-header">
+        <span>Chatbot</span>
+        <button id="close-btn">&times;</button>
+      </div>
+      <div id="chatbot-body">
+        <div id="chatbot-messages"></div>
+      </div>
+      <div id="chatbot-input-container">
+        <input type="text" id="chatbot-input" placeholder="Type a message..." />
+        <button id="send-btn">Send</button>
+      </div>
+    </div>
+</section>
+<footer class="mt-4">
+<div class="container ">
+<div class="row">
+  <div class="col-md-4 text-md-start text-center">
+    <h2 class="footer-logo py-2" style="color: rgb(214,178,82);">MINDSPARK</h2>
+    <p style="font-size: 14px;">"Igniting Minds. Inspiring Futures."</p>
+    <p style="font-size: 13px; text-align: justify; max-width: 295px;">MindSpark is an educational platform that empowers learners with content, tools, and emotional intelligence to spark curiosity, foster growth, and build a smarter future.</p>
+  </div>
+  <div class="quick col-md-4 text-md-start text-center py-2  ">  
+    <h4 class="mt-1 ">Quick Links</h4>
+
+    <div class="row mt-3">
+    <div class="col-6">
+      <ul class="list-unstyled">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="lifestyle.html">lifestyle</a></li>
+      <li><a href="smart-studies.html">smart-studies</a></li>
+      <li><a href="career.html">career hub</a></li>
+      <li><a href="soft-edge.html">soft Edge</a></li>
+      <li><a href="tech.html#webdev">Web Development</a></li>
+      </ul>
+      </div>
+      <div class="col-6">
+      <ul class="list-unstyled">
+      <li><a href="tech.html#datasci">Data Science</a></li>
+      <li><a href="tech.html#seo">SEO</a></li>
+      <li><a href="tech.html#mern">MERN Stack</a></li>
+      <li><a href="tech.html#cyber">Cybersecurity</a></li>
+      <li><a href="tech.html#cloud">Cloud Computing</a></li>
+      <li><a href="tech.html#mobile">Mobile Development</a></li>
+      </ul>
+      </div>
+                   
+      </div> <!-- row -->
+      </div>
+      <div class="col-md-4 text-center text-md-start py-2 ">
+      <h4 class="mt-1 mb-4">Connect With Us</h4>
+
+      <div class="d-flex justify-content-center justify-content-md-start align-items-center gap-3 mt-4 f-icons" style="margin-top: 31px;">         
+      <a style="font-size: 22px;" href="https://facebook.com/mindspark" target="_blank"><i class="fab fa-facebook fa-lg"></i></a>
+      <a style="font-size: 22px;" href="https://instagram.com/mindspark" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+      <a style="font-size: 22px;" href="https://twitter.com/mindspark" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
+      <a style="font-size: 22px;" href="https://linkedin.com/company/mindspark" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+      <a style="font-size: 22px;" href="https://youtube.com/@mindspark" target="_blank"><i class="fab fa-youtube fa-lg"></i></a>
+      </div>
+   <!-- Email and Instagram side by side -->
+       <div class=" justify-content-center justify-content-md-start align-items-center mt-4" style="font-size: 14px;">
+        <p style="margin-top: 15px;">Email: <a href="mailto:mindspark@example.com" style="color:  rgb(214,178,82);">mindspark@example.com</a></p><br>
+        <p style="margin-top: -25px;">Instagram: <a href="https://instagram.com/mindspark" style="color:  rgb(214,178,82);" target="_blank">@mindspark</a></p>
+       </div>
+
+       </div>
+
+  </div>
+  </div>
+</footer>
+                                            <!-- popper and js links and AOS,lottie -->
+
+<!--msg js-->
+<script>
+function showPopup(subject) {
+  const popup = document.getElementById("popup-notification");
+  popup.textContent = `Your ${subject} notes have been successfully downloaded`;
+  popup.style.display = "block";
+
+  setTimeout(() => {
+    popup.style.display = "none";
+  }, 3000);
+}
+function showSuccessPopup(message) {
+  const popup = document.getElementById("popup-notification");
+  popup.textContent = message;
+  popup.style.display = "block";
+  setTimeout(() => {
+    popup.style.display = "none";
+  }, 3000);
+}
+
+</script>
+<script>
+  window.addEventListener("scroll", function () {
+    const el = document.getElementById("heading-effect");
+    if (!el) return;
+
+    const rect = el.getBoundingClientRect();
+    const inView = rect.top >= 0 && rect.top <= window.innerHeight;
+
+    if (inView) {
+      el.style.display = "block";
+    } else {
+      el.style.display = "none";
+    }
+  });
+</script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/script.js"></script>
+  <script>
+  AOS.init({
+    once: false,
+    duration: 800,
+  });
+</script>
+<!-- chatbot -->
+<script>
+// script.js
+document.addEventListener("DOMContentLoaded", function () {
+  // ================================
+  // GET REFERENCES TO HTML ELEMENTS
+  // ================================
+  const chatbotContainer = document.getElementById("chatbot-container"); // The chatbot box
+  const chatbotIcon = document.getElementById("chatbot-icon");           // Floating chat icon
+  const closeButton = document.getElementById("close-btn");              // "X" button to close chatbot
+  const sendBtn = document.getElementById("send-btn");                   // Send button
+  const chatbotInput = document.getElementById("chatbot-input");         // Text input for user messages
+  const chatbotMessages = document.getElementById("chatbot-messages");   // Message display area
+
+  // ================================
+  // TOGGLE CHATBOT VISIBILITY
+  // ================================
+  
+  // When clicking the floating chat icon
+  chatbotIcon.addEventListener("click", function () {
+    chatbotContainer.classList.remove("hidden"); // Show chatbot window
+    chatbotIcon.style.display = "none"; // Hide floating icon
+  });
+
+  // When clicking the close button in chatbot header
+  closeButton.addEventListener("click", function () {
+    chatbotContainer.classList.add("hidden"); // Hide chatbot window
+    chatbotIcon.style.display = "flex"; // Show floating icon again
+  });
+
+  // ================================
+  // SEND MESSAGE EVENTS
+  // ================================
+  
+  // Click on the Send button
+  sendBtn.addEventListener("click", sendMessage);
+
+  // Press "Enter" in the input box
+  chatbotInput.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      sendMessage();
+    }
+  });
+
+  // ================================
+  // MAIN SEND MESSAGE FUNCTION
+  // ================================
+  function sendMessage() {
+    const userMessage = chatbotInput.value.trim(); // Get the message text
+    if (userMessage) {
+      appendMessage("user", userMessage); // Show the user's message in chat
+      chatbotInput.value = ""; // Clear the input box
+      getBotResponse(userMessage); // Call the bot response function
+    }
+  }
+
+  // ================================
+  // APPEND A MESSAGE TO CHAT AREA
+  // sender: "user" or "bot"
+  // message: text to display
+  // ================================
+  function appendMessage(sender, message) {
+    const messageElement = document.createElement("div");
+    messageElement.classList.add("message", sender); // Add classes for styling
+    messageElement.textContent = message; // Set the message text
+    chatbotMessages.appendChild(messageElement); // Add message to chat area
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight; // Auto scroll to latest message
+  }
+
+  // ================================
+  // GET BOT RESPONSE (Gemini API)
+  // ================================
+  async function getBotResponse(userMessage) {
+    // Replace with your Gemini API key
+    const apiKey = "AIzaSyBkXe3xpRZb6OxnKu4ZvuJwxAolNJc4BfY"; // <-- ADD YOUR KEY HERE
+
+    // Choose the model version you want to use
+    const model = "gemini-1.5-flash";
+
+    // Gemini API endpoint URL
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+
+    // ====================================
+    // STEP 1: Show "Bot is typing..." message
+    // ====================================
+    const typingEl = document.createElement("div");
+    typingEl.classList.add("message", "bot");
+    typingEl.textContent = "Bot is typing...";
+    chatbotMessages.appendChild(typingEl);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+    try {
+      // ====================================
+      // STEP 2: Make API Request to Gemini
+      // ====================================
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          contents: [
+            {
+              role: "user",
+              parts: [{ text: userMessage }],
+            },
+          ],
+        }),
+      });
+
+      const data = await response.json();
+
+      // ====================================
+      // STEP 3: Replace "Bot is typing..." with actual reply
+      // ====================================
+      const botMessage = data.candidates?.[0]?.content?.parts?.[0]?.text || 
+                         "Sorry, I couldn't understand that.";
+      typingEl.textContent = botMessage; // Update the same element's text
+    } catch (error) {
+      console.error("Error fetching bot response:", error);
+      typingEl.textContent = "Sorry, something went wrong. Please try again.";
+    }
+  }
+});
+</script>
+</body>
+</html>
