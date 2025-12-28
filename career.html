@@ -23,7 +23,7 @@
 
   .career-card{background:#fff;border-radius:15px;transition:.3s ease;text-align:center}
 .career-card:hover{transform:translateY(-5px);box-shadow:0 6px 15px rgba(0,0,0,.1)}
-.career-banner{ height:100vh;background:url('../images/i8.jpg') center/cover no-repeat;position:relative;z-index:1}
+.career-banner{ height:100vh;background:center/cover no-repeat;position:relative;z-index:1}
 .career-banner::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.2);z-index:-1}
 .career-banner h1,.career-banner p{color:#fff;z-index:1}
 .section-title{font-weight:600;margin-bottom:20px;color:#1e1e1e}
@@ -409,6 +409,46 @@ font-size: 11px;
     font-size: 20px; /* smaller close button */
   }
 }
+.career-banner{
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* actual image */
+.career-banner img.hero-img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* overlay */
+.career-banner::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* content on top */
+.career-banner .container{
+  position: relative;
+  z-index: 2;
+}
+
+@media(max-width:768px){
+  .career-banner{
+    min-height:70vh;
+  }
+}
+
 </style>
 <body>
 
@@ -488,16 +528,34 @@ font-size: 11px;
 
   </div>
 </nav>
+<section class="career-banner text-white">
+  
+  <!-- HERO IMAGE -->
+  <img 
+    src="images/i8.jpg" 
+    alt="Career guidance illustration" 
+    class="hero-img"
+    loading="lazy"
+  >
 
-<!-- HERO SECTION -->
-<section class="career-banner text-white d-flex align-items-center justify-content-center  " >
+  <!-- CONTENT -->
   <div class="container text-center">
-    <div class="text-center "><h1 class="display-4 fw-bold" id="heading-effect">Unlock Your Career Potential</h1></div>
-    <p class="lead">Explore your path. Be future-ready. MindSpark guides you every step of the way.</p>
-    <a href="#career-sections" class="btn px-4 py-2 rounded-1 shadow mt-3 px-4 fw-bold text-dark" style="background-color: rgb(214,178,82);" id="btn">Explore CareerHub</a>
-  </div> 
+    <h1 class="display-4 fw-bold" id="heading-effect">
+      Unlock Your Career Potential
+    </h1>
+    <p class="lead">
+      Explore your path. Be future-ready. MindSpark guides you every step of the way.
+    </p>
+    <a href="#career-sections"
+       class="btn px-4 py-2 rounded-1 shadow mt-3 fw-bold text-dark"
+       style="background-color: rgb(214,178,82);"
+       id="btn">
+       Explore CareerHub
+    </a>
+  </div>
 
 </section>
+
   <!-- Cards Section -->
   <section id="career-sections" class="container py-5">
     <div class="row g-4">

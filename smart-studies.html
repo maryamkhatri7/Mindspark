@@ -481,7 +481,7 @@ table a:hover{
 }
 .smart-hero{
   position: relative;
-  min-height: 616px;
+    min-height: 100vh;   /* ⭐ MOST IMPORTANT LINE */
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -511,6 +511,11 @@ table a:hover{
 .smart-hero-content{
   position: relative;
   z-index: 2;
+}
+@media (max-width: 576px) {
+  .smart-hero {
+    height: 310px!important;
+  }
 }
 
 </style>
